@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <data>
+        <record id="view_limayrac_formations_list" model="ir.ui.view">
+            <field name="name">limayrac.formations.list</field>
+            <field name="model">limayrac.formations</field>
+            <field name="arch" type="xml">
+                <list string="Formations Limayrac">
+                    <field name="name"/>
+                    <field name="question_one"/>
+                    <field name="question_two"/>
+                    <field name="question_three"/>
+                    <field name="question_four"/>
+                    <field name="question_five"/>
+                </list>
+                <form string="Formations Limayrac">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="question_one"/>
+                            <field name="question_two"/>
+                            <field name="question_three"/>
+                            <field name="question_four"/>
+                            <field name="question_five"/>
+                        </group>
+                    </sheet>
+                    <page name="tilte_rncp" string="Ancien titre RNCP associé">
+                        <field name="title_rncp_id" string="Title RNCP"/>
+                    </page>
+                </form>
+            </field>
+        </record>
+    
+    </data>
+    
+
+</odoo>

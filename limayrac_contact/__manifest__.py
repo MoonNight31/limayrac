@@ -19,6 +19,7 @@
         'views/res_partner_views.xml',
         'views/res_partner_department_views.xml',
         'views/res_partner_naf_views.xml',
+        'views/limayrac_formation_views.xml'
         # #REPORT
         # 'report/report_estate_property.xml',
         # # WIZARD
