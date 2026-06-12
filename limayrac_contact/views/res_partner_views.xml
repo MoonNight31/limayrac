@@ -15,10 +15,7 @@
                     <field name="res_partner_naf_id" invisible="not is_company"/>
                 </xpath>
                 <xpath expr="//page[@name='internal_notes']" position="after">
-                <page name="services" string="Services" invisible='not is_company'>
-                    <field name="res_partner_department_ids"/>
-                </page>
-                    <page name="services" string="Services">
+                    <page name="services" string="Services" invisible='not is_company'>
                         <field name="res_partner_department_ids"/>
                     </page>
                     <page name="subsidiaries" string="Filiales" invisible="not is_company">
@@ -45,17 +42,13 @@
                 </xpath>
             </field>
         </record>
-        <record id="res_partner_view_search" model="ir.ui.view">
-            <field name="name">res.partner.select</field>
+        <record id="res_partner_view_search_limayrac_contact" model="ir.ui.view">
+            <field name="name">res.partner.select.limayrac.contact</field>
             <field name="model">res.partner</field>
             <field name="inherit_id" ref="base.view_res_partner_filter"/>
             <field name="arch" type="xml">
-                <xpath expr="//field[@name='properties']" position="after">
-                    <group name="search_company_information" string="Informations entreprise">
-                        <search string="Informations entreprise">
-                            <filter string="Prospect" domain="[('is_prospect', '=', True)]"/>
-                        </search>
-                    </group>
+                <xpath expr="//filter[@name='type_company']" position="after">
+                    <filter name='is_prospect' string="Prospect" domain="[('is_prospect', '=', True)]"/>
                 </xpath>
             </field>
         </record>
