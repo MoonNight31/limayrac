@@ -8,3 +8,6 @@ class ResPartner(models.Model):
         'res.partner.department',
         'res_partner_id',
         string='Services')
+    is_partenaire = fields.Boolean(default=False)
+    is_prospect = fields.Boolean(default=False)
+    is_blacklist = fields.Boolean(default=False)
