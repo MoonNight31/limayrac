@@ -1,0 +1,2932 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="naf_0111Z" model="res.partner.naf">
+            <field name="code">0111Z</field>
+            <field name="activity">Culture de céréales (à l'exception du riz), de légumineuses et de graines oléagineuses</field>
+        </record>
+        <record id="naf_0112Z" model="res.partner.naf">
+            <field name="code">0112Z</field>
+            <field name="activity">Culture du riz</field>
+        </record>
+        <record id="naf_0113Z" model="res.partner.naf">
+            <field name="code">0113Z</field>
+            <field name="activity">Culture de légumes, de melons, de racines et de tubercules</field>
+        </record>
+        <record id="naf_0114Z" model="res.partner.naf">
+            <field name="code">0114Z</field>
+            <field name="activity">Culture de la canne à sucre</field>
+        </record>
+        <record id="naf_0115Z" model="res.partner.naf">
+            <field name="code">0115Z</field>
+            <field name="activity">Culture du tabac</field>
+        </record>
+        <record id="naf_0116Z" model="res.partner.naf">
+            <field name="code">0116Z</field>
+            <field name="activity">Culture de plantes à fibres</field>
+        </record>
+        <record id="naf_0119Z" model="res.partner.naf">
+            <field name="code">0119Z</field>
+            <field name="activity">Autres cultures non permanentes</field>
+        </record>
+        <record id="naf_0121Z" model="res.partner.naf">
+            <field name="code">0121Z</field>
+            <field name="activity">Culture de la vigne</field>
+        </record>
+        <record id="naf_0122Z" model="res.partner.naf">
+            <field name="code">0122Z</field>
+            <field name="activity">Culture de fruits tropicaux et subtropicaux</field>
+        </record>
+        <record id="naf_0123Z" model="res.partner.naf">
+            <field name="code">0123Z</field>
+            <field name="activity">Culture d'agrumes</field>
+        </record>
+        <record id="naf_0124Z" model="res.partner.naf">
+            <field name="code">0124Z</field>
+            <field name="activity">Culture de fruits à pépins et à noyau</field>
+        </record>
+        <record id="naf_0125Z" model="res.partner.naf">
+            <field name="code">0125Z</field>
+            <field name="activity">Culture d'autres fruits d'arbres ou d'arbustes et de fruits à coque</field>
+        </record>
+        <record id="naf_0126Z" model="res.partner.naf">
+            <field name="code">0126Z</field>
+            <field name="activity">Culture de fruits oléagineux</field>
+        </record>
+        <record id="naf_0127Z" model="res.partner.naf">
+            <field name="code">0127Z</field>
+            <field name="activity">Culture de plantes à boissons</field>
+        </record>
+        <record id="naf_0128Z" model="res.partner.naf">
+            <field name="code">0128Z</field>
+            <field name="activity">Culture de plantes à épices, aromatiques, médicinales et pharmaceutiques</field>
+        </record>
+        <record id="naf_0129Z" model="res.partner.naf">
+            <field name="code">0129Z</field>
+            <field name="activity">Autres cultures permanentes</field>
+        </record>
+        <record id="naf_0130Z" model="res.partner.naf">
+            <field name="code">0130Z</field>
+            <field name="activity">Reproduction de plantes</field>
+        </record>
+        <record id="naf_0141Z" model="res.partner.naf">
+            <field name="code">0141Z</field>
+            <field name="activity">Élevage de vaches laitières</field>
+        </record>
+        <record id="naf_0142Z" model="res.partner.naf">
+            <field name="code">0142Z</field>
+            <field name="activity">Élevage d'autres bovins et de buffles</field>
+        </record>
+        <record id="naf_0143Z" model="res.partner.naf">
+            <field name="code">0143Z</field>
+            <field name="activity">Élevage de chevaux et d'autres équidés</field>
+        </record>
+        <record id="naf_0144Z" model="res.partner.naf">
+            <field name="code">0144Z</field>
+            <field name="activity">Élevage de chameaux et d'autres camélidés</field>
+        </record>
+        <record id="naf_0145Z" model="res.partner.naf">
+            <field name="code">0145Z</field>
+            <field name="activity">Élevage d'ovins et de caprins</field>
+        </record>
+        <record id="naf_0146Z" model="res.partner.naf">
+            <field name="code">0146Z</field>
+            <field name="activity">Élevage de porcins</field>
+        </record>
+        <record id="naf_0147Z" model="res.partner.naf">
+            <field name="code">0147Z</field>
+            <field name="activity">Élevage de volailles</field>
+        </record>
+        <record id="naf_0149Z" model="res.partner.naf">
+            <field name="code">0149Z</field>
+            <field name="activity">Élevage d'autres animaux</field>
+        </record>
+        <record id="naf_0150Z" model="res.partner.naf">
+            <field name="code">0150Z</field>
+            <field name="activity">Culture et élevage associés</field>
+        </record>
+        <record id="naf_0161Z" model="res.partner.naf">
+            <field name="code">0161Z</field>
+            <field name="activity">Activités de soutien aux cultures</field>
+        </record>
+        <record id="naf_0162Z" model="res.partner.naf">
+            <field name="code">0162Z</field>
+            <field name="activity">Activités de soutien à la production animale</field>
+        </record>
+        <record id="naf_0163Z" model="res.partner.naf">
+            <field name="code">0163Z</field>
+            <field name="activity">Traitement primaire des récoltes</field>
+        </record>
+        <record id="naf_0164Z" model="res.partner.naf">
+            <field name="code">0164Z</field>
+            <field name="activity">Traitement des semences</field>
+        </record>
+        <record id="naf_0170Z" model="res.partner.naf">
+            <field name="code">0170Z</field>
+            <field name="activity">Chasse, piégeage et services annexes</field>
+        </record>
+        <record id="naf_0210Z" model="res.partner.naf">
+            <field name="code">0210Z</field>
+            <field name="activity">Sylviculture et autres activités forestières</field>
+        </record>
+        <record id="naf_0220Z" model="res.partner.naf">
+            <field name="code">0220Z</field>
+            <field name="activity">Exploitation forestière</field>
+        </record>
+        <record id="naf_0230Z" model="res.partner.naf">
+            <field name="code">0230Z</field>
+            <field name="activity">Récolte de produits forestiers non ligneux poussant à l'état sauvage</field>
+        </record>
+        <record id="naf_0240Z" model="res.partner.naf">
+            <field name="code">0240Z</field>
+            <field name="activity">Services de soutien à l'exploitation forestière</field>
+        </record>
+        <record id="naf_0311Z" model="res.partner.naf">
+            <field name="code">0311Z</field>
+            <field name="activity">Pêche en mer</field>
+        </record>
+        <record id="naf_0312Z" model="res.partner.naf">
+            <field name="code">0312Z</field>
+            <field name="activity">Pêche en eau douce</field>
+        </record>
+        <record id="naf_0321Z" model="res.partner.naf">
+            <field name="code">0321Z</field>
+            <field name="activity">Aquaculture en mer</field>
+        </record>
+        <record id="naf_0322Z" model="res.partner.naf">
+            <field name="code">0322Z</field>
+            <field name="activity">Aquaculture en eau douce</field>
+        </record>
+        <record id="naf_0510Z" model="res.partner.naf">
+            <field name="code">0510Z</field>
+            <field name="activity">Extraction de houille</field>
+        </record>
+        <record id="naf_0520Z" model="res.partner.naf">
+            <field name="code">0520Z</field>
+            <field name="activity">Extraction de lignite</field>
+        </record>
+        <record id="naf_0610Z" model="res.partner.naf">
+            <field name="code">0610Z</field>
+            <field name="activity">Extraction de pétrole brut</field>
+        </record>
+        <record id="naf_0620Z" model="res.partner.naf">
+            <field name="code">0620Z</field>
+            <field name="activity">Extraction de gaz naturel</field>
+        </record>
+        <record id="naf_0710Z" model="res.partner.naf">
+            <field name="code">0710Z</field>
+            <field name="activity">Extraction de minerais de fer</field>
+        </record>
+        <record id="naf_0721Z" model="res.partner.naf">
+            <field name="code">0721Z</field>
+            <field name="activity">Extraction de minerais d'uranium et de thorium</field>
+        </record>
+        <record id="naf_0729Z" model="res.partner.naf">
+            <field name="code">0729Z</field>
+            <field name="activity">Extraction d'autres minerais de métaux non ferreux</field>
+        </record>
+        <record id="naf_0811Z" model="res.partner.naf">
+            <field name="code">0811Z</field>
+            <field name="activity">Extraction de pierres ornementales et de construction, de calcaire industriel, de gypse, de craie et d'ardoise</field>
+        </record>
+        <record id="naf_0812Z" model="res.partner.naf">
+            <field name="code">0812Z</field>
+            <field name="activity">Exploitation de gravières et sablières, extraction d'argiles et de kaolin</field>
+        </record>
+        <record id="naf_0891Z" model="res.partner.naf">
+            <field name="code">0891Z</field>
+            <field name="activity">Extraction des minéraux chimiques et d'engrais minéraux</field>
+        </record>
+        <record id="naf_0892Z" model="res.partner.naf">
+            <field name="code">0892Z</field>
+            <field name="activity">Extraction de tourbe</field>
+        </record>
+        <record id="naf_0893Z" model="res.partner.naf">
+            <field name="code">0893Z</field>
+            <field name="activity">Production de sel</field>
+        </record>
+        <record id="naf_0899Z" model="res.partner.naf">
+            <field name="code">0899Z</field>
+            <field name="activity">Autres activités extractives n.c.a.</field>
+        </record>
+        <record id="naf_0910Z" model="res.partner.naf">
+            <field name="code">0910Z</field>
+            <field name="activity">Activités de soutien à l'extraction d'hydrocarbures</field>
+        </record>
+        <record id="naf_0990Z" model="res.partner.naf">
+            <field name="code">0990Z</field>
+            <field name="activity">Activités de soutien aux autres industries extractives</field>
+        </record>
+        <record id="naf_1011Z" model="res.partner.naf">
+            <field name="code">1011Z</field>
+            <field name="activity">Transformation et conservation de la viande de boucherie</field>
+        </record>
+        <record id="naf_1012Z" model="res.partner.naf">
+            <field name="code">1012Z</field>
+            <field name="activity">Transformation et conservation de la viande de volaille</field>
+        </record>
+        <record id="naf_1013A" model="res.partner.naf">
+            <field name="code">1013A</field>
+            <field name="activity">Préparation industrielle de produits à base de viande</field>
+        </record>
+        <record id="naf_1013B" model="res.partner.naf">
+            <field name="code">1013B</field>
+            <field name="activity">Charcuterie</field>
+        </record>
+        <record id="naf_1020Z" model="res.partner.naf">
+            <field name="code">1020Z</field>
+            <field name="activity">Transformation et conservation de poisson, de crustacés et de mollusques</field>
+        </record>
+        <record id="naf_1031Z" model="res.partner.naf">
+            <field name="code">1031Z</field>
+            <field name="activity">Transformation et conservation de pommes de terre</field>
+        </record>
+        <record id="naf_1032Z" model="res.partner.naf">
+            <field name="code">1032Z</field>
+            <field name="activity">Préparation de jus de fruits et légumes</field>
+        </record>
+        <record id="naf_1039A" model="res.partner.naf">
+            <field name="code">1039A</field>
+            <field name="activity">Autre transformation et conservation de légumes</field>
+        </record>
+        <record id="naf_1039B" model="res.partner.naf">
+            <field name="code">1039B</field>
+            <field name="activity">Transformation et conservation de fruits</field>
+        </record>
+        <record id="naf_1041B" model="res.partner.naf">
+            <field name="code">1041B</field>
+            <field name="activity">Fabrication d'huiles et graisses raffinées</field>
+        </record>
+        <record id="naf_1042Z" model="res.partner.naf">
+            <field name="code">1042Z</field>
+            <field name="activity">Fabrication de margarine et graisses comestibles similaires</field>
+        </record>
+        <record id="naf_1051A" model="res.partner.naf">
+            <field name="code">1051A</field>
+            <field name="activity">Fabrication de lait liquide et de produits frais</field>
+        </record>
+        <record id="naf_1051B" model="res.partner.naf">
+            <field name="code">1051B</field>
+            <field name="activity">Fabrication de beurre</field>
+        </record>
+        <record id="naf_1051C" model="res.partner.naf">
+            <field name="code">1051C</field>
+            <field name="activity">Fabrication de fromage</field>
+        </record>
+        <record id="naf_1051D" model="res.partner.naf">
+            <field name="code">1051D</field>
+            <field name="activity">Fabrication d'autres produits laitiers</field>
+        </record>
+        <record id="naf_1052Z" model="res.partner.naf">
+            <field name="code">1052Z</field>
+            <field name="activity">Fabrication de glaces et sorbets</field>
+        </record>
+        <record id="naf_1061A" model="res.partner.naf">
+            <field name="code">1061A</field>
+            <field name="activity">Meunerie</field>
+        </record>
+        <record id="naf_1061B" model="res.partner.naf">
+            <field name="code">1061B</field>
+            <field name="activity">Autres activités du travail des grains</field>
+        </record>
+        <record id="naf_1062Z" model="res.partner.naf">
+            <field name="code">1062Z</field>
+            <field name="activity">Fabrication de produits amylacés</field>
+        </record>
+        <record id="naf_1071A" model="res.partner.naf">
+            <field name="code">1071A</field>
+            <field name="activity">Fabrication industrielle de pain et de pâtisserie fraîche</field>
+        </record>
+        <record id="naf_1071B" model="res.partner.naf">
+            <field name="code">1071B</field>
+            <field name="activity">Cuisson de produits de boulangerie</field>
+        </record>
+        <record id="naf_1071C" model="res.partner.naf">
+            <field name="code">1071C</field>
+            <field name="activity">Boulangerie et boulangerie-pâtisserie</field>
+        </record>
+        <record id="naf_1071D" model="res.partner.naf">
+            <field name="code">1071D</field>
+            <field name="activity">Pâtisserie</field>
+        </record>
+        <record id="naf_1072Z" model="res.partner.naf">
+            <field name="code">1072Z</field>
+            <field name="activity">Fabrication de biscuits, biscottes et pâtisseries de conservation</field>
+        </record>
+        <record id="naf_1073Z" model="res.partner.naf">
+            <field name="code">1073Z</field>
+            <field name="activity">Fabrication de pâtes alimentaires</field>
+        </record>
+        <record id="naf_1081Z" model="res.partner.naf">
+            <field name="code">1081Z</field>
+            <field name="activity">Fabrication de sucre</field>
+        </record>
+        <record id="naf_1082Z" model="res.partner.naf">
+            <field name="code">1082Z</field>
+            <field name="activity">Fabrication de cacao, chocolat et de produits de confiserie</field>
+        </record>
+        <record id="naf_1083Z" model="res.partner.naf">
+            <field name="code">1083Z</field>
+            <field name="activity">Transformation du thé et du café</field>
+        </record>
+        <record id="naf_1084Z" model="res.partner.naf">
+            <field name="code">1084Z</field>
+            <field name="activity">Fabrication de condiments et assaisonnements</field>
+        </record>
+        <record id="naf_1085Z" model="res.partner.naf">
+            <field name="code">1085Z</field>
+            <field name="activity">Fabrication de plats préparés</field>
+        </record>
+        <record id="naf_1086Z" model="res.partner.naf">
+            <field name="code">1086Z</field>
+            <field name="activity">Fabrication d'aliments homogénéisés et diététiques</field>
+        </record>
+        <record id="naf_1089Z" model="res.partner.naf">
+            <field name="code">1089Z</field>
+            <field name="activity">Fabrication d'autres produits alimentaires n.c.a.</field>
+        </record>
+        <record id="naf_1091Z" model="res.partner.naf">
+            <field name="code">1091Z</field>
+            <field name="activity">Fabrication d'aliments pour animaux de ferme</field>
+        </record>
+        <record id="naf_1092Z" model="res.partner.naf">
+            <field name="code">1092Z</field>
+            <field name="activity">Fabrication d'aliments pour animaux de compagnie</field>
+        </record>
+        <record id="naf_1101Z" model="res.partner.naf">
+            <field name="code">1101Z</field>
+            <field name="activity">Production de boissons alcooliques distillées</field>
+        </record>
+        <record id="naf_1102A" model="res.partner.naf">
+            <field name="code">1102A</field>
+            <field name="activity">Fabrication de vins effervescents</field>
+        </record>
+        <record id="naf_1102B" model="res.partner.naf">
+            <field name="code">1102B</field>
+            <field name="activity">Vinification</field>
+        </record>
+        <record id="naf_1103Z" model="res.partner.naf">
+            <field name="code">1103Z</field>
+            <field name="activity">Fabrication de cidre et de vins de fruits</field>
+        </record>
+        <record id="naf_1104Z" model="res.partner.naf">
+            <field name="code">1104Z</field>
+            <field name="activity">Production d'autres boissons fermentées non distillées</field>
+        </record>
+        <record id="naf_1105Z" model="res.partner.naf">
+            <field name="code">1105Z</field>
+            <field name="activity">Fabrication de bière</field>
+        </record>
+        <record id="naf_1106Z" model="res.partner.naf">
+            <field name="code">1106Z</field>
+            <field name="activity">Fabrication de malt</field>
+        </record>
+        <record id="naf_1107A" model="res.partner.naf">
+            <field name="code">1107A</field>
+            <field name="activity">Industrie des eaux de table</field>
+        </record>
+        <record id="naf_1107B" model="res.partner.naf">
+            <field name="code">1107B</field>
+            <field name="activity">Production de boissons rafraîchissantes</field>
+        </record>
+        <record id="naf_1200Z" model="res.partner.naf">
+            <field name="code">1200Z</field>
+            <field name="activity">Fabrication de produits à base de tabac</field>
+        </record>
+        <record id="naf_1310Z" model="res.partner.naf">
+            <field name="code">1310Z</field>
+            <field name="activity">Préparation de fibres textiles et filature</field>
+        </record>
+        <record id="naf_1320Z" model="res.partner.naf">
+            <field name="code">1320Z</field>
+            <field name="activity">Tissage</field>
+        </record>
+        <record id="naf_1330Z" model="res.partner.naf">
+            <field name="code">1330Z</field>
+            <field name="activity">Ennoblissement textile</field>
+        </record>
+        <record id="naf_1391Z" model="res.partner.naf">
+            <field name="code">1391Z</field>
+            <field name="activity">Fabrication d'étoffes à mailles</field>
+        </record>
+        <record id="naf_1392Z" model="res.partner.naf">
+            <field name="code">1392Z</field>
+            <field name="activity">Fabrication d'articles textiles, sauf habillement</field>
+        </record>
+        <record id="naf_1393Z" model="res.partner.naf">
+            <field name="code">1393Z</field>
+            <field name="activity">Fabrication de tapis et moquettes</field>
+        </record>
+        <record id="naf_1394Z" model="res.partner.naf">
+            <field name="code">1394Z</field>
+            <field name="activity">Fabrication de ficelles, cordes et filets</field>
+        </record>
+        <record id="naf_1395Z" model="res.partner.naf">
+            <field name="code">1395Z</field>
+            <field name="activity">Fabrication de non-tissés, sauf habillement</field>
+        </record>
+        <record id="naf_1396Z" model="res.partner.naf">
+            <field name="code">1396Z</field>
+            <field name="activity">Fabrication d'autres textiles techniques et industriels</field>
+        </record>
+        <record id="naf_1399Z" model="res.partner.naf">
+            <field name="code">1399Z</field>
+            <field name="activity">Fabrication d'autres textiles n.c.a.</field>
+        </record>
+        <record id="naf_1411Z" model="res.partner.naf">
+            <field name="code">1411Z</field>
+            <field name="activity">Fabrication de vêtements en cuir</field>
+        </record>
+        <record id="naf_1412Z" model="res.partner.naf">
+            <field name="code">1412Z</field>
+            <field name="activity">Fabrication de vêtements de travail</field>
+        </record>
+        <record id="naf_1413Z" model="res.partner.naf">
+            <field name="code">1413Z</field>
+            <field name="activity">Fabrication de vêtements de dessus</field>
+        </record>
+        <record id="naf_1414Z" model="res.partner.naf">
+            <field name="code">1414Z</field>
+            <field name="activity">Fabrication de vêtements de dessous</field>
+        </record>
+        <record id="naf_1419Z" model="res.partner.naf">
+            <field name="code">1419Z</field>
+            <field name="activity">Fabrication d'autres vêtements et accessoires</field>
+        </record>
+        <record id="naf_1420Z" model="res.partner.naf">
+            <field name="code">1420Z</field>
+            <field name="activity">Fabrication d'articles en fourrure</field>
+        </record>
+        <record id="naf_1431Z" model="res.partner.naf">
+            <field name="code">1431Z</field>
+            <field name="activity">Fabrication d'articles chaussants à mailles</field>
+        </record>
+        <record id="naf_1439Z" model="res.partner.naf">
+            <field name="code">1439Z</field>
+            <field name="activity">Fabrication d'autres articles à mailles</field>
+        </record>
+        <record id="naf_1511Z" model="res.partner.naf">
+            <field name="code">1511Z</field>
+            <field name="activity">Apprêt et tannage des cuirs ; préparation et teinture des fourrures</field>
+        </record>
+        <record id="naf_1512Z" model="res.partner.naf">
+            <field name="code">1512Z</field>
+            <field name="activity">Fabrication d'articles de voyage, de maroquinerie et de sellerie</field>
+        </record>
+        <record id="naf_1520Z" model="res.partner.naf">
+            <field name="code">1520Z</field>
+            <field name="activity">Fabrication de chaussures</field>
+        </record>
+        <record id="naf_1610A" model="res.partner.naf">
+            <field name="code">1610A</field>
+            <field name="activity">Sciage et rabotage du bois, hors imprégnation</field>
+        </record>
+        <record id="naf_1610B" model="res.partner.naf">
+            <field name="code">1610B</field>
+            <field name="activity">Imprégnation du bois</field>
+        </record>
+        <record id="naf_1621Z" model="res.partner.naf">
+            <field name="code">1621Z</field>
+            <field name="activity">Fabrication de placage et de panneaux de bois</field>
+        </record>
+        <record id="naf_1622Z" model="res.partner.naf">
+            <field name="code">1622Z</field>
+            <field name="activity">Fabrication de parquets assemblés</field>
+        </record>
+        <record id="naf_1623Z" model="res.partner.naf">
+            <field name="code">1623Z</field>
+            <field name="activity">Fabrication de charpentes et d'autres menuiseries</field>
+        </record>
+        <record id="naf_1624Z" model="res.partner.naf">
+            <field name="code">1624Z</field>
+            <field name="activity">Fabrication d'emballages en bois</field>
+        </record>
+        <record id="naf_1629Z" model="res.partner.naf">
+            <field name="code">1629Z</field>
+            <field name="activity">Fabrication d'objets divers en bois ; fabrication d'objets en liège, vannerie et sparterie</field>
+        </record>
+        <record id="naf_1711Z" model="res.partner.naf">
+            <field name="code">1711Z</field>
+            <field name="activity">Fabrication de pâte à papier</field>
+        </record>
+        <record id="naf_1712Z" model="res.partner.naf">
+            <field name="code">1712Z</field>
+            <field name="activity">Fabrication de papier et de carton</field>
+        </record>
+        <record id="naf_1721A" model="res.partner.naf">
+            <field name="code">1721A</field>
+            <field name="activity">Fabrication de carton ondulé</field>
+        </record>
+        <record id="naf_1721B" model="res.partner.naf">
+            <field name="code">1721B</field>
+            <field name="activity">Fabrication de cartonnages</field>
+        </record>
+        <record id="naf_1721C" model="res.partner.naf">
+            <field name="code">1721C</field>
+            <field name="activity">Fabrication d'emballages en papier</field>
+        </record>
+        <record id="naf_1722Z" model="res.partner.naf">
+            <field name="code">1722Z</field>
+            <field name="activity">Fabrication d'articles en papier à usage sanitaire ou domestique</field>
+        </record>
+        <record id="naf_1723Z" model="res.partner.naf">
+            <field name="code">1723Z</field>
+            <field name="activity">Fabrication d'articles de papeterie</field>
+        </record>
+        <record id="naf_1724Z" model="res.partner.naf">
+            <field name="code">1724Z</field>
+            <field name="activity">Fabrication de papiers peints</field>
+        </record>
+        <record id="naf_1729Z" model="res.partner.naf">
+            <field name="code">1729Z</field>
+            <field name="activity">Fabrication d'autres articles en papier ou en carton</field>
+        </record>
+        <record id="naf_1811Z" model="res.partner.naf">
+            <field name="code">1811Z</field>
+            <field name="activity">Imprimerie de journaux</field>
+        </record>
+        <record id="naf_1812Z" model="res.partner.naf">
+            <field name="code">1812Z</field>
+            <field name="activity">Autre imprimerie (labeur)</field>
+        </record>
+        <record id="naf_1813Z" model="res.partner.naf">
+            <field name="code">1813Z</field>
+            <field name="activity">Activités de pré-presse</field>
+        </record>
+        <record id="naf_1814Z" model="res.partner.naf">
+            <field name="code">1814Z</field>
+            <field name="activity">Reliure et activités connexes</field>
+        </record>
+        <record id="naf_1820Z" model="res.partner.naf">
+            <field name="code">1820Z</field>
+            <field name="activity">Reproduction d'enregistrements</field>
+        </record>
+        <record id="naf_1910Z" model="res.partner.naf">
+            <field name="code">1910Z</field>
+            <field name="activity">Cokéfaction</field>
+        </record>
+        <record id="naf_1920Z" model="res.partner.naf">
+            <field name="code">1920Z</field>
+            <field name="activity">Raffinage du pétrole</field>
+        </record>
+        <record id="naf_2011Z" model="res.partner.naf">
+            <field name="code">2011Z</field>
+            <field name="activity">Fabrication de gaz industriels</field>
+        </record>
+        <record id="naf_2012Z" model="res.partner.naf">
+            <field name="code">2012Z</field>
+            <field name="activity">Fabrication de colorants et de pigments</field>
+        </record>
+        <record id="naf_2013A" model="res.partner.naf">
+            <field name="code">2013A</field>
+            <field name="activity">Enrichissement et retraitement de matières nucléaires</field>
+        </record>
+        <record id="naf_2013B" model="res.partner.naf">
+            <field name="code">2013B</field>
+            <field name="activity">Fabrication d'autres produits chimiques inorganiques de base n.c.a.</field>
+        </record>
+        <record id="naf_2014Z" model="res.partner.naf">
+            <field name="code">2014Z</field>
+            <field name="activity">Fabrication d'autres produits chimiques organiques de base</field>
+        </record>
+        <record id="naf_2015Z" model="res.partner.naf">
+            <field name="code">2015Z</field>
+            <field name="activity">Fabrication de produits azotés et d'engrais</field>
+        </record>
+        <record id="naf_2016Z" model="res.partner.naf">
+            <field name="code">2016Z</field>
+            <field name="activity">Fabrication de matières plastiques de base</field>
+        </record>
+        <record id="naf_2017Z" model="res.partner.naf">
+            <field name="code">2017Z</field>
+            <field name="activity">Fabrication de caoutchouc synthétique</field>
+        </record>
+        <record id="naf_2020Z" model="res.partner.naf">
+            <field name="code">2020Z</field>
+            <field name="activity">Fabrication de pesticides et d'autres produits agrochimiques</field>
+        </record>
+        <record id="naf_2030Z" model="res.partner.naf">
+            <field name="code">2030Z</field>
+            <field name="activity">Fabrication de peintures, vernis, encres et mastics</field>
+        </record>
+        <record id="naf_2041Z" model="res.partner.naf">
+            <field name="code">2041Z</field>
+            <field name="activity">Fabrication de savons, détergents et produits d'entretien</field>
+        </record>
+        <record id="naf_2042Z" model="res.partner.naf">
+            <field name="code">2042Z</field>
+            <field name="activity">Fabrication de parfums et de produits pour la toilette</field>
+        </record>
+        <record id="naf_2051Z" model="res.partner.naf">
+            <field name="code">2051Z</field>
+            <field name="activity">Fabrication de produits explosifs</field>
+        </record>
+        <record id="naf_2052Z" model="res.partner.naf">
+            <field name="code">2052Z</field>
+            <field name="activity">Fabrication de colles</field>
+        </record>
+        <record id="naf_2053Z" model="res.partner.naf">
+            <field name="code">2053Z</field>
+            <field name="activity">Fabrication d'huiles essentielles</field>
+        </record>
+        <record id="naf_2059Z" model="res.partner.naf">
+            <field name="code">2059Z</field>
+            <field name="activity">Fabrication d'autres produits chimiques n.c.a.</field>
+        </record>
+        <record id="naf_2060Z" model="res.partner.naf">
+            <field name="code">2060Z</field>
+            <field name="activity">Fabrication de fibres artificielles ou synthétiques</field>
+        </record>
+        <record id="naf_2110Z" model="res.partner.naf">
+            <field name="code">2110Z</field>
+            <field name="activity">Fabrication de produits pharmaceutiques de base</field>
+        </record>
+        <record id="naf_2120Z" model="res.partner.naf">
+            <field name="code">2120Z</field>
+            <field name="activity">Fabrication de préparations pharmaceutiques</field>
+        </record>
+        <record id="naf_2211Z" model="res.partner.naf">
+            <field name="code">2211Z</field>
+            <field name="activity">Fabrication et rechapage de pneumatiques</field>
+        </record>
+        <record id="naf_2219Z" model="res.partner.naf">
+            <field name="code">2219Z</field>
+            <field name="activity">Fabrication d'autres articles en caoutchouc</field>
+        </record>
+        <record id="naf_2221Z" model="res.partner.naf">
+            <field name="code">2221Z</field>
+            <field name="activity">Fabrication de plaques, feuilles, tubes et profilés en matières plastiques</field>
+        </record>
+        <record id="naf_2222Z" model="res.partner.naf">
+            <field name="code">2222Z</field>
+            <field name="activity">Fabrication d'emballages en matières plastiques</field>
+        </record>
+        <record id="naf_2223Z" model="res.partner.naf">
+            <field name="code">2223Z</field>
+            <field name="activity">Fabrication d'éléments en matières plastiques pour la construction</field>
+        </record>
+        <record id="naf_2229A" model="res.partner.naf">
+            <field name="code">2229A</field>
+            <field name="activity">Fabrication de pièces techniques à base de matières plastiques</field>
+        </record>
+        <record id="naf_2229B" model="res.partner.naf">
+            <field name="code">2229B</field>
+            <field name="activity">Fabrication de produits de consommation courante en matières plastiques</field>
+        </record>
+        <record id="naf_2311Z" model="res.partner.naf">
+            <field name="code">2311Z</field>
+            <field name="activity">Fabrication de verre plat</field>
+        </record>
+        <record id="naf_2312Z" model="res.partner.naf">
+            <field name="code">2312Z</field>
+            <field name="activity">Façonnage et transformation du verre plat</field>
+        </record>
+        <record id="naf_2313Z" model="res.partner.naf">
+            <field name="code">2313Z</field>
+            <field name="activity">Fabrication de verre creux</field>
+        </record>
+        <record id="naf_2314Z" model="res.partner.naf">
+            <field name="code">2314Z</field>
+            <field name="activity">Fabrication de fibres de verre</field>
+        </record>
+        <record id="naf_2319Z" model="res.partner.naf">
+            <field name="code">2319Z</field>
+            <field name="activity">Fabrication et façonnage d'autres articles en verre, y compris verre technique</field>
+        </record>
+        <record id="naf_2320Z" model="res.partner.naf">
+            <field name="code">2320Z</field>
+            <field name="activity">Fabrication de produits réfractaires</field>
+        </record>
+        <record id="naf_2331Z" model="res.partner.naf">
+            <field name="code">2331Z</field>
+            <field name="activity">Fabrication de carreaux en céramique</field>
+        </record>
+        <record id="naf_2332Z" model="res.partner.naf">
+            <field name="code">2332Z</field>
+            <field name="activity">Fabrication de briques, tuiles et produits de construction, en terre cuite</field>
+        </record>
+        <record id="naf_2341Z" model="res.partner.naf">
+            <field name="code">2341Z</field>
+            <field name="activity">Fabrication d'articles céramiques à usage domestique ou ornemental</field>
+        </record>
+        <record id="naf_2342Z" model="res.partner.naf">
+            <field name="code">2342Z</field>
+            <field name="activity">Fabrication d'appareils sanitaires en céramique</field>
+        </record>
+        <record id="naf_2343Z" model="res.partner.naf">
+            <field name="code">2343Z</field>
+            <field name="activity">Fabrication d'isolateurs et pièces isolantes en céramique</field>
+        </record>
+        <record id="naf_2344Z" model="res.partner.naf">
+            <field name="code">2344Z</field>
+            <field name="activity">Fabrication d'autres produits céramiques à usage technique</field>
+        </record>
+        <record id="naf_2349Z" model="res.partner.naf">
+            <field name="code">2349Z</field>
+            <field name="activity">Fabrication d'autres produits céramiques</field>
+        </record>
+        <record id="naf_2351Z" model="res.partner.naf">
+            <field name="code">2351Z</field>
+            <field name="activity">Fabrication de ciment</field>
+        </record>
+        <record id="naf_2352Z" model="res.partner.naf">
+            <field name="code">2352Z</field>
+            <field name="activity">Fabrication de chaux et plâtre</field>
+        </record>
+        <record id="naf_2361Z" model="res.partner.naf">
+            <field name="code">2361Z</field>
+            <field name="activity">Fabrication d'éléments en béton pour la construction</field>
+        </record>
+        <record id="naf_2362Z" model="res.partner.naf">
+            <field name="code">2362Z</field>
+            <field name="activity">Fabrication d'éléments en plâtre pour la construction</field>
+        </record>
+        <record id="naf_2363Z" model="res.partner.naf">
+            <field name="code">2363Z</field>
+            <field name="activity">Fabrication de béton prêt à l'emploi</field>
+        </record>
+        <record id="naf_2364Z" model="res.partner.naf">
+            <field name="code">2364Z</field>
+            <field name="activity">Fabrication de mortiers et bétons secs</field>
+        </record>
+        <record id="naf_2365Z" model="res.partner.naf">
+            <field name="code">2365Z</field>
+            <field name="activity">Fabrication d'ouvrages en fibre-ciment</field>
+        </record>
+        <record id="naf_2369Z" model="res.partner.naf">
+            <field name="code">2369Z</field>
+            <field name="activity">Fabrication d'autres ouvrages en béton, en ciment ou en plâtre</field>
+        </record>
+        <record id="naf_2370Z" model="res.partner.naf">
+            <field name="code">2370Z</field>
+            <field name="activity">Taille, façonnage et finissage de pierres</field>
+        </record>
+        <record id="naf_2391Z" model="res.partner.naf">
+            <field name="code">2391Z</field>
+            <field name="activity">Fabrication de produits abrasifs</field>
+        </record>
+        <record id="naf_2399Z" model="res.partner.naf">
+            <field name="code">2399Z</field>
+            <field name="activity">Fabrication d'autres produits minéraux non métalliques n.c.a.</field>
+        </record>
+        <record id="naf_2410Z" model="res.partner.naf">
+            <field name="code">2410Z</field>
+            <field name="activity">Sidérurgie</field>
+        </record>
+        <record id="naf_2420Z" model="res.partner.naf">
+            <field name="code">2420Z</field>
+            <field name="activity">Fabrication de tubes, tuyaux, profilés creux et accessoires correspondants en acier</field>
+        </record>
+        <record id="naf_2431Z" model="res.partner.naf">
+            <field name="code">2431Z</field>
+            <field name="activity">Etirage à froid de barres</field>
+        </record>
+        <record id="naf_2432Z" model="res.partner.naf">
+            <field name="code">2432Z</field>
+            <field name="activity">Laminage à froid de feuillards</field>
+        </record>
+        <record id="naf_2433Z" model="res.partner.naf">
+            <field name="code">2433Z</field>
+            <field name="activity">Profilage à froid par formage ou pliage</field>
+        </record>
+        <record id="naf_2434Z" model="res.partner.naf">
+            <field name="code">2434Z</field>
+            <field name="activity">Tréfilage à froid</field>
+        </record>
+        <record id="naf_2441Z" model="res.partner.naf">
+            <field name="code">2441Z</field>
+            <field name="activity">Production de métaux précieux</field>
+        </record>
+        <record id="naf_2442Z" model="res.partner.naf">
+            <field name="code">2442Z</field>
+            <field name="activity">Métallurgie de l'aluminium</field>
+        </record>
+        <record id="naf_2443Z" model="res.partner.naf">
+            <field name="code">2443Z</field>
+            <field name="activity">Métallurgie du plomb, du zinc ou de l'étain</field>
+        </record>
+        <record id="naf_2444Z" model="res.partner.naf">
+            <field name="code">2444Z</field>
+            <field name="activity">Métallurgie du cuivre</field>
+        </record>
+        <record id="naf_2445Z" model="res.partner.naf">
+            <field name="code">2445Z</field>
+            <field name="activity">Métallurgie des autres métaux non ferreux</field>
+        </record>
+        <record id="naf_2446Z" model="res.partner.naf">
+            <field name="code">2446Z</field>
+            <field name="activity">élaboration et transformation de matières nucléaires</field>
+        </record>
+        <record id="naf_2451Z" model="res.partner.naf">
+            <field name="code">2451Z</field>
+            <field name="activity">Fonderie de fonte</field>
+        </record>
+        <record id="naf_2452Z" model="res.partner.naf">
+            <field name="code">2452Z</field>
+            <field name="activity">Fonderie d'acier</field>
+        </record>
+        <record id="naf_2453Z" model="res.partner.naf">
+            <field name="code">2453Z</field>
+            <field name="activity">Fonderie de métaux légers</field>
+        </record>
+        <record id="naf_2454Z" model="res.partner.naf">
+            <field name="code">2454Z</field>
+            <field name="activity">Fonderie d'autres métaux non ferreux</field>
+        </record>
+        <record id="naf_2511Z" model="res.partner.naf">
+            <field name="code">2511Z</field>
+            <field name="activity">Fabrication de structures métalliques et de parties de structures</field>
+        </record>
+        <record id="naf_2512Z" model="res.partner.naf">
+            <field name="code">2512Z</field>
+            <field name="activity">Fabrication de portes et fenêtres en métal</field>
+        </record>
+        <record id="naf_2521Z" model="res.partner.naf">
+            <field name="code">2521Z</field>
+            <field name="activity">Fabrication de radiateurs et de chaudières pour le chauffage central</field>
+        </record>
+        <record id="naf_2529Z" model="res.partner.naf">
+            <field name="code">2529Z</field>
+            <field name="activity">Fabrication d'autres réservoirs, citernes et conteneurs métalliques</field>
+        </record>
+        <record id="naf_2530Z" model="res.partner.naf">
+            <field name="code">2530Z</field>
+            <field name="activity">Fabrication de générateurs de vapeur, à l'exception des chaudières pour le chauffage central</field>
+        </record>
+        <record id="naf_2540Z" model="res.partner.naf">
+            <field name="code">2540Z</field>
+            <field name="activity">Fabrication d'armes et de munitions</field>
+        </record>
+        <record id="naf_2550A" model="res.partner.naf">
+            <field name="code">2550A</field>
+            <field name="activity">Forge, estampage, matriçage ; métallurgie des poudres</field>
+        </record>
+        <record id="naf_2550B" model="res.partner.naf">
+            <field name="code">2550B</field>
+            <field name="activity">Découpage, emboutissage</field>
+        </record>
+        <record id="naf_2561Z" model="res.partner.naf">
+            <field name="code">2561Z</field>
+            <field name="activity">Traitement et revêtement des métaux</field>
+        </record>
+        <record id="naf_2562A" model="res.partner.naf">
+            <field name="code">2562A</field>
+            <field name="activity">Décolletage</field>
+        </record>
+        <record id="naf_2562B" model="res.partner.naf">
+            <field name="code">2562B</field>
+            <field name="activity">Mécanique industrielle</field>
+        </record>
+        <record id="naf_2571Z" model="res.partner.naf">
+            <field name="code">2571Z</field>
+            <field name="activity">Fabrication de coutellerie</field>
+        </record>
+        <record id="naf_2572Z" model="res.partner.naf">
+            <field name="code">2572Z</field>
+            <field name="activity">Fabrication de serrures et de ferrures</field>
+        </record>
+        <record id="naf_2573A" model="res.partner.naf">
+            <field name="code">2573A</field>
+            <field name="activity">Fabrication de moules et modèles</field>
+        </record>
+        <record id="naf_2573B" model="res.partner.naf">
+            <field name="code">2573B</field>
+            <field name="activity">Fabrication d'autres outillages</field>
+        </record>
+        <record id="naf_2591Z" model="res.partner.naf">
+            <field name="code">2591Z</field>
+            <field name="activity">Fabrication de fûts et emballages métalliques similaires</field>
+        </record>
+        <record id="naf_2592Z" model="res.partner.naf">
+            <field name="code">2592Z</field>
+            <field name="activity">Fabrication d'emballages métalliques légers</field>
+        </record>
+        <record id="naf_2593Z" model="res.partner.naf">
+            <field name="code">2593Z</field>
+            <field name="activity">Fabrication d'articles en fils métalliques, de chaînes et de ressorts</field>
+        </record>
+        <record id="naf_2594Z" model="res.partner.naf">
+            <field name="code">2594Z</field>
+            <field name="activity">Fabrication de vis et de boulons</field>
+        </record>
+        <record id="naf_2599A" model="res.partner.naf">
+            <field name="code">2599A</field>
+            <field name="activity">Fabrication d'articles métalliques ménagers</field>
+        </record>
+        <record id="naf_2599B" model="res.partner.naf">
+            <field name="code">2599B</field>
+            <field name="activity">Fabrication d'autres articles métalliques</field>
+        </record>
+        <record id="naf_2611Z" model="res.partner.naf">
+            <field name="code">2611Z</field>
+            <field name="activity">Fabrication de composants électroniques</field>
+        </record>
+        <record id="naf_2612Z" model="res.partner.naf">
+            <field name="code">2612Z</field>
+            <field name="activity">Fabrication de cartes électroniques assemblées</field>
+        </record>
+        <record id="naf_2620Z" model="res.partner.naf">
+            <field name="code">2620Z</field>
+            <field name="activity">Fabrication d'ordinateurs et d'équipements périphériques</field>
+        </record>
+        <record id="naf_2630Z" model="res.partner.naf">
+            <field name="code">2630Z</field>
+            <field name="activity">Fabrication d'équipements de communication</field>
+        </record>
+        <record id="naf_2640Z" model="res.partner.naf">
+            <field name="code">2640Z</field>
+            <field name="activity">Fabrication de produits électroniques grand public</field>
+        </record>
+        <record id="naf_2651A" model="res.partner.naf">
+            <field name="code">2651A</field>
+            <field name="activity">Fabrication d'équipements d'aide à la navigation</field>
+        </record>
+        <record id="naf_2651B" model="res.partner.naf">
+            <field name="code">2651B</field>
+            <field name="activity">Fabrication d'instrumentation scientifique et technique</field>
+        </record>
+        <record id="naf_2652Z" model="res.partner.naf">
+            <field name="code">2652Z</field>
+            <field name="activity">Horlogerie</field>
+        </record>
+        <record id="naf_2660Z" model="res.partner.naf">
+            <field name="code">2660Z</field>
+            <field name="activity">Fabrication d'équipements d'irradiation médicale, d'équipements électromédicaux et électrothérapeutiques</field>
+        </record>
+        <record id="naf_2670Z" model="res.partner.naf">
+            <field name="code">2670Z</field>
+            <field name="activity">Fabrication de matériels optique et photographique</field>
+        </record>
+        <record id="naf_2680Z" model="res.partner.naf">
+            <field name="code">2680Z</field>
+            <field name="activity">Fabrication de supports magnétiques et optiques</field>
+        </record>
+        <record id="naf_2711Z" model="res.partner.naf">
+            <field name="code">2711Z</field>
+            <field name="activity">Fabrication de moteurs, génératrices et transformateurs électriques</field>
+        </record>
+        <record id="naf_2712Z" model="res.partner.naf">
+            <field name="code">2712Z</field>
+            <field name="activity">Fabrication de matériel de distribution et de commande électrique</field>
+        </record>
+        <record id="naf_2720Z" model="res.partner.naf">
+            <field name="code">2720Z</field>
+            <field name="activity">Fabrication de piles et d'accumulateurs électriques</field>
+        </record>
+        <record id="naf_2731Z" model="res.partner.naf">
+            <field name="code">2731Z</field>
+            <field name="activity">Fabrication de câbles de fibres optiques</field>
+        </record>
+        <record id="naf_2732Z" model="res.partner.naf">
+            <field name="code">2732Z</field>
+            <field name="activity">Fabrication d'autres fils et câbles électroniques ou électriques</field>
+        </record>
+        <record id="naf_2733Z" model="res.partner.naf">
+            <field name="code">2733Z</field>
+            <field name="activity">Fabrication de matériel d'installation électrique</field>
+        </record>
+        <record id="naf_2740Z" model="res.partner.naf">
+            <field name="code">2740Z</field>
+            <field name="activity">Fabrication d'appareils d'éclairage électrique</field>
+        </record>
+        <record id="naf_2751Z" model="res.partner.naf">
+            <field name="code">2751Z</field>
+            <field name="activity">Fabrication d'appareils électroménagers</field>
+        </record>
+        <record id="naf_2752Z" model="res.partner.naf">
+            <field name="code">2752Z</field>
+            <field name="activity">Fabrication d'appareils ménagers non électriques</field>
+        </record>
+        <record id="naf_2790Z" model="res.partner.naf">
+            <field name="code">2790Z</field>
+            <field name="activity">Fabrication d'autres matériels électriques</field>
+        </record>
+        <record id="naf_2811Z" model="res.partner.naf">
+            <field name="code">2811Z</field>
+            <field name="activity">Fabrication de moteurs et turbines, à l'exception des moteurs d'avions et de véhicules</field>
+        </record>
+        <record id="naf_2812Z" model="res.partner.naf">
+            <field name="code">2812Z</field>
+            <field name="activity">Fabrication d'équipements hydrauliques et pneumatiques</field>
+        </record>
+        <record id="naf_2813Z" model="res.partner.naf">
+            <field name="code">2813Z</field>
+            <field name="activity">Fabrication d'autres pompes et compresseurs</field>
+        </record>
+        <record id="naf_2814Z" model="res.partner.naf">
+            <field name="code">2814Z</field>
+            <field name="activity">Fabrication d'autres articles de robinetterie</field>
+        </record>
+        <record id="naf_2815Z" model="res.partner.naf">
+            <field name="code">2815Z</field>
+            <field name="activity">Fabrication d'engrenages et d'organes mécaniques de transmission</field>
+        </record>
+        <record id="naf_2821Z" model="res.partner.naf">
+            <field name="code">2821Z</field>
+            <field name="activity">Fabrication de fours et brûleurs</field>
+        </record>
+        <record id="naf_2822Z" model="res.partner.naf">
+            <field name="code">2822Z</field>
+            <field name="activity">Fabrication de matériel de levage et de manutention</field>
+        </record>
+        <record id="naf_2823Z" model="res.partner.naf">
+            <field name="code">2823Z</field>
+            <field name="activity">Fabrication de machines et d'équipements de bureau (à l'exception des ordinateurs et équipements
+périphériques)</field>
+        </record>
+        <record id="naf_2824Z" model="res.partner.naf">
+            <field name="code">2824Z</field>
+            <field name="activity">Fabrication d'outillage portatif à moteur incorporé</field>
+        </record>
+        <record id="naf_2825Z" model="res.partner.naf">
+            <field name="code">2825Z</field>
+            <field name="activity">Fabrication d'équipements aérauliques et frigorifiques industriels</field>
+        </record>
+        <record id="naf_2829A" model="res.partner.naf">
+            <field name="code">2829A</field>
+            <field name="activity">Fabrication d'équipements d'emballage, de conditionnement et de pesage</field>
+        </record>
+        <record id="naf_2829B" model="res.partner.naf">
+            <field name="code">2829B</field>
+            <field name="activity">Fabrication d'autres machines d'usage général</field>
+        </record>
+        <record id="naf_2830Z" model="res.partner.naf">
+            <field name="code">2830Z</field>
+            <field name="activity">Fabrication de machines agricoles et forestières</field>
+        </record>
+        <record id="naf_2841Z" model="res.partner.naf">
+            <field name="code">2841Z</field>
+            <field name="activity">Fabrication de machines-outils pour le travail des métaux</field>
+        </record>
+        <record id="naf_2849Z" model="res.partner.naf">
+            <field name="code">2849Z</field>
+            <field name="activity">Fabrication d'autres machines-outils</field>
+        </record>
+        <record id="naf_2891Z" model="res.partner.naf">
+            <field name="code">2891Z</field>
+            <field name="activity">Fabrication de machines pour la métallurgie</field>
+        </record>
+        <record id="naf_2892Z" model="res.partner.naf">
+            <field name="code">2892Z</field>
+            <field name="activity">Fabrication de machines pour l'extraction ou la construction</field>
+        </record>
+        <record id="naf_2893Z" model="res.partner.naf">
+            <field name="code">2893Z</field>
+            <field name="activity">Fabrication de machines pour l'industrie agro-alimentaire</field>
+        </record>
+        <record id="naf_2894Z" model="res.partner.naf">
+            <field name="code">2894Z</field>
+            <field name="activity">Fabrication de machines pour les industries textiles</field>
+        </record>
+        <record id="naf_2895Z" model="res.partner.naf">
+            <field name="code">2895Z</field>
+            <field name="activity">Fabrication de machines pour les industries du papier et du carton</field>
+        </record>
+        <record id="naf_2896Z" model="res.partner.naf">
+            <field name="code">2896Z</field>
+            <field name="activity">Fabrication de machines pour le travail du caoutchouc ou des plastiques</field>
+        </record>
+        <record id="naf_2899A" model="res.partner.naf">
+            <field name="code">2899A</field>
+            <field name="activity">Fabrication de machines d'imprimerie</field>
+        </record>
+        <record id="naf_2899B" model="res.partner.naf">
+            <field name="code">2899B</field>
+            <field name="activity">Fabrication d'autres machines spécialisées</field>
+        </record>
+        <record id="naf_2910Z" model="res.partner.naf">
+            <field name="code">2910Z</field>
+            <field name="activity">Construction de véhicules automobiles</field>
+        </record>
+        <record id="naf_2920Z" model="res.partner.naf">
+            <field name="code">2920Z</field>
+            <field name="activity">Fabrication de carrosseries et remorques</field>
+        </record>
+        <record id="naf_2931Z" model="res.partner.naf">
+            <field name="code">2931Z</field>
+            <field name="activity">Fabrication d'équipements électriques et électroniques automobiles</field>
+        </record>
+        <record id="naf_2932Z" model="res.partner.naf">
+            <field name="code">2932Z</field>
+            <field name="activity">Fabrication d'autres équipements automobiles</field>
+        </record>
+        <record id="naf_3011Z" model="res.partner.naf">
+            <field name="code">3011Z</field>
+            <field name="activity">Construction de navires et de structures flottantes</field>
+        </record>
+        <record id="naf_3012Z" model="res.partner.naf">
+            <field name="code">3012Z</field>
+            <field name="activity">Construction de bateaux de plaisance</field>
+        </record>
+        <record id="naf_3020Z" model="res.partner.naf">
+            <field name="code">3020Z</field>
+            <field name="activity">Construction de locomotives et d'autre matériel ferroviaire roulant</field>
+        </record>
+        <record id="naf_3030Z" model="res.partner.naf">
+            <field name="code">3030Z</field>
+            <field name="activity">Construction aéronautique et spatiale</field>
+        </record>
+        <record id="naf_3040Z" model="res.partner.naf">
+            <field name="code">3040Z</field>
+            <field name="activity">Construction de véhicules militaires de combat</field>
+        </record>
+        <record id="naf_3091Z" model="res.partner.naf">
+            <field name="code">3091Z</field>
+            <field name="activity">Fabrication de motocycles</field>
+        </record>
+        <record id="naf_3092Z" model="res.partner.naf">
+            <field name="code">3092Z</field>
+            <field name="activity">Fabrication de bicyclettes et de véhicules pour invalides</field>
+        </record>
+        <record id="naf_3099Z" model="res.partner.naf">
+            <field name="code">3099Z</field>
+            <field name="activity">Fabrication d'autres équipements de transport n.c.a.</field>
+        </record>
+        <record id="naf_3101Z" model="res.partner.naf">
+            <field name="code">3101Z</field>
+            <field name="activity">Fabrication de meubles de bureau et de magasin</field>
+        </record>
+        <record id="naf_3102Z" model="res.partner.naf">
+            <field name="code">3102Z</field>
+            <field name="activity">Fabrication de meubles de cuisine</field>
+        </record>
+        <record id="naf_3103Z" model="res.partner.naf">
+            <field name="code">3103Z</field>
+            <field name="activity">Fabrication de matelas</field>
+        </record>
+        <record id="naf_3109A" model="res.partner.naf">
+            <field name="code">3109A</field>
+            <field name="activity">Fabrication de sièges d'ameublement d'intérieur</field>
+        </record>
+        <record id="naf_3109B" model="res.partner.naf">
+            <field name="code">3109B</field>
+            <field name="activity">Fabrication d'autres meubles et industries connexes de l'ameublement</field>
+        </record>
+        <record id="naf_3211Z" model="res.partner.naf">
+            <field name="code">3211Z</field>
+            <field name="activity">Frappe de monnaie</field>
+        </record>
+        <record id="naf_3212Z" model="res.partner.naf">
+            <field name="code">3212Z</field>
+            <field name="activity">Fabrication d'articles de joaillerie et bijouterie</field>
+        </record>
+        <record id="naf_3213Z" model="res.partner.naf">
+            <field name="code">3213Z</field>
+            <field name="activity">Fabrication d'articles de bijouterie fantaisie et articles similaires</field>
+        </record>
+        <record id="naf_3220Z" model="res.partner.naf">
+            <field name="code">3220Z</field>
+            <field name="activity">Fabrication d'instruments de musique</field>
+        </record>
+        <record id="naf_3230Z" model="res.partner.naf">
+            <field name="code">3230Z</field>
+            <field name="activity">Fabrication d'articles de sport</field>
+        </record>
+        <record id="naf_3240Z" model="res.partner.naf">
+            <field name="code">3240Z</field>
+            <field name="activity">Fabrication de jeux et jouets</field>
+        </record>
+        <record id="naf_3250A" model="res.partner.naf">
+            <field name="code">3250A</field>
+            <field name="activity">Fabrication de matériel médico-chirurgical et dentaire</field>
+        </record>
+        <record id="naf_3250B" model="res.partner.naf">
+            <field name="code">3250B</field>
+            <field name="activity">Fabrication de lunettes</field>
+        </record>
+        <record id="naf_3291Z" model="res.partner.naf">
+            <field name="code">3291Z</field>
+            <field name="activity">Fabrication d'articles de brosserie</field>
+        </record>
+        <record id="naf_3299Z" model="res.partner.naf">
+            <field name="code">3299Z</field>
+            <field name="activity">Autres activités manufacturières n.c.a.</field>
+        </record>
+        <record id="naf_3311Z" model="res.partner.naf">
+            <field name="code">3311Z</field>
+            <field name="activity">Réparation d'ouvrages en métaux</field>
+        </record>
+        <record id="naf_3312Z" model="res.partner.naf">
+            <field name="code">3312Z</field>
+            <field name="activity">Réparation de machines et équipements mécaniques</field>
+        </record>
+        <record id="naf_3313Z" model="res.partner.naf">
+            <field name="code">3313Z</field>
+            <field name="activity">Réparation de matériels électroniques et optiques</field>
+        </record>
+        <record id="naf_3314Z" model="res.partner.naf">
+            <field name="code">3314Z</field>
+            <field name="activity">Réparation d'équipements électriques</field>
+        </record>
+        <record id="naf_3315Z" model="res.partner.naf">
+            <field name="code">3315Z</field>
+            <field name="activity">Réparation et maintenance navale</field>
+        </record>
+        <record id="naf_3316Z" model="res.partner.naf">
+            <field name="code">3316Z</field>
+            <field name="activity">Réparation et maintenance d'aéronefs et d'engins spatiaux</field>
+        </record>
+        <record id="naf_3317Z" model="res.partner.naf">
+            <field name="code">3317Z</field>
+            <field name="activity">Réparation et maintenance d'autres équipements de transport</field>
+        </record>
+        <record id="naf_3319Z" model="res.partner.naf">
+            <field name="code">3319Z</field>
+            <field name="activity">Réparation d'autres équipements</field>
+        </record>
+        <record id="naf_3320A" model="res.partner.naf">
+            <field name="code">3320A</field>
+            <field name="activity">Installation de structures métalliques, chaudronnées et de tuyauterie</field>
+        </record>
+        <record id="naf_3320B" model="res.partner.naf">
+            <field name="code">3320B</field>
+            <field name="activity">Installation de machines et équipements mécaniques</field>
+        </record>
+        <record id="naf_3320C" model="res.partner.naf">
+            <field name="code">3320C</field>
+            <field name="activity">Conception d'ensemble et assemblage sur site industriel d'équipements de contrôle des processus industriels</field>
+        </record>
+        <record id="naf_3320D" model="res.partner.naf">
+            <field name="code">3320D</field>
+            <field name="activity">Installation d'équipements électriques, de matériels électroniques et optiques ou d'autres matériels</field>
+        </record>
+        <record id="naf_3511Z" model="res.partner.naf">
+            <field name="code">3511Z</field>
+            <field name="activity">Production d'électricité</field>
+        </record>
+        <record id="naf_3512Z" model="res.partner.naf">
+            <field name="code">3512Z</field>
+            <field name="activity">Transport d'électricité</field>
+        </record>
+        <record id="naf_3513Z" model="res.partner.naf">
+            <field name="code">3513Z</field>
+            <field name="activity">Distribution d'électricité</field>
+        </record>
+        <record id="naf_3514Z" model="res.partner.naf">
+            <field name="code">3514Z</field>
+            <field name="activity">Commerce d'électricité</field>
+        </record>
+        <record id="naf_3521Z" model="res.partner.naf">
+            <field name="code">3521Z</field>
+            <field name="activity">Production de combustibles gazeux</field>
+        </record>
+        <record id="naf_3522Z" model="res.partner.naf">
+            <field name="code">3522Z</field>
+            <field name="activity">Distribution de combustibles gazeux par conduites</field>
+        </record>
+        <record id="naf_3523Z" model="res.partner.naf">
+            <field name="code">3523Z</field>
+            <field name="activity">Commerce de combustibles gazeux par conduites</field>
+        </record>
+        <record id="naf_3530Z" model="res.partner.naf">
+            <field name="code">3530Z</field>
+            <field name="activity">Production et distribution de vapeur et d'air conditionné</field>
+        </record>
+        <record id="naf_3600Z" model="res.partner.naf">
+            <field name="code">3600Z</field>
+            <field name="activity">Captage, traitement et distribution d'eau</field>
+        </record>
+        <record id="naf_3700Z" model="res.partner.naf">
+            <field name="code">3700Z</field>
+            <field name="activity">Collecte et traitement des eaux usées</field>
+        </record>
+        <record id="naf_3811Z" model="res.partner.naf">
+            <field name="code">3811Z</field>
+            <field name="activity">Collecte des déchets non dangereux</field>
+        </record>
+        <record id="naf_3812Z" model="res.partner.naf">
+            <field name="code">3812Z</field>
+            <field name="activity">Collecte des déchets dangereux</field>
+        </record>
+        <record id="naf_3821Z" model="res.partner.naf">
+            <field name="code">3821Z</field>
+            <field name="activity">Traitement et élimination des déchets non dangereux</field>
+        </record>
+        <record id="naf_3822Z" model="res.partner.naf">
+            <field name="code">3822Z</field>
+            <field name="activity">Traitement et élimination des déchets dangereux</field>
+        </record>
+        <record id="naf_3831Z" model="res.partner.naf">
+            <field name="code">3831Z</field>
+            <field name="activity">Démantèlement d'épaves</field>
+        </record>
+        <record id="naf_3832Z" model="res.partner.naf">
+            <field name="code">3832Z</field>
+            <field name="activity">Récupération de déchets triés</field>
+        </record>
+        <record id="naf_3900Z" model="res.partner.naf">
+            <field name="code">3900Z</field>
+            <field name="activity">Dépollution et autres services de gestion des déchets</field>
+        </record>
+        <record id="naf_4110A" model="res.partner.naf">
+            <field name="code">4110A</field>
+            <field name="activity">Promotion immobilière de logements</field>
+        </record>
+        <record id="naf_4110B" model="res.partner.naf">
+            <field name="code">4110B</field>
+            <field name="activity">Promotion immobilière de bureaux</field>
+        </record>
+        <record id="naf_4110C" model="res.partner.naf">
+            <field name="code">4110C</field>
+            <field name="activity">Promotion immobilière d'autres bâtiments</field>
+        </record>
+        <record id="naf_4110D" model="res.partner.naf">
+            <field name="code">4110D</field>
+            <field name="activity">Supports juridiques de programmes</field>
+        </record>
+        <record id="naf_4120A" model="res.partner.naf">
+            <field name="code">4120A</field>
+            <field name="activity">Construction de maisons individuelles</field>
+        </record>
+        <record id="naf_4120B" model="res.partner.naf">
+            <field name="code">4120B</field>
+            <field name="activity">Construction d'autres bâtiments</field>
+        </record>
+        <record id="naf_4211Z" model="res.partner.naf">
+            <field name="code">4211Z</field>
+            <field name="activity">Construction de routes et autoroutes</field>
+        </record>
+        <record id="naf_4212Z" model="res.partner.naf">
+            <field name="code">4212Z</field>
+            <field name="activity">Construction de voies ferrées de surface et souterraines</field>
+        </record>
+        <record id="naf_4213A" model="res.partner.naf">
+            <field name="code">4213A</field>
+            <field name="activity">Construction d'ouvrages d'art</field>
+        </record>
+        <record id="naf_4213B" model="res.partner.naf">
+            <field name="code">4213B</field>
+            <field name="activity">Construction et entretien de tunnels</field>
+        </record>
+        <record id="naf_4221Z" model="res.partner.naf">
+            <field name="code">4221Z</field>
+            <field name="activity">Construction de réseaux pour fluides</field>
+        </record>
+        <record id="naf_4222Z" model="res.partner.naf">
+            <field name="code">4222Z</field>
+            <field name="activity">Construction de réseaux électriques et de télécommunications</field>
+        </record>
+        <record id="naf_4291Z" model="res.partner.naf">
+            <field name="code">4291Z</field>
+            <field name="activity">Construction d'ouvrages maritimes et fluviaux</field>
+        </record>
+        <record id="naf_4299Z" model="res.partner.naf">
+            <field name="code">4299Z</field>
+            <field name="activity">Construction d'autres ouvrages de génie civil n.c.a.</field>
+        </record>
+        <record id="naf_4311Z" model="res.partner.naf">
+            <field name="code">4311Z</field>
+            <field name="activity">Travaux de démolition</field>
+        </record>
+        <record id="naf_4312A" model="res.partner.naf">
+            <field name="code">4312A</field>
+            <field name="activity">Travaux de terrassement courants et travaux préparatoires</field>
+        </record>
+        <record id="naf_4312B" model="res.partner.naf">
+            <field name="code">4312B</field>
+            <field name="activity">Travaux de terrassement spécialisés ou de grande masse</field>
+        </record>
+        <record id="naf_4313Z" model="res.partner.naf">
+            <field name="code">4313Z</field>
+            <field name="activity">Forages et sondages</field>
+        </record>
+        <record id="naf_4321A" model="res.partner.naf">
+            <field name="code">4321A</field>
+            <field name="activity">Travaux d'installation électrique dans tous locaux</field>
+        </record>
+        <record id="naf_4321B" model="res.partner.naf">
+            <field name="code">4321B</field>
+            <field name="activity">Travaux d'installation électrique sur la voie publique</field>
+        </record>
+        <record id="naf_4322A" model="res.partner.naf">
+            <field name="code">4322A</field>
+            <field name="activity">Travaux d'installation d'eau et de gaz en tous locaux</field>
+        </record>
+        <record id="naf_4322B" model="res.partner.naf">
+            <field name="code">4322B</field>
+            <field name="activity">Travaux d'installation d'équipements thermiques et de climatisation</field>
+        </record>
+        <record id="naf_4329A" model="res.partner.naf">
+            <field name="code">4329A</field>
+            <field name="activity">Travaux d'isolation</field>
+        </record>
+        <record id="naf_4329B" model="res.partner.naf">
+            <field name="code">4329B</field>
+            <field name="activity">Autres travaux d'installation n.c.a.</field>
+        </record>
+        <record id="naf_4331Z" model="res.partner.naf">
+            <field name="code">4331Z</field>
+            <field name="activity">Travaux de plâtrerie</field>
+        </record>
+        <record id="naf_4332A" model="res.partner.naf">
+            <field name="code">4332A</field>
+            <field name="activity">Travaux de menuiserie bois et pvc</field>
+        </record>
+        <record id="naf_4332B" model="res.partner.naf">
+            <field name="code">4332B</field>
+            <field name="activity">Travaux de menuiserie métallique et serrurerie</field>
+        </record>
+        <record id="naf_4332C" model="res.partner.naf">
+            <field name="code">4332C</field>
+            <field name="activity">Agencement de lieux de vente</field>
+        </record>
+        <record id="naf_4333Z" model="res.partner.naf">
+            <field name="code">4333Z</field>
+            <field name="activity">Travaux de revêtement des sols et des murs</field>
+        </record>
+        <record id="naf_4334Z" model="res.partner.naf">
+            <field name="code">4334Z</field>
+            <field name="activity">Travaux de peinture et vitrerie</field>
+        </record>
+        <record id="naf_4339Z" model="res.partner.naf">
+            <field name="code">4339Z</field>
+            <field name="activity">Autres travaux de finition</field>
+        </record>
+        <record id="naf_4391A" model="res.partner.naf">
+            <field name="code">4391A</field>
+            <field name="activity">Travaux de charpente</field>
+        </record>
+        <record id="naf_4391B" model="res.partner.naf">
+            <field name="code">4391B</field>
+            <field name="activity">Travaux de couverture par éléments</field>
+        </record>
+        <record id="naf_4399A" model="res.partner.naf">
+            <field name="code">4399A</field>
+            <field name="activity">Travaux d'étanchéification</field>
+        </record>
+        <record id="naf_4399B" model="res.partner.naf">
+            <field name="code">4399B</field>
+            <field name="activity">Travaux de montage de structures métalliques</field>
+        </record>
+        <record id="naf_4399C" model="res.partner.naf">
+            <field name="code">4399C</field>
+            <field name="activity">Travaux de maçonnerie générale et gros œuvre de bâtiment</field>
+        </record>
+        <record id="naf_4399D" model="res.partner.naf">
+            <field name="code">4399D</field>
+            <field name="activity">Autres travaux spécialisés de construction</field>
+        </record>
+        <record id="naf_4399E" model="res.partner.naf">
+            <field name="code">4399E</field>
+            <field name="activity">Location avec opérateur de matériel de construction</field>
+        </record>
+        <record id="naf_4511Z" model="res.partner.naf">
+            <field name="code">4511Z</field>
+            <field name="activity">Commerce de voitures et de véhicules automobiles légers</field>
+        </record>
+        <record id="naf_4519Z" model="res.partner.naf">
+            <field name="code">4519Z</field>
+            <field name="activity">Commerce d'autres véhicules automobiles</field>
+        </record>
+        <record id="naf_4520A" model="res.partner.naf">
+            <field name="code">4520A</field>
+            <field name="activity">Entretien et réparation de véhicules automobiles légers</field>
+        </record>
+        <record id="naf_4520B" model="res.partner.naf">
+            <field name="code">4520B</field>
+            <field name="activity">Entretien et réparation d'autres véhicules automobiles</field>
+        </record>
+        <record id="naf_4531Z" model="res.partner.naf">
+            <field name="code">4531Z</field>
+            <field name="activity">Commerce de gros d'équipements automobiles</field>
+        </record>
+        <record id="naf_4532Z" model="res.partner.naf">
+            <field name="code">4532Z</field>
+            <field name="activity">Commerce de détail d'équipements automobiles</field>
+        </record>
+        <record id="naf_4540Z" model="res.partner.naf">
+            <field name="code">4540Z</field>
+            <field name="activity">Commerce et réparation de motocycles</field>
+        </record>
+        <record id="naf_4611Z" model="res.partner.naf">
+            <field name="code">4611Z</field>
+            <field name="activity">Intermédiaires du commerce en matières premières agricoles, animaux vivants, matières premières textiles et</field>
+        </record>
+        <record id="naf_4612A" model="res.partner.naf">
+            <field name="code">4612A</field>
+            <field name="activity">Centrales d'achat de carburant</field>
+        </record>
+        <record id="naf_4612B" model="res.partner.naf">
+            <field name="code">4612B</field>
+            <field name="activity">Autres intermédiaires du commerce en combustibles, métaux, minéraux et produits chimiques</field>
+        </record>
+        <record id="naf_4613Z" model="res.partner.naf">
+            <field name="code">4613Z</field>
+            <field name="activity">Intermédiaires du commerce en bois et matériaux de construction</field>
+        </record>
+        <record id="naf_4614Z" model="res.partner.naf">
+            <field name="code">4614Z</field>
+            <field name="activity">Intermédiaires du commerce en machines, équipements industriels, navires et avions</field>
+        </record>
+        <record id="naf_4615Z" model="res.partner.naf">
+            <field name="code">4615Z</field>
+            <field name="activity">Intermédiaires du commerce en meubles, articles de ménage et quincaillerie</field>
+        </record>
+        <record id="naf_4616Z" model="res.partner.naf">
+            <field name="code">4616Z</field>
+            <field name="activity">Intermédiaires du commerce en textiles, habillement, fourrures, chaussures et articles en cuir</field>
+        </record>
+        <record id="naf_4617A" model="res.partner.naf">
+            <field name="code">4617A</field>
+            <field name="activity">Centrales d'achat alimentaires</field>
+        </record>
+        <record id="naf_4617B" model="res.partner.naf">
+            <field name="code">4617B</field>
+            <field name="activity">Autres intermédiaires du commerce en denrées, boissons et tabac</field>
+        </record>
+        <record id="naf_4618Z" model="res.partner.naf">
+            <field name="code">4618Z</field>
+            <field name="activity">Intermédiaires spécialisés dans le commerce d'autres produits spécifiques</field>
+        </record>
+        <record id="naf_4619A" model="res.partner.naf">
+            <field name="code">4619A</field>
+            <field name="activity">Centrales d'achat non alimentaires</field>
+        </record>
+        <record id="naf_4619B" model="res.partner.naf">
+            <field name="code">4619B</field>
+            <field name="activity">Autres intermédiaires du commerce en produits divers</field>
+        </record>
+        <record id="naf_4621Z" model="res.partner.naf">
+            <field name="code">4621Z</field>
+            <field name="activity">Commerce de gros  de céréales, de tabac non manufacturé, de semences et d'aliments pour le bétail</field>
+        </record>
+        <record id="naf_4622Z" model="res.partner.naf">
+            <field name="code">4622Z</field>
+            <field name="activity">Commerce de gros  de fleurs et plantes</field>
+        </record>
+        <record id="naf_4623Z" model="res.partner.naf">
+            <field name="code">4623Z</field>
+            <field name="activity">Commerce de gros  d'animaux vivants</field>
+        </record>
+        <record id="naf_4624Z" model="res.partner.naf">
+            <field name="code">4624Z</field>
+            <field name="activity">Commerce de gros  de cuirs et peaux</field>
+        </record>
+        <record id="naf_4631Z" model="res.partner.naf">
+            <field name="code">4631Z</field>
+            <field name="activity">Commerce de gros  de fruits et légumes</field>
+        </record>
+        <record id="naf_4632A" model="res.partner.naf">
+            <field name="code">4632A</field>
+            <field name="activity">Commerce de gros  de viandes de boucherie</field>
+        </record>
+        <record id="naf_4632B" model="res.partner.naf">
+            <field name="code">4632B</field>
+            <field name="activity">Commerce de gros  de produits à base de viande</field>
+        </record>
+        <record id="naf_4632C" model="res.partner.naf">
+            <field name="code">4632C</field>
+            <field name="activity">Commerce de gros  de volailles et gibier</field>
+        </record>
+        <record id="naf_4633Z" model="res.partner.naf">
+            <field name="code">4633Z</field>
+            <field name="activity">Commerce de gros  de produits laitiers, œufs, huiles et matières grasses comestibles</field>
+        </record>
+        <record id="naf_4634Z" model="res.partner.naf">
+            <field name="code">4634Z</field>
+            <field name="activity">Commerce de gros  de boissons</field>
+        </record>
+        <record id="naf_4635Z" model="res.partner.naf">
+            <field name="code">4635Z</field>
+            <field name="activity">Commerce de gros  de produits à base de tabac</field>
+        </record>
+        <record id="naf_4636Z" model="res.partner.naf">
+            <field name="code">4636Z</field>
+            <field name="activity">Commerce de gros  de sucre, chocolat et confiserie</field>
+        </record>
+        <record id="naf_4637Z" model="res.partner.naf">
+            <field name="code">4637Z</field>
+            <field name="activity">Commerce de gros  de café, thé, cacao et épices</field>
+        </record>
+        <record id="naf_4638A" model="res.partner.naf">
+            <field name="code">4638A</field>
+            <field name="activity">Commerce de gros  de poissons, crustacés et mollusques</field>
+        </record>
+        <record id="naf_4638B" model="res.partner.naf">
+            <field name="code">4638B</field>
+            <field name="activity">Commerce de gros  alimentaire spécialisé divers</field>
+        </record>
+        <record id="naf_4639A" model="res.partner.naf">
+            <field name="code">4639A</field>
+            <field name="activity">Commerce de gros  de produits surgelés</field>
+        </record>
+        <record id="naf_4639B" model="res.partner.naf">
+            <field name="code">4639B</field>
+            <field name="activity">Commerce de gros  alimentaire non spécialisé</field>
+        </record>
+        <record id="naf_4641Z" model="res.partner.naf">
+            <field name="code">4641Z</field>
+            <field name="activity">Commerce de gros  de textiles</field>
+        </record>
+        <record id="naf_4642Z" model="res.partner.naf">
+            <field name="code">4642Z</field>
+            <field name="activity">Commerce de gros  d'habillement et de chaussures</field>
+        </record>
+        <record id="naf_4643Z" model="res.partner.naf">
+            <field name="code">4643Z</field>
+            <field name="activity">Commerce de gros  d'appareils électroménagers</field>
+        </record>
+        <record id="naf_4644Z" model="res.partner.naf">
+            <field name="code">4644Z</field>
+            <field name="activity">Commerce de gros  de vaisselle, verrerie et produits d'entretien</field>
+        </record>
+        <record id="naf_4645Z" model="res.partner.naf">
+            <field name="code">4645Z</field>
+            <field name="activity">Commerce de gros  de parfumerie et de produits de beauté</field>
+        </record>
+        <record id="naf_4646Z" model="res.partner.naf">
+            <field name="code">4646Z</field>
+            <field name="activity">Commerce de gros  de produits pharmaceutiques</field>
+        </record>
+        <record id="naf_4647Z" model="res.partner.naf">
+            <field name="code">4647Z</field>
+            <field name="activity">Commerce de gros  de meubles, de tapis et d'appareils d'éclairage</field>
+        </record>
+        <record id="naf_4648Z" model="res.partner.naf">
+            <field name="code">4648Z</field>
+            <field name="activity">Commerce de gros  d'articles d'horlogerie et de bijouterie</field>
+        </record>
+        <record id="naf_4649Z" model="res.partner.naf">
+            <field name="code">4649Z</field>
+            <field name="activity">Commerce de gros  d'autres biens domestiques</field>
+        </record>
+        <record id="naf_4651Z" model="res.partner.naf">
+            <field name="code">4651Z</field>
+            <field name="activity">Commerce de gros  d'ordinateurs, d'équipements informatiques périphériques et de logiciels</field>
+        </record>
+        <record id="naf_4652Z" model="res.partner.naf">
+            <field name="code">4652Z</field>
+            <field name="activity">Commerce de gros  de composants et d'équipements électroniques et de télécommunication</field>
+        </record>
+        <record id="naf_4661Z" model="res.partner.naf">
+            <field name="code">4661Z</field>
+            <field name="activity">Commerce de gros  de matériel agricole</field>
+        </record>
+        <record id="naf_4662Z" model="res.partner.naf">
+            <field name="code">4662Z</field>
+            <field name="activity">Commerce de gros  de machines-outils</field>
+        </record>
+        <record id="naf_4663Z" model="res.partner.naf">
+            <field name="code">4663Z</field>
+            <field name="activity">Commerce de gros  de machines pour l'extraction, la construction et le génie civil</field>
+        </record>
+        <record id="naf_4664Z" model="res.partner.naf">
+            <field name="code">4664Z</field>
+            <field name="activity">Commerce de gros  de machines pour l'industrie textile et l'habillement</field>
+        </record>
+        <record id="naf_4665Z" model="res.partner.naf">
+            <field name="code">4665Z</field>
+            <field name="activity">Commerce de gros  de mobilier de bureau</field>
+        </record>
+        <record id="naf_4666Z" model="res.partner.naf">
+            <field name="code">4666Z</field>
+            <field name="activity">Commerce de gros  d'autres machines et équipements de bureau</field>
+        </record>
+        <record id="naf_4669A" model="res.partner.naf">
+            <field name="code">4669A</field>
+            <field name="activity">Commerce de gros  de matériel électrique</field>
+        </record>
+        <record id="naf_4669B" model="res.partner.naf">
+            <field name="code">4669B</field>
+            <field name="activity">Commerce de gros  de fournitures et équipements industriels divers</field>
+        </record>
+        <record id="naf_4669C" model="res.partner.naf">
+            <field name="code">4669C</field>
+            <field name="activity">Commerce de gros  de fournitures et équipements divers pour le commerce et les services</field>
+        </record>
+        <record id="naf_4671Z" model="res.partner.naf">
+            <field name="code">4671Z</field>
+            <field name="activity">Commerce de gros  de combustibles et de produits annexes</field>
+        </record>
+        <record id="naf_4672Z" model="res.partner.naf">
+            <field name="code">4672Z</field>
+            <field name="activity">Commerce de gros  de minerais et métaux</field>
+        </record>
+        <record id="naf_4673A" model="res.partner.naf">
+            <field name="code">4673A</field>
+            <field name="activity">Commerce de gros  de bois et de matériaux de construction</field>
+        </record>
+        <record id="naf_4673B" model="res.partner.naf">
+            <field name="code">4673B</field>
+            <field name="activity">Commerce de gros  d'appareils sanitaires et de produits de décoration</field>
+        </record>
+        <record id="naf_4674A" model="res.partner.naf">
+            <field name="code">4674A</field>
+            <field name="activity">Commerce de gros  de quincaillerie</field>
+        </record>
+        <record id="naf_4674B" model="res.partner.naf">
+            <field name="code">4674B</field>
+            <field name="activity">Commerce de gros  de fournitures pour la plomberie et le chauffage</field>
+        </record>
+        <record id="naf_4675Z" model="res.partner.naf">
+            <field name="code">4675Z</field>
+            <field name="activity">Commerce de gros  de produits chimiques</field>
+        </record>
+        <record id="naf_4676Z" model="res.partner.naf">
+            <field name="code">4676Z</field>
+            <field name="activity">Commerce de gros  d'autres produits intermédiaires</field>
+        </record>
+        <record id="naf_4677Z" model="res.partner.naf">
+            <field name="code">4677Z</field>
+            <field name="activity">Commerce de gros  de déchets et débris</field>
+        </record>
+        <record id="naf_4690Z" model="res.partner.naf">
+            <field name="code">4690Z</field>
+            <field name="activity">Commerce de gros  non spécialisé</field>
+        </record>
+        <record id="naf_4711A" model="res.partner.naf">
+            <field name="code">4711A</field>
+            <field name="activity">Commerce de détail de produits surgelés</field>
+        </record>
+        <record id="naf_4711B" model="res.partner.naf">
+            <field name="code">4711B</field>
+            <field name="activity">Commerce d'alimentation générale</field>
+        </record>
+        <record id="naf_4711C" model="res.partner.naf">
+            <field name="code">4711C</field>
+            <field name="activity">Supérettes</field>
+        </record>
+        <record id="naf_4711D" model="res.partner.naf">
+            <field name="code">4711D</field>
+            <field name="activity">Supermarchés</field>
+        </record>
+        <record id="naf_4711E" model="res.partner.naf">
+            <field name="code">4711E</field>
+            <field name="activity">Magasins multi-commerces</field>
+        </record>
+        <record id="naf_4711F" model="res.partner.naf">
+            <field name="code">4711F</field>
+            <field name="activity">Hypermarchés</field>
+        </record>
+        <record id="naf_4719A" model="res.partner.naf">
+            <field name="code">4719A</field>
+            <field name="activity">Grands magasins</field>
+        </record>
+        <record id="naf_4719B" model="res.partner.naf">
+            <field name="code">4719B</field>
+            <field name="activity">Autres commerces de détail en magasin non spécialisé</field>
+        </record>
+        <record id="naf_4721Z" model="res.partner.naf">
+            <field name="code">4721Z</field>
+            <field name="activity">Commerce de détail de fruits et légumes en magasin spécialisé</field>
+        </record>
+        <record id="naf_4722Z" model="res.partner.naf">
+            <field name="code">4722Z</field>
+            <field name="activity">Commerce de détail de viandes et de produits à base de viande en magasin spécialisé</field>
+        </record>
+        <record id="naf_4723Z" model="res.partner.naf">
+            <field name="code">4723Z</field>
+            <field name="activity">Commerce de détail de poissons, crustacés et mollusques en magasin spécialisé</field>
+        </record>
+        <record id="naf_4724Z" model="res.partner.naf">
+            <field name="code">4724Z</field>
+            <field name="activity">Commerce de détail de pain, pâtisserie et confiserie en magasin spécialisé</field>
+        </record>
+        <record id="naf_4725Z" model="res.partner.naf">
+            <field name="code">4725Z</field>
+            <field name="activity">Commerce de détail de boissons en magasin spécialisé</field>
+        </record>
+        <record id="naf_4726Z" model="res.partner.naf">
+            <field name="code">4726Z</field>
+            <field name="activity">Commerce de détail de produits à base de tabac en magasin spécialisé</field>
+        </record>
+        <record id="naf_4729Z" model="res.partner.naf">
+            <field name="code">4729Z</field>
+            <field name="activity">Autres commerces de détail alimentaires en magasin spécialisé</field>
+        </record>
+        <record id="naf_4730Z" model="res.partner.naf">
+            <field name="code">4730Z</field>
+            <field name="activity">Commerce de détail de carburants en magasin spécialisé</field>
+        </record>
+        <record id="naf_4741Z" model="res.partner.naf">
+            <field name="code">4741Z</field>
+            <field name="activity">Commerce de détail d'ordinateurs, d'unités périphériques et de logiciels en magasin spécialisé</field>
+        </record>
+        <record id="naf_4742Z" model="res.partner.naf">
+            <field name="code">4742Z</field>
+            <field name="activity">Commerce de détail de matériels de télécommunication en magasin spécialisé</field>
+        </record>
+        <record id="naf_4743Z" model="res.partner.naf">
+            <field name="code">4743Z</field>
+            <field name="activity">Commerce de détail de matériels audio et vidéo en magasin spécialisé</field>
+        </record>
+        <record id="naf_4751Z" model="res.partner.naf">
+            <field name="code">4751Z</field>
+            <field name="activity">Commerce de détail de textiles en magasin spécialisé</field>
+        </record>
+        <record id="naf_4752A" model="res.partner.naf">
+            <field name="code">4752A</field>
+            <field name="activity">Commerce de détail de quincaillerie, peintures et verres en petites surfaces (moins de 400 m²)</field>
+        </record>
+        <record id="naf_4752B" model="res.partner.naf">
+            <field name="code">4752B</field>
+            <field name="activity">Commerce de détail de quincaillerie, peintures et verres en grandes surfaces (400 m² et plus)</field>
+        </record>
+        <record id="naf_4753Z" model="res.partner.naf">
+            <field name="code">4753Z</field>
+            <field name="activity">Commerce de détail de tapis, moquettes et revêtements de murs et de sols en magasin spécialisé</field>
+        </record>
+        <record id="naf_4754Z" model="res.partner.naf">
+            <field name="code">4754Z</field>
+            <field name="activity">Commerce de détail d'appareils électroménagers en magasin spécialisé</field>
+        </record>
+        <record id="naf_4759A" model="res.partner.naf">
+            <field name="code">4759A</field>
+            <field name="activity">Commerce de détail de meubles</field>
+        </record>
+        <record id="naf_4759B" model="res.partner.naf">
+            <field name="code">4759B</field>
+            <field name="activity">Commerce de détail d'autres équipements du foyer</field>
+        </record>
+        <record id="naf_4761Z" model="res.partner.naf">
+            <field name="code">4761Z</field>
+            <field name="activity">Commerce de détail de livres en magasin spécialisé</field>
+        </record>
+        <record id="naf_4762Z" model="res.partner.naf">
+            <field name="code">4762Z</field>
+            <field name="activity">Commerce de détail de journaux et papeterie en magasin spécialisé</field>
+        </record>
+        <record id="naf_4763Z" model="res.partner.naf">
+            <field name="code">4763Z</field>
+            <field name="activity">Commerce de détail d'enregistrements musicaux et vidéo en magasin spécialisé</field>
+        </record>
+        <record id="naf_4764Z" model="res.partner.naf">
+            <field name="code">4764Z</field>
+            <field name="activity">Commerce de détail d'articles de sport en magasin spécialisé</field>
+        </record>
+        <record id="naf_4765Z" model="res.partner.naf">
+            <field name="code">4765Z</field>
+            <field name="activity">Commerce de détail de jeux et jouets en magasin spécialisé</field>
+        </record>
+        <record id="naf_4771Z" model="res.partner.naf">
+            <field name="code">4771Z</field>
+            <field name="activity">Commerce de détail d'habillement en magasin spécialisé</field>
+        </record>
+        <record id="naf_4772A" model="res.partner.naf">
+            <field name="code">4772A</field>
+            <field name="activity">Commerce de détail de la chaussure</field>
+        </record>
+        <record id="naf_4772B" model="res.partner.naf">
+            <field name="code">4772B</field>
+            <field name="activity">Commerce de détail de maroquinerie et d'articles de voyage</field>
+        </record>
+        <record id="naf_4773Z" model="res.partner.naf">
+            <field name="code">4773Z</field>
+            <field name="activity">Commerce de détail de produits pharmaceutiques en magasin spécialisé</field>
+        </record>
+        <record id="naf_4774Z" model="res.partner.naf">
+            <field name="code">4774Z</field>
+            <field name="activity">Commerce de détail d'articles médicaux et orthopédiques en magasin spécialisé</field>
+        </record>
+        <record id="naf_4775Z" model="res.partner.naf">
+            <field name="code">4775Z</field>
+            <field name="activity">Commerce de détail de parfumerie et de produits de beauté en magasin spécialisé</field>
+        </record>
+        <record id="naf_4776Z" model="res.partner.naf">
+            <field name="code">4776Z</field>
+            <field name="activity">Commerce de détail de fleurs, plantes, graines, engrais, animaux de compagnie et aliments pour ces animaux</field>
+        </record>
+        <record id="naf_4777Z" model="res.partner.naf">
+            <field name="code">4777Z</field>
+            <field name="activity">Commerce de détail d'articles d'horlogerie et de bijouterie en magasin spécialisé</field>
+        </record>
+        <record id="naf_4778A" model="res.partner.naf">
+            <field name="code">4778A</field>
+            <field name="activity">Commerces de détail d'optique</field>
+        </record>
+        <record id="naf_4778B" model="res.partner.naf">
+            <field name="code">4778B</field>
+            <field name="activity">Commerces de détail de charbons et combustibles</field>
+        </record>
+        <record id="naf_4778C" model="res.partner.naf">
+            <field name="code">4778C</field>
+            <field name="activity">Autres commerces de détail spécialisés divers</field>
+        </record>
+        <record id="naf_4779Z" model="res.partner.naf">
+            <field name="code">4779Z</field>
+            <field name="activity">Commerce de détail de biens d'occasion en magasin</field>
+        </record>
+        <record id="naf_4781Z" model="res.partner.naf">
+            <field name="code">4781Z</field>
+            <field name="activity">Commerce de détail alimentaire sur éventaires et marchés</field>
+        </record>
+        <record id="naf_4782Z" model="res.partner.naf">
+            <field name="code">4782Z</field>
+            <field name="activity">Commerce de détail de textiles, d'habillement et de chaussures sur éventaires et marchés</field>
+        </record>
+        <record id="naf_4789Z" model="res.partner.naf">
+            <field name="code">4789Z</field>
+            <field name="activity">Autres commerces de détail sur éventaires et marchés</field>
+        </record>
+        <record id="naf_4791A" model="res.partner.naf">
+            <field name="code">4791A</field>
+            <field name="activity">Vente à distance sur catalogue général</field>
+        </record>
+        <record id="naf_4791B" model="res.partner.naf">
+            <field name="code">4791B</field>
+            <field name="activity">Vente à distance sur catalogue spécialisé</field>
+        </record>
+        <record id="naf_4799A" model="res.partner.naf">
+            <field name="code">4799A</field>
+            <field name="activity">Vente à domicile</field>
+        </record>
+        <record id="naf_4799B" model="res.partner.naf">
+            <field name="code">4799B</field>
+            <field name="activity">Vente par automates et autres commerces de détail hors magasin, éventaires ou marchés n.c.a.</field>
+        </record>
+        <record id="naf_4910Z" model="res.partner.naf">
+            <field name="code">4910Z</field>
+            <field name="activity">Transport ferroviaire interurbain de voyageurs</field>
+        </record>
+        <record id="naf_4920Z" model="res.partner.naf">
+            <field name="code">4920Z</field>
+            <field name="activity">Transports ferroviaires de fret</field>
+        </record>
+        <record id="naf_4931Z" model="res.partner.naf">
+            <field name="code">4931Z</field>
+            <field name="activity">Transports urbains et suburbains de voyageurs</field>
+        </record>
+        <record id="naf_4932Z" model="res.partner.naf">
+            <field name="code">4932Z</field>
+            <field name="activity">Transports de voyageurs par taxis</field>
+        </record>
+        <record id="naf_4939A" model="res.partner.naf">
+            <field name="code">4939A</field>
+            <field name="activity">Transports routiers réguliers de voyageurs</field>
+        </record>
+        <record id="naf_4939B" model="res.partner.naf">
+            <field name="code">4939B</field>
+            <field name="activity">Autres transports routiers de voyageurs</field>
+        </record>
+        <record id="naf_4939C" model="res.partner.naf">
+            <field name="code">4939C</field>
+            <field name="activity">Téléphériques et remontées mécaniques</field>
+        </record>
+        <record id="naf_4941A" model="res.partner.naf">
+            <field name="code">4941A</field>
+            <field name="activity">Transports routiers de fret interurbains</field>
+        </record>
+        <record id="naf_4941B" model="res.partner.naf">
+            <field name="code">4941B</field>
+            <field name="activity">Transports routiers de fret de proximité</field>
+        </record>
+        <record id="naf_4941C" model="res.partner.naf">
+            <field name="code">4941C</field>
+            <field name="activity">Location de camions avec chauffeur</field>
+        </record>
+        <record id="naf_4942Z" model="res.partner.naf">
+            <field name="code">4942Z</field>
+            <field name="activity">Services de déménagement</field>
+        </record>
+        <record id="naf_4950Z" model="res.partner.naf">
+            <field name="code">4950Z</field>
+            <field name="activity">Transports par conduites</field>
+        </record>
+        <record id="naf_5010Z" model="res.partner.naf">
+            <field name="code">5010Z</field>
+            <field name="activity">Transports maritimes et côtiers de passagers</field>
+        </record>
+        <record id="naf_5020Z" model="res.partner.naf">
+            <field name="code">5020Z</field>
+            <field name="activity">Transports maritimes et côtiers de fret</field>
+        </record>
+        <record id="naf_5030Z" model="res.partner.naf">
+            <field name="code">5030Z</field>
+            <field name="activity">Transports fluviaux de passagers</field>
+        </record>
+        <record id="naf_5040Z" model="res.partner.naf">
+            <field name="code">5040Z</field>
+            <field name="activity">Transports fluviaux de fret</field>
+        </record>
+        <record id="naf_5110Z" model="res.partner.naf">
+            <field name="code">5110Z</field>
+            <field name="activity">Transports aériens de passagers</field>
+        </record>
+        <record id="naf_5121Z" model="res.partner.naf">
+            <field name="code">5121Z</field>
+            <field name="activity">Transports aériens de fret</field>
+        </record>
+        <record id="naf_5122Z" model="res.partner.naf">
+            <field name="code">5122Z</field>
+            <field name="activity">Transports spatiaux</field>
+        </record>
+        <record id="naf_5210A" model="res.partner.naf">
+            <field name="code">5210A</field>
+            <field name="activity">Entreposage et stockage frigorifique</field>
+        </record>
+        <record id="naf_5210B" model="res.partner.naf">
+            <field name="code">5210B</field>
+            <field name="activity">Entreposage et stockage non frigorifique</field>
+        </record>
+        <record id="naf_5221Z" model="res.partner.naf">
+            <field name="code">5221Z</field>
+            <field name="activity">Services auxiliaires des transports terrestres</field>
+        </record>
+        <record id="naf_5222Z" model="res.partner.naf">
+            <field name="code">5222Z</field>
+            <field name="activity">Services auxiliaires des transports par eau</field>
+        </record>
+        <record id="naf_5223Z" model="res.partner.naf">
+            <field name="code">5223Z</field>
+            <field name="activity">Services auxiliaires des transports aériens</field>
+        </record>
+        <record id="naf_5224A" model="res.partner.naf">
+            <field name="code">5224A</field>
+            <field name="activity">Manutention portuaire</field>
+        </record>
+        <record id="naf_5224B" model="res.partner.naf">
+            <field name="code">5224B</field>
+            <field name="activity">Manutention non portuaire</field>
+        </record>
+        <record id="naf_5229A" model="res.partner.naf">
+            <field name="code">5229A</field>
+            <field name="activity">Messagerie, fret express</field>
+        </record>
+        <record id="naf_5229B" model="res.partner.naf">
+            <field name="code">5229B</field>
+            <field name="activity">Affrètement et organisation des transports</field>
+        </record>
+        <record id="naf_5310Z" model="res.partner.naf">
+            <field name="code">5310Z</field>
+            <field name="activity">Activités de poste dans le cadre d'une obligation de service universel</field>
+        </record>
+        <record id="naf_5320Z" model="res.partner.naf">
+            <field name="code">5320Z</field>
+            <field name="activity">Autres activités de poste et de courrier</field>
+        </record>
+        <record id="naf_5510Z" model="res.partner.naf">
+            <field name="code">5510Z</field>
+            <field name="activity">Hôtels et hébergement similaire</field>
+        </record>
+        <record id="naf_5520Z" model="res.partner.naf">
+            <field name="code">5520Z</field>
+            <field name="activity">Hébergement touristique et autre hébergement de courte durée</field>
+        </record>
+        <record id="naf_5530Z" model="res.partner.naf">
+            <field name="code">5530Z</field>
+            <field name="activity">Terrains de camping et parcs pour caravanes ou véhicules de loisirs</field>
+        </record>
+        <record id="naf_5590Z" model="res.partner.naf">
+            <field name="code">5590Z</field>
+            <field name="activity">Autres hébergements</field>
+        </record>
+        <record id="naf_5610A" model="res.partner.naf">
+            <field name="code">5610A</field>
+            <field name="activity">Restauration traditionnelle</field>
+        </record>
+        <record id="naf_5610B" model="res.partner.naf">
+            <field name="code">5610B</field>
+            <field name="activity">Cafétérias et autres libres-services</field>
+        </record>
+        <record id="naf_5610C" model="res.partner.naf">
+            <field name="code">5610C</field>
+            <field name="activity">Restauration de type rapide</field>
+        </record>
+        <record id="naf_5621Z" model="res.partner.naf">
+            <field name="code">5621Z</field>
+            <field name="activity">Services des traiteurs</field>
+        </record>
+        <record id="naf_5629A" model="res.partner.naf">
+            <field name="code">5629A</field>
+            <field name="activity">Restauration collective sous contrat</field>
+        </record>
+        <record id="naf_5629B" model="res.partner.naf">
+            <field name="code">5629B</field>
+            <field name="activity">Autres services de restauration n.c.a.</field>
+        </record>
+        <record id="naf_5630Z" model="res.partner.naf">
+            <field name="code">5630Z</field>
+            <field name="activity">Débits de boissons</field>
+        </record>
+        <record id="naf_5811Z" model="res.partner.naf">
+            <field name="code">5811Z</field>
+            <field name="activity">Édition de livres</field>
+        </record>
+        <record id="naf_5812Z" model="res.partner.naf">
+            <field name="code">5812Z</field>
+            <field name="activity">Édition de répertoires et de fichiers d'adresses</field>
+        </record>
+        <record id="naf_5813Z" model="res.partner.naf">
+            <field name="code">5813Z</field>
+            <field name="activity">Édition de journaux</field>
+        </record>
+        <record id="naf_5814Z" model="res.partner.naf">
+            <field name="code">5814Z</field>
+            <field name="activity">Édition de revues et périodiques</field>
+        </record>
+        <record id="naf_5819Z" model="res.partner.naf">
+            <field name="code">5819Z</field>
+            <field name="activity">Autres activités d'édition</field>
+        </record>
+        <record id="naf_5821Z" model="res.partner.naf">
+            <field name="code">5821Z</field>
+            <field name="activity">Édition de jeux électroniques</field>
+        </record>
+        <record id="naf_5829A" model="res.partner.naf">
+            <field name="code">5829A</field>
+            <field name="activity">Édition de logiciels système et de réseau</field>
+        </record>
+        <record id="naf_5829B" model="res.partner.naf">
+            <field name="code">5829B</field>
+            <field name="activity">Edition de logiciels outils de développement et de langages</field>
+        </record>
+        <record id="naf_5829C" model="res.partner.naf">
+            <field name="code">5829C</field>
+            <field name="activity">Edition de logiciels applicatifs</field>
+        </record>
+        <record id="naf_5911A" model="res.partner.naf">
+            <field name="code">5911A</field>
+            <field name="activity">Production de films et de programmes pour la télévision</field>
+        </record>
+        <record id="naf_5911B" model="res.partner.naf">
+            <field name="code">5911B</field>
+            <field name="activity">Production de films institutionnels et publicitaires</field>
+        </record>
+        <record id="naf_5911C" model="res.partner.naf">
+            <field name="code">5911C</field>
+            <field name="activity">Production de films pour le cinéma</field>
+        </record>
+        <record id="naf_5912Z" model="res.partner.naf">
+            <field name="code">5912Z</field>
+            <field name="activity">Post-production de films cinématographiques, de vidéo et de programmes de télévision</field>
+        </record>
+        <record id="naf_5913A" model="res.partner.naf">
+            <field name="code">5913A</field>
+            <field name="activity">Distribution de films cinématographiques</field>
+        </record>
+        <record id="naf_5913B" model="res.partner.naf">
+            <field name="code">5913B</field>
+            <field name="activity">Edition et distribution vidéo</field>
+        </record>
+        <record id="naf_5914Z" model="res.partner.naf">
+            <field name="code">5914Z</field>
+            <field name="activity">Projection de films cinématographiques</field>
+        </record>
+        <record id="naf_5920Z" model="res.partner.naf">
+            <field name="code">5920Z</field>
+            <field name="activity">Enregistrement sonore et édition musicale</field>
+        </record>
+        <record id="naf_6010Z" model="res.partner.naf">
+            <field name="code">6010Z</field>
+            <field name="activity">Édition et diffusion de programmes radio</field>
+        </record>
+        <record id="naf_6020A" model="res.partner.naf">
+            <field name="code">6020A</field>
+            <field name="activity">Edition de chaînes généralistes</field>
+        </record>
+        <record id="naf_6020B" model="res.partner.naf">
+            <field name="code">6020B</field>
+            <field name="activity">Edition de chaînes thématiques</field>
+        </record>
+        <record id="naf_6110Z" model="res.partner.naf">
+            <field name="code">6110Z</field>
+            <field name="activity">Télécommunications filaires</field>
+        </record>
+        <record id="naf_6120Z" model="res.partner.naf">
+            <field name="code">6120Z</field>
+            <field name="activity">Télécommunications sans fil</field>
+        </record>
+        <record id="naf_6130Z" model="res.partner.naf">
+            <field name="code">6130Z</field>
+            <field name="activity">Télécommunications par satellite</field>
+        </record>
+        <record id="naf_6190Z" model="res.partner.naf">
+            <field name="code">6190Z</field>
+            <field name="activity">Autres activités de télécommunication</field>
+        </record>
+        <record id="naf_6201Z" model="res.partner.naf">
+            <field name="code">6201Z</field>
+            <field name="activity">Programmation informatique</field>
+        </record>
+        <record id="naf_6202A" model="res.partner.naf">
+            <field name="code">6202A</field>
+            <field name="activity">Conseil en systèmes et logiciels informatiques</field>
+        </record>
+        <record id="naf_6202B" model="res.partner.naf">
+            <field name="code">6202B</field>
+            <field name="activity">Tierce maintenance de systèmes et d'applications informatiques</field>
+        </record>
+        <record id="naf_6203Z" model="res.partner.naf">
+            <field name="code">6203Z</field>
+            <field name="activity">Gestion d'installations informatiques</field>
+        </record>
+        <record id="naf_6209Z" model="res.partner.naf">
+            <field name="code">6209Z</field>
+            <field name="activity">Autres activités informatiques</field>
+        </record>
+        <record id="naf_6311Z" model="res.partner.naf">
+            <field name="code">6311Z</field>
+            <field name="activity">Traitement de données, hébergement et activités connexes</field>
+        </record>
+        <record id="naf_6312Z" model="res.partner.naf">
+            <field name="code">6312Z</field>
+            <field name="activity">Portails internet</field>
+        </record>
+        <record id="naf_6391Z" model="res.partner.naf">
+            <field name="code">6391Z</field>
+            <field name="activity">Activités des agences de presse</field>
+        </record>
+        <record id="naf_6399Z" model="res.partner.naf">
+            <field name="code">6399Z</field>
+            <field name="activity">Autres services d'information n.c.a.</field>
+        </record>
+        <record id="naf_6411Z" model="res.partner.naf">
+            <field name="code">6411Z</field>
+            <field name="activity">Activités de banque centrale</field>
+        </record>
+        <record id="naf_6419Z" model="res.partner.naf">
+            <field name="code">6419Z</field>
+            <field name="activity">Autres intermédiations monétaires</field>
+        </record>
+        <record id="naf_6420Z" model="res.partner.naf">
+            <field name="code">6420Z</field>
+            <field name="activity">Activités des sociétés holding</field>
+        </record>
+        <record id="naf_6430Z" model="res.partner.naf">
+            <field name="code">6430Z</field>
+            <field name="activity">Fonds de placement et entités financières similaires</field>
+        </record>
+        <record id="naf_6491Z" model="res.partner.naf">
+            <field name="code">6491Z</field>
+            <field name="activity">Crédit-bail</field>
+        </record>
+        <record id="naf_6492Z" model="res.partner.naf">
+            <field name="code">6492Z</field>
+            <field name="activity">Autre distribution de crédit</field>
+        </record>
+        <record id="naf_6499Z" model="res.partner.naf">
+            <field name="code">6499Z</field>
+            <field name="activity">Autres activités des services financiers, hors assurance et caisses de retraite, n.c.a.</field>
+        </record>
+        <record id="naf_6511Z" model="res.partner.naf">
+            <field name="code">6511Z</field>
+            <field name="activity">Assurance vie</field>
+        </record>
+        <record id="naf_6512Z" model="res.partner.naf">
+            <field name="code">6512Z</field>
+            <field name="activity">Autres assurances</field>
+        </record>
+        <record id="naf_6520Z" model="res.partner.naf">
+            <field name="code">6520Z</field>
+            <field name="activity">Réassurance</field>
+        </record>
+        <record id="naf_6530Z" model="res.partner.naf">
+            <field name="code">6530Z</field>
+            <field name="activity">Caisses de retraite</field>
+        </record>
+        <record id="naf_6611Z" model="res.partner.naf">
+            <field name="code">6611Z</field>
+            <field name="activity">Administration de marchés financiers</field>
+        </record>
+        <record id="naf_6612Z" model="res.partner.naf">
+            <field name="code">6612Z</field>
+            <field name="activity">Courtage de valeurs mobilières et de marchandises</field>
+        </record>
+        <record id="naf_6619A" model="res.partner.naf">
+            <field name="code">6619A</field>
+            <field name="activity">Supports juridiques de gestion de patrimoine mobilier</field>
+        </record>
+        <record id="naf_6619B" model="res.partner.naf">
+            <field name="code">6619B</field>
+            <field name="activity">Autres activités auxiliaires de services financiers, hors assurance et caisses de retraite, n.c.a.</field>
+        </record>
+        <record id="naf_6621Z" model="res.partner.naf">
+            <field name="code">6621Z</field>
+            <field name="activity">évaluation des risques et dommages</field>
+        </record>
+        <record id="naf_6622Z" model="res.partner.naf">
+            <field name="code">6622Z</field>
+            <field name="activity">Activités des agents et courtiers d'assurances</field>
+        </record>
+        <record id="naf_6629Z" model="res.partner.naf">
+            <field name="code">6629Z</field>
+            <field name="activity">Autres activités auxiliaires d'assurance et de caisses de retraite</field>
+        </record>
+        <record id="naf_6630Z" model="res.partner.naf">
+            <field name="code">6630Z</field>
+            <field name="activity">Gestion de fonds</field>
+        </record>
+        <record id="naf_6810Z" model="res.partner.naf">
+            <field name="code">6810Z</field>
+            <field name="activity">Activités des marchands de biens immobiliers</field>
+        </record>
+        <record id="naf_6820A" model="res.partner.naf">
+            <field name="code">6820A</field>
+            <field name="activity">Location de logements</field>
+        </record>
+        <record id="naf_6820B" model="res.partner.naf">
+            <field name="code">6820B</field>
+            <field name="activity">Location de terrains et d'autres biens immobiliers</field>
+        </record>
+        <record id="naf_6831Z" model="res.partner.naf">
+            <field name="code">6831Z</field>
+            <field name="activity">Agences immobilières</field>
+        </record>
+        <record id="naf_6832A" model="res.partner.naf">
+            <field name="code">6832A</field>
+            <field name="activity">Administration d'immeubles et autres biens immobiliers</field>
+        </record>
+        <record id="naf_6832B" model="res.partner.naf">
+            <field name="code">6832B</field>
+            <field name="activity">Supports juridiques de gestion de patrimoine immobilier</field>
+        </record>
+        <record id="naf_6910Z" model="res.partner.naf">
+            <field name="code">6910Z</field>
+            <field name="activity">Activités juridiques</field>
+        </record>
+        <record id="naf_6920Z" model="res.partner.naf">
+            <field name="code">6920Z</field>
+            <field name="activity">Activités comptables</field>
+        </record>
+        <record id="naf_7010Z" model="res.partner.naf">
+            <field name="code">7010Z</field>
+            <field name="activity">Activités des sièges sociaux</field>
+        </record>
+        <record id="naf_7021Z" model="res.partner.naf">
+            <field name="code">7021Z</field>
+            <field name="activity">Conseil en relations publiques et communication</field>
+        </record>
+        <record id="naf_7022Z" model="res.partner.naf">
+            <field name="code">7022Z</field>
+            <field name="activity">Conseil pour les affaires et autres conseils de gestion</field>
+        </record>
+        <record id="naf_7111Z" model="res.partner.naf">
+            <field name="code">7111Z</field>
+            <field name="activity">Activités d'architecture</field>
+        </record>
+        <record id="naf_7112A" model="res.partner.naf">
+            <field name="code">7112A</field>
+            <field name="activity">Activité des géomètres</field>
+        </record>
+        <record id="naf_7112B" model="res.partner.naf">
+            <field name="code">7112B</field>
+            <field name="activity">Ingénierie, études techniques</field>
+        </record>
+        <record id="naf_7120A" model="res.partner.naf">
+            <field name="code">7120A</field>
+            <field name="activity">Contrôle technique automobile</field>
+        </record>
+        <record id="naf_7120B" model="res.partner.naf">
+            <field name="code">7120B</field>
+            <field name="activity">Analyses, essais et inspections techniques</field>
+        </record>
+        <record id="naf_7211Z" model="res.partner.naf">
+            <field name="code">7211Z</field>
+            <field name="activity">Recherche-développement en biotechnologie</field>
+        </record>
+        <record id="naf_7219Z" model="res.partner.naf">
+            <field name="code">7219Z</field>
+            <field name="activity">Recherche-développement en autres sciences physiques et naturelles</field>
+        </record>
+        <record id="naf_7220Z" model="res.partner.naf">
+            <field name="code">7220Z</field>
+            <field name="activity">Recherche-développement en sciences humaines et sociales</field>
+        </record>
+        <record id="naf_7311Z" model="res.partner.naf">
+            <field name="code">7311Z</field>
+            <field name="activity">Activités des agences de publicité</field>
+        </record>
+        <record id="naf_7312Z" model="res.partner.naf">
+            <field name="code">7312Z</field>
+            <field name="activity">Régie publicitaire de médias</field>
+        </record>
+        <record id="naf_7320Z" model="res.partner.naf">
+            <field name="code">7320Z</field>
+            <field name="activity">études de marché et sondages</field>
+        </record>
+        <record id="naf_7410Z" model="res.partner.naf">
+            <field name="code">7410Z</field>
+            <field name="activity">Activités spécialisées de design</field>
+        </record>
+        <record id="naf_7420Z" model="res.partner.naf">
+            <field name="code">7420Z</field>
+            <field name="activity">Activités photographiques</field>
+        </record>
+        <record id="naf_7430Z" model="res.partner.naf">
+            <field name="code">7430Z</field>
+            <field name="activity">Traduction et interprétation</field>
+        </record>
+        <record id="naf_7490A" model="res.partner.naf">
+            <field name="code">7490A</field>
+            <field name="activity">Activité des économistes de la construction</field>
+        </record>
+        <record id="naf_7490B" model="res.partner.naf">
+            <field name="code">7490B</field>
+            <field name="activity">Activités spécialisées, scientifiques et techniques diverses</field>
+        </record>
+        <record id="naf_7500Z" model="res.partner.naf">
+            <field name="code">7500Z</field>
+            <field name="activity">Activités vétérinaires</field>
+        </record>
+        <record id="naf_7711A" model="res.partner.naf">
+            <field name="code">7711A</field>
+            <field name="activity">Location de courte durée de voitures et de véhicules automobiles légers</field>
+        </record>
+        <record id="naf_7711B" model="res.partner.naf">
+            <field name="code">7711B</field>
+            <field name="activity">Location de longue durée de voitures et de véhicules automobiles légers</field>
+        </record>
+        <record id="naf_7712Z" model="res.partner.naf">
+            <field name="code">7712Z</field>
+            <field name="activity">Location et location-bail de camions</field>
+        </record>
+        <record id="naf_7721Z" model="res.partner.naf">
+            <field name="code">7721Z</field>
+            <field name="activity">Location et location-bail d'articles de loisirs et de sport</field>
+        </record>
+        <record id="naf_7722Z" model="res.partner.naf">
+            <field name="code">7722Z</field>
+            <field name="activity">Location de vidéocassettes et disques vidéo</field>
+        </record>
+        <record id="naf_7729Z" model="res.partner.naf">
+            <field name="code">7729Z</field>
+            <field name="activity">Location et location-bail d'autres biens personnels et domestiques</field>
+        </record>
+        <record id="naf_7731Z" model="res.partner.naf">
+            <field name="code">7731Z</field>
+            <field name="activity">Location et location-bail de machines et équipements agricoles</field>
+        </record>
+        <record id="naf_7732Z" model="res.partner.naf">
+            <field name="code">7732Z</field>
+            <field name="activity">Location et location-bail de machines et équipements pour la construction</field>
+        </record>
+        <record id="naf_7733Z" model="res.partner.naf">
+            <field name="code">7733Z</field>
+            <field name="activity">Location et location-bail de machines de bureau et de matériel informatique</field>
+        </record>
+        <record id="naf_7734Z" model="res.partner.naf">
+            <field name="code">7734Z</field>
+            <field name="activity">Location et location-bail de matériels de transport par eau</field>
+        </record>
+        <record id="naf_7735Z" model="res.partner.naf">
+            <field name="code">7735Z</field>
+            <field name="activity">Location et location-bail de matériels de transport aérien</field>
+        </record>
+        <record id="naf_7739Z" model="res.partner.naf">
+            <field name="code">7739Z</field>
+            <field name="activity">Location et location-bail d'autres machines, équipements et biens matériels n.c.a.</field>
+        </record>
+        <record id="naf_7740Z" model="res.partner.naf">
+            <field name="code">7740Z</field>
+            <field name="activity">Location-bail de propriété intellectuelle et de produits similaires, à l'exception des œuvres soumises à
+copyright</field>
+        </record>
+        <record id="naf_7810Z" model="res.partner.naf">
+            <field name="code">7810Z</field>
+            <field name="activity">Activités des agences de placement de main-d'œuvre</field>
+        </record>
+        <record id="naf_7820Z" model="res.partner.naf">
+            <field name="code">7820Z</field>
+            <field name="activity">Activités des agences de travail temporaire</field>
+        </record>
+        <record id="naf_7830Z" model="res.partner.naf">
+            <field name="code">7830Z</field>
+            <field name="activity">Autre mise à disposition de ressources humaines</field>
+        </record>
+        <record id="naf_7911Z" model="res.partner.naf">
+            <field name="code">7911Z</field>
+            <field name="activity">Activités des agences de voyage</field>
+        </record>
+        <record id="naf_7912Z" model="res.partner.naf">
+            <field name="code">7912Z</field>
+            <field name="activity">Activités des voyagistes</field>
+        </record>
+        <record id="naf_7990Z" model="res.partner.naf">
+            <field name="code">7990Z</field>
+            <field name="activity">Autres services de réservation et activités connexes</field>
+        </record>
+        <record id="naf_8010Z" model="res.partner.naf">
+            <field name="code">8010Z</field>
+            <field name="activity">Activités de sécurité privée</field>
+        </record>
+        <record id="naf_8020Z" model="res.partner.naf">
+            <field name="code">8020Z</field>
+            <field name="activity">Activités liées aux systèmes de sécurité</field>
+        </record>
+        <record id="naf_8030Z" model="res.partner.naf">
+            <field name="code">8030Z</field>
+            <field name="activity">Activités d'enquête</field>
+        </record>
+        <record id="naf_8110Z" model="res.partner.naf">
+            <field name="code">8110Z</field>
+            <field name="activity">Activités combinées de soutien lié aux bâtiments</field>
+        </record>
+        <record id="naf_8121Z" model="res.partner.naf">
+            <field name="code">8121Z</field>
+            <field name="activity">Nettoyage courant des bâtiments</field>
+        </record>
+        <record id="naf_8122Z" model="res.partner.naf">
+            <field name="code">8122Z</field>
+            <field name="activity">Autres activités de nettoyage des bâtiments et nettoyage industriel</field>
+        </record>
+        <record id="naf_8129A" model="res.partner.naf">
+            <field name="code">8129A</field>
+            <field name="activity">Désinfection, désinsectisation, dératisation</field>
+        </record>
+        <record id="naf_8129B" model="res.partner.naf">
+            <field name="code">8129B</field>
+            <field name="activity">Autres activités de nettoyage n.c.a.</field>
+        </record>
+        <record id="naf_8130Z" model="res.partner.naf">
+            <field name="code">8130Z</field>
+            <field name="activity">Services d'aménagement paysager</field>
+        </record>
+        <record id="naf_8211Z" model="res.partner.naf">
+            <field name="code">8211Z</field>
+            <field name="activity">Services administratifs combinés de bureau</field>
+        </record>
+        <record id="naf_8219Z" model="res.partner.naf">
+            <field name="code">8219Z</field>
+            <field name="activity">Photocopie, préparation de documents et autres activités spécialisées de soutien de bureau</field>
+        </record>
+        <record id="naf_8220Z" model="res.partner.naf">
+            <field name="code">8220Z</field>
+            <field name="activity">Activités de centres d'appels</field>
+        </record>
+        <record id="naf_8230Z" model="res.partner.naf">
+            <field name="code">8230Z</field>
+            <field name="activity">Organisation de foires, salons professionnels et congrès</field>
+        </record>
+        <record id="naf_8291Z" model="res.partner.naf">
+            <field name="code">8291Z</field>
+            <field name="activity">Activités des agences de recouvrement de factures et des sociétés d'information financière sur la clientèle</field>
+        </record>
+        <record id="naf_8292Z" model="res.partner.naf">
+            <field name="code">8292Z</field>
+            <field name="activity">Activités de conditionnement</field>
+        </record>
+        <record id="naf_8299Z" model="res.partner.naf">
+            <field name="code">8299Z</field>
+            <field name="activity">Autres activités de soutien aux entreprises n.c.a.</field>
+        </record>
+        <record id="naf_8411Z" model="res.partner.naf">
+            <field name="code">8411Z</field>
+            <field name="activity">Administration publique générale</field>
+        </record>
+        <record id="naf_8412Z" model="res.partner.naf">
+            <field name="code">8412Z</field>
+            <field name="activity">Administration publique (tutelle) de la santé, de la formation, de la culture et des services sociaux, autre que
+sécurité sociale</field>
+        </record>
+        <record id="naf_8413Z" model="res.partner.naf">
+            <field name="code">8413Z</field>
+            <field name="activity">Administration publique (tutelle) des activités économiques</field>
+        </record>
+        <record id="naf_8421Z" model="res.partner.naf">
+            <field name="code">8421Z</field>
+            <field name="activity">Affaires étrangères</field>
+        </record>
+        <record id="naf_8422Z" model="res.partner.naf">
+            <field name="code">8422Z</field>
+            <field name="activity">Défense</field>
+        </record>
+        <record id="naf_8423Z" model="res.partner.naf">
+            <field name="code">8423Z</field>
+            <field name="activity">Justice</field>
+        </record>
+        <record id="naf_8424Z" model="res.partner.naf">
+            <field name="code">8424Z</field>
+            <field name="activity">Activités d'ordre public et de sécurité</field>
+        </record>
+        <record id="naf_8425Z" model="res.partner.naf">
+            <field name="code">8425Z</field>
+            <field name="activity">Services du feu et de secours</field>
+        </record>
+        <record id="naf_8430A" model="res.partner.naf">
+            <field name="code">8430A</field>
+            <field name="activity">Activités générales de sécurité sociale</field>
+        </record>
+        <record id="naf_8430B" model="res.partner.naf">
+            <field name="code">8430B</field>
+            <field name="activity">Gestion des retraites complémentaires</field>
+        </record>
+        <record id="naf_8430C" model="res.partner.naf">
+            <field name="code">8430C</field>
+            <field name="activity">Distribution sociale de revenus</field>
+        </record>
+        <record id="naf_8510Z" model="res.partner.naf">
+            <field name="code">8510Z</field>
+            <field name="activity">Enseignement pré-primaire</field>
+        </record>
+        <record id="naf_8520Z" model="res.partner.naf">
+            <field name="code">8520Z</field>
+            <field name="activity">Enseignement primaire</field>
+        </record>
+        <record id="naf_8531Z" model="res.partner.naf">
+            <field name="code">8531Z</field>
+            <field name="activity">Enseignement secondaire général</field>
+        </record>
+        <record id="naf_8532Z" model="res.partner.naf">
+            <field name="code">8532Z</field>
+            <field name="activity">Enseignement secondaire technique ou professionnel</field>
+        </record>
+        <record id="naf_8541Z" model="res.partner.naf">
+            <field name="code">8541Z</field>
+            <field name="activity">Enseignement post-secondaire non supérieur</field>
+        </record>
+        <record id="naf_8542Z" model="res.partner.naf">
+            <field name="code">8542Z</field>
+            <field name="activity">Enseignement supérieur</field>
+        </record>
+        <record id="naf_8551Z" model="res.partner.naf">
+            <field name="code">8551Z</field>
+            <field name="activity">Enseignement de disciplines sportives et d'activités de loisirs</field>
+        </record>
+        <record id="naf_8552Z" model="res.partner.naf">
+            <field name="code">8552Z</field>
+            <field name="activity">Enseignement culturel</field>
+        </record>
+        <record id="naf_8553Z" model="res.partner.naf">
+            <field name="code">8553Z</field>
+            <field name="activity">Enseignement de la conduite</field>
+        </record>
+        <record id="naf_8559A" model="res.partner.naf">
+            <field name="code">8559A</field>
+            <field name="activity">Formation continue d'adultes</field>
+        </record>
+        <record id="naf_8559B" model="res.partner.naf">
+            <field name="code">8559B</field>
+            <field name="activity">Autres enseignements</field>
+        </record>
+        <record id="naf_8560Z" model="res.partner.naf">
+            <field name="code">8560Z</field>
+            <field name="activity">Activités de soutien à l'enseignement</field>
+        </record>
+        <record id="naf_8610Z" model="res.partner.naf">
+            <field name="code">8610Z</field>
+            <field name="activity">Activités hospitalières</field>
+        </record>
+        <record id="naf_8621Z" model="res.partner.naf">
+            <field name="code">8621Z</field>
+            <field name="activity">Activité des médecins généralistes</field>
+        </record>
+        <record id="naf_8622A" model="res.partner.naf">
+            <field name="code">8622A</field>
+            <field name="activity">Activités de radiodiagnostic et de radiothérapie</field>
+        </record>
+        <record id="naf_8622B" model="res.partner.naf">
+            <field name="code">8622B</field>
+            <field name="activity">Activités chirurgicales</field>
+        </record>
+        <record id="naf_8622C" model="res.partner.naf">
+            <field name="code">8622C</field>
+            <field name="activity">Autres activités des médecins spécialistes</field>
+        </record>
+        <record id="naf_8623Z" model="res.partner.naf">
+            <field name="code">8623Z</field>
+            <field name="activity">Pratique dentaire</field>
+        </record>
+        <record id="naf_8690A" model="res.partner.naf">
+            <field name="code">8690A</field>
+            <field name="activity">Ambulances</field>
+        </record>
+        <record id="naf_8690B" model="res.partner.naf">
+            <field name="code">8690B</field>
+            <field name="activity">Laboratoires d'analyses médicales</field>
+        </record>
+        <record id="naf_8690C" model="res.partner.naf">
+            <field name="code">8690C</field>
+            <field name="activity">Centres de collecte et banques d'organes</field>
+        </record>
+        <record id="naf_8690D" model="res.partner.naf">
+            <field name="code">8690D</field>
+            <field name="activity">Activités des infirmiers et des sages-femmes</field>
+        </record>
+        <record id="naf_8690E" model="res.partner.naf">
+            <field name="code">8690E</field>
+            <field name="activity">Activités des professionnels de la rééducation, de l'appareillage et des pédicures-podologues</field>
+        </record>
+        <record id="naf_8690F" model="res.partner.naf">
+            <field name="code">8690F</field>
+            <field name="activity">Activités de santé humaine non classées ailleurs</field>
+        </record>
+        <record id="naf_8710A" model="res.partner.naf">
+            <field name="code">8710A</field>
+            <field name="activity">Hébergement médicalisé pour personnes âgées</field>
+        </record>
+        <record id="naf_8710B" model="res.partner.naf">
+            <field name="code">8710B</field>
+            <field name="activity">Hébergement médicalisé pour enfants handicapés</field>
+        </record>
+        <record id="naf_8710C" model="res.partner.naf">
+            <field name="code">8710C</field>
+            <field name="activity">Hébergement médicalisé pour adultes handicapés et autre hébergement médicalisé</field>
+        </record>
+        <record id="naf_8720A" model="res.partner.naf">
+            <field name="code">8720A</field>
+            <field name="activity">Hébergement social pour handicapés mentaux et malades mentaux</field>
+        </record>
+        <record id="naf_8720B" model="res.partner.naf">
+            <field name="code">8720B</field>
+            <field name="activity">Hébergement social pour toxicomanes</field>
+        </record>
+        <record id="naf_8730A" model="res.partner.naf">
+            <field name="code">8730A</field>
+            <field name="activity">Hébergement social pour personnes âgées</field>
+        </record>
+        <record id="naf_8730B" model="res.partner.naf">
+            <field name="code">8730B</field>
+            <field name="activity">Hébergement social pour handicapés  physiques</field>
+        </record>
+        <record id="naf_8790A" model="res.partner.naf">
+            <field name="code">8790A</field>
+            <field name="activity">Hébergement social pour enfants en difficultés</field>
+        </record>
+        <record id="naf_8790B" model="res.partner.naf">
+            <field name="code">8790B</field>
+            <field name="activity">Hébergement social pour adultes et familles en difficultés et autre hébergement social</field>
+        </record>
+        <record id="naf_8810A" model="res.partner.naf">
+            <field name="code">8810A</field>
+            <field name="activity">Aide à domicile</field>
+        </record>
+        <record id="naf_8810B" model="res.partner.naf">
+            <field name="code">8810B</field>
+            <field name="activity">Accueil ou accompagnement sans hébergement d'adultes handicapés ou de personnes âgées</field>
+        </record>
+        <record id="naf_8810C" model="res.partner.naf">
+            <field name="code">8810C</field>
+            <field name="activity">Aide par le travail</field>
+        </record>
+        <record id="naf_8891A" model="res.partner.naf">
+            <field name="code">8891A</field>
+            <field name="activity">Accueil de jeunes enfants</field>
+        </record>
+        <record id="naf_8891B" model="res.partner.naf">
+            <field name="code">8891B</field>
+            <field name="activity">Accueil ou accompagnement sans hébergement d'enfants handicapés</field>
+        </record>
+        <record id="naf_8899A" model="res.partner.naf">
+            <field name="code">8899A</field>
+            <field name="activity">Autre accueil ou accompagnement sans hébergement d'enfants et d'adolescents</field>
+        </record>
+        <record id="naf_8899B" model="res.partner.naf">
+            <field name="code">8899B</field>
+            <field name="activity">Action sociale sans hébergement n.c.a.</field>
+        </record>
+        <record id="naf_9001Z" model="res.partner.naf">
+            <field name="code">9001Z</field>
+            <field name="activity">Arts du spectacle vivant</field>
+        </record>
+        <record id="naf_9002Z" model="res.partner.naf">
+            <field name="code">9002Z</field>
+            <field name="activity">Activités de soutien au spectacle vivant</field>
+        </record>
+        <record id="naf_9003A" model="res.partner.naf">
+            <field name="code">9003A</field>
+            <field name="activity">Création artistique relevant des arts plastiques</field>
+        </record>
+        <record id="naf_9003B" model="res.partner.naf">
+            <field name="code">9003B</field>
+            <field name="activity">Autre création artistique</field>
+        </record>
+        <record id="naf_9004Z" model="res.partner.naf">
+            <field name="code">9004Z</field>
+            <field name="activity">Gestion de salles de spectacles</field>
+        </record>
+        <record id="naf_9101Z" model="res.partner.naf">
+            <field name="code">9101Z</field>
+            <field name="activity">Gestion des bibliothèques et des archives</field>
+        </record>
+        <record id="naf_9102Z" model="res.partner.naf">
+            <field name="code">9102Z</field>
+            <field name="activity">Gestion des musées</field>
+        </record>
+        <record id="naf_9103Z" model="res.partner.naf">
+            <field name="code">9103Z</field>
+            <field name="activity">Gestion des sites et monuments historiques et des attractions touristiques similaires</field>
+        </record>
+        <record id="naf_9104Z" model="res.partner.naf">
+            <field name="code">9104Z</field>
+            <field name="activity">Gestion des jardins botaniques et zoologiques et des réserves naturelles</field>
+        </record>
+        <record id="naf_9200Z" model="res.partner.naf">
+            <field name="code">9200Z</field>
+            <field name="activity">Organisation de jeux de hasard et d'argent</field>
+        </record>
+        <record id="naf_9311Z" model="res.partner.naf">
+            <field name="code">9311Z</field>
+            <field name="activity">Gestion d'installations sportives</field>
+        </record>
+        <record id="naf_9312Z" model="res.partner.naf">
+            <field name="code">9312Z</field>
+            <field name="activity">Activités de clubs de sports</field>
+        </record>
+        <record id="naf_9313Z" model="res.partner.naf">
+            <field name="code">9313Z</field>
+            <field name="activity">Activités des centres de culture physique</field>
+        </record>
+        <record id="naf_9319Z" model="res.partner.naf">
+            <field name="code">9319Z</field>
+            <field name="activity">Autres activités liées au sport</field>
+        </record>
+        <record id="naf_9321Z" model="res.partner.naf">
+            <field name="code">9321Z</field>
+            <field name="activity">Activités des parcs d'attractions et parcs à thèmes</field>
+        </record>
+        <record id="naf_9329Z" model="res.partner.naf">
+            <field name="code">9329Z</field>
+            <field name="activity">Autres activités récréatives et de loisirs</field>
+        </record>
+        <record id="naf_9411Z" model="res.partner.naf">
+            <field name="code">9411Z</field>
+            <field name="activity">Activités des organisations patronales et consulaires</field>
+        </record>
+        <record id="naf_9412Z" model="res.partner.naf">
+            <field name="code">9412Z</field>
+            <field name="activity">Activités des organisations professionnelles</field>
+        </record>
+        <record id="naf_9420Z" model="res.partner.naf">
+            <field name="code">9420Z</field>
+            <field name="activity">Activités des syndicats de salariés</field>
+        </record>
+        <record id="naf_9491Z" model="res.partner.naf">
+            <field name="code">9491Z</field>
+            <field name="activity">Activités des organisations religieuses</field>
+        </record>
+        <record id="naf_9492Z" model="res.partner.naf">
+            <field name="code">9492Z</field>
+            <field name="activity">Activités des organisations politiques</field>
+        </record>
+        <record id="naf_9499Z" model="res.partner.naf">
+            <field name="code">9499Z</field>
+            <field name="activity">Autres organisations fonctionnant par adhésion volontaire</field>
+        </record>
+        <record id="naf_9511Z" model="res.partner.naf">
+            <field name="code">9511Z</field>
+            <field name="activity">Réparation d'ordinateurs et d'équipements périphériques</field>
+        </record>
+        <record id="naf_9512Z" model="res.partner.naf">
+            <field name="code">9512Z</field>
+            <field name="activity">Réparation d'équipements de communication</field>
+        </record>
+        <record id="naf_9521Z" model="res.partner.naf">
+            <field name="code">9521Z</field>
+            <field name="activity">Réparation de produits électroniques grand public</field>
+        </record>
+        <record id="naf_9522Z" model="res.partner.naf">
+            <field name="code">9522Z</field>
+            <field name="activity">Réparation d'appareils électroménagers et d'équipements pour la maison et le jardin</field>
+        </record>
+        <record id="naf_9523Z" model="res.partner.naf">
+            <field name="code">9523Z</field>
+            <field name="activity">Réparation de chaussures et d'articles en cuir</field>
+        </record>
+        <record id="naf_9524Z" model="res.partner.naf">
+            <field name="code">9524Z</field>
+            <field name="activity">Réparation de meubles et d'équipements du foyer</field>
+        </record>
+        <record id="naf_9525Z" model="res.partner.naf">
+            <field name="code">9525Z</field>
+            <field name="activity">Réparation d'articles d'horlogerie et de bijouterie</field>
+        </record>
+        <record id="naf_9529Z" model="res.partner.naf">
+            <field name="code">9529Z</field>
+            <field name="activity">Réparation d'autres biens personnels et domestiques</field>
+        </record>
+        <record id="naf_9601A" model="res.partner.naf">
+            <field name="code">9601A</field>
+            <field name="activity">Blanchisserie-teinturerie de gros</field>
+        </record>
+        <record id="naf_9601B" model="res.partner.naf">
+            <field name="code">9601B</field>
+            <field name="activity">Blanchisserie-teinturerie de détail</field>
+        </record>
+        <record id="naf_9602A" model="res.partner.naf">
+            <field name="code">9602A</field>
+            <field name="activity">Coiffure</field>
+        </record>
+        <record id="naf_9602B" model="res.partner.naf">
+            <field name="code">9602B</field>
+            <field name="activity">Soins de beauté</field>
+        </record>
+        <record id="naf_9603Z" model="res.partner.naf">
+            <field name="code">9603Z</field>
+            <field name="activity">Services funéraires</field>
+        </record>
+        <record id="naf_9604Z" model="res.partner.naf">
+            <field name="code">9604Z</field>
+            <field name="activity">Entretien corporel</field>
+        </record>
+        <record id="naf_9609Z" model="res.partner.naf">
+            <field name="code">9609Z</field>
+            <field name="activity">Autres services personnels n.c.a.</field>
+        </record>
+        <record id="naf_9700Z" model="res.partner.naf">
+            <field name="code">9700Z</field>
+            <field name="activity">Activités des ménages en tant qu'employeurs de personnel domestique</field>
+        </record>
+        <record id="naf_9810Z" model="res.partner.naf">
+            <field name="code">9810Z</field>
+            <field name="activity">Activités indifférenciées des ménages en tant que producteurs de biens pour usage propre</field>
+        </record>
+        <record id="naf_9820Z" model="res.partner.naf">
+            <field name="code">9820Z</field>
+            <field name="activity">Activités indifférenciées des ménages en tant que producteurs de services pour usage propre</field>
+        </record>
+        <record id="naf_9900Z" model="res.partner.naf">
+            <field name="code">9900Z</field>
+            <field name="activity">Activités des organisations et organismes extraterritoriaux</field>
+        </record>
+    </data>
+</odoo>

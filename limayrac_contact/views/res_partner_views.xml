@@ -8,11 +8,33 @@
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='parent_id']" position="after">
                     <field name="birthday_date" invisible='is_company'/>
+                    <field name="headquarters_id" invisible="not is_company"/>
+                    <field name="birthday_date"/>
+                </xpath>
+                <xpath expr="//field[@name='company_registry']" position="after">
+                    <field name="res_partner_naf_id" invisible="not is_company"/>
                 </xpath>
                 <xpath expr="//page[@name='internal_notes']" position="after">
                 <page name="services" string="Services" invisible='not is_company'>
                     <field name="res_partner_department_ids"/>
                 </page>
+                    <page name="services" string="Services">
+                        <field name="res_partner_department_ids"/>
+                    </page>
+                    <page name="subsidiaries" string="Filiales" invisible="not is_company">
+                        <field name="childs_company_ids">
+                            <kanban>
+                                <templates>
+                                    <t t-name="card">
+                                        <div class="fw-bold"><field name="name"/></div>
+                                        <div><field name="vat"/></div>
+                                        <div><field name="company_registry"/></div>
+                                        <div><field name="res_partner_naf_id"/></div>
+                                    </t>
+                                </templates>
+                            </kanban>
+                        </field>
+                    </page>
                 </xpath>
                 <xpath expr="//sheet/group[1]" position="after">
                     <group name="company_information" string="Informations entreprise" invisible='not is_company'>

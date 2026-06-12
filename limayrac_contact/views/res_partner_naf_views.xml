@@ -1,0 +1,24 @@
+<odoo>
+    <data>
+        <record id="view_res_partner_naf_list" model="ir.ui.view">
+            <field name="name">res.partner.naf.list</field>
+            <field name="model">res.partner.naf</field>
+            <field name="arch" type="xml">
+                <list>
+                    <field name="code"/>
+                    <field name="activity"/>
+                </list>
+            </field>
+        </record>
+        <record id="view_res_partner_naf_search" model="ir.ui.view">
+            <field name="name">res.partner.naf.search</field>
+            <field name="model">res.partner.naf</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="code"/>
+                    <field name="activity"/>
+                </search>
+            </field>
+        </record>
+    </data>
+</odoo>
