@@ -22,7 +22,7 @@
         # #REPORT
         # 'report/report_estate_property.xml',
         # # WIZARD
-        # 'wizard/mon_super_wizard_views.xml',
+        'wizard/res_partner_blacklist_wizard_views.xml',
         # #MENU
         # 'views/menu.xml',
     ],

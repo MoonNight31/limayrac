@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_partner_blacklist_wizard_form" model="ir.ui.view">
+        <field name="name">res.partner.blacklist.wizard.form</field>
+        <field name="model">res.partner.blacklist.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Blacklister un service">
+                <sheet>
+                    <group string="Raison de la mise en blacklist">
+                        <field name="reason" />
+                    </group>
+                </sheet>
+                <footer>
+                    <button name="action_confirm"
+                            string="Confirmer"
+                            type="object"
+                            class="btn-primary"
+                            data-hotkey="q"/>
+                    <button string="Annuler"
+                            class="btn-secondary"
+                            special="cancel"
+                            data-hotkey="z"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>
