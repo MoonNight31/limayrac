@@ -13,10 +13,12 @@
         #SECURITY
         'security/ir.model.access.csv',
         # #DATA
+        'data/default_res_partner_naf.xml',
         # 'data/res_groups.xml',
         # #VIEWS
         'views/res_partner_views.xml',
         'views/res_partner_department_views.xml',
+        'views/res_partner_naf_views.xml',
         # #REPORT
         # 'report/report_estate_property.xml',
         # # WIZARD

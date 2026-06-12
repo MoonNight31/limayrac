@@ -8,3 +8,6 @@ class ResPartner(models.Model):
         'res.partner.department',
         'res_partner_id',
         string='Services')
+    res_partner_naf_id = fields.Many2one(
+        'res.partner.naf',
+        string='Code NAF')
