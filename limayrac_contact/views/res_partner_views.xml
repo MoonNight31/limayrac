@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <data>
+        <record id="view_res_partner_form_limayrac_contact" model="ir.ui.view">
+            <field name="name">res.partner.form.limayrac.contact</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='parent_id']" position="after">
+                    <field name="birthday_date"/>
+                </xpath>
+                <xpath expr="//page[@name='internal_notes']" position="after">
+                <page name="services" string="Services">
+                    <field name="res_partner_department_ids"/>
+                </page>
+                </xpath>
+            </field>
+        </record>
+        
+    
+    </data>
+    
+
+</odoo>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <data>
+        <record id="view_res_partner_department_list" model="ir.ui.view">
+            <field name="name">res.partner.department.list</field>
+            <field name="model">res.partner.department</field>
+            <field name="arch" type="xml">
+                <list>
+                    <field name="name"></field>
+                    <field name="res_partner_id" column_invisible='1'></field>
+                    <field name="is_blacklisted" column_invisible='1'></field>
+                    <field name="tags_ids"></field>
+                    <button name="action_blacklist" string="Blacklist" type="object" class="btn-primary"></button>
+                </list>
+            </field>
+        </record>
+    </data>
+</odoo>
