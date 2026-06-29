@@ -32,7 +32,7 @@
                         </field>
                     </page>
                     <page name="needs" string="Besoins">
-                        <field name="title_needs_id"/>
+                        <field name="services_needs_id"/>
                     </page>
                 </xpath>
                 <xpath expr="//field[@name='vat']" position="attributes">
