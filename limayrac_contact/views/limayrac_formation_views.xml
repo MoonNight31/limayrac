@@ -14,6 +14,13 @@
                     <field name="question_four"/>
                     <field name="question_five"/>
                 </list>
+            </field>
+        </record>
+
+        <record id="view_limayrac_formations_form" model="ir.ui.view">
+            <field name="name">limayrac.formations.form</field>
+            <field name="model">limayrac.formations</field>
+            <field name="arch" type="xml">
                 <form string="Formations Limayrac">
                     <sheet>
                         <group>
@@ -24,14 +31,37 @@
                             <field name="question_four"/>
                             <field name="question_five"/>
                         </group>
+                        <notebook>
+                            <page name="title_rncp" string="Ancien titre RNCP associé">
+                                <field name="title_rncp_id" string="Titre RNCP"/>
+                            </page>
+                        </notebook>
                     </sheet>
-                    <page name="tilte_rncp" string="Ancien titre RNCP associé">
-                        <field name="title_rncp_id" string="Title RNCP"/>
-                    </page>
                 </form>
             </field>
         </record>
-    
+
+        <record id="action_limayrac_formations" model="ir.actions.act_window">
+            <field name="name">Formations</field>
+            <field name="res_model">limayrac.formations</field>
+            <field name="view_mode">list,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Créez votre première formation
+                </p>
+            </field>
+        </record>
+
+        <menuitem id="menu_limayrac_root"
+            name="Limayrac"
+            sequence="10"/>
+
+        <menuitem id="menu_limayrac_formations"
+            name="Formations"
+            parent="menu_limayrac_root"
+            action="action_limayrac_formations"
+            sequence="10"/>
+
     </data>
     
 

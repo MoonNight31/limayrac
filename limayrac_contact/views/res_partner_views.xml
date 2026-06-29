@@ -9,7 +9,6 @@
                 <xpath expr="//field[@name='parent_id']" position="after">
                     <field name="birthday_date" invisible='is_company'/>
                     <field name="headquarters_id" invisible="not is_company"/>
-                    <field name="birthday_date"/>
                 </xpath>
                 <xpath expr="//field[@name='company_registry']" position="after">
                     <field name="res_partner_naf_id" invisible="not is_company"/>
