@@ -31,10 +31,20 @@
                             </kanban>
                         </field>
                     </page>
+                    <page name="needs" string="Besoins">
+                        <field name="title_needs_id"/>
+                    </page>
+                </xpath>
+                <xpath expr="//field[@name='vat']" position="attributes">
+                    <attribute name="invisible">not is_company</attribute>
+                    <attribute name="string">SIRET/SIREN</attribute>
+                </xpath>
+                <xpath expr="//page[@name='sales_purchases']" position="attributes">
+                    <attribute name="invisible">not is_company</attribute>
                 </xpath>
                 <xpath expr="//sheet/group[1]" position="after">
                     <group name="company_information" string="Informations entreprise" invisible='not is_company'>
-                        <field name="is_partenaire" string="Partenaire"/>
+                        <field name="is_partenaire" string="Partenaire" invisible="1"/>
                         <field name="is_prospect" string="Prospect"/>
                         <field name="is_blacklist" string="Blacklist"/>
                     </group>
