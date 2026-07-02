@@ -34,7 +34,9 @@
                         </group>
                         <notebook>
                             <page name="title_rncp" string="Ancien titre RNCP associé">
-                                <field name="title_rncp_id"/>
+                                <group>
+                                    <field name="title_rncp_id"/>
+                                </group>
                             </page>
                             <page name="responsables_pedagogiques" string="Responsables pédagogiques">
                                 <field name="res_partner_ids">
