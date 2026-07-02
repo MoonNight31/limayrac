@@ -10,9 +10,6 @@
                     <field name="birthday_date" invisible='is_company'/>
                     <field name="headquarters_id" invisible="not is_company"/>
                 </xpath>
-                <xpath expr="//field[@name='company_registry']" position="after">
-                    <field name="res_partner_naf_id" invisible="not is_company"/>
-                </xpath>
                 <xpath expr="//page[@name='internal_notes']" position="after">
                     <page name="services" string="Services" invisible='not is_company'>
                         <field name="res_partner_department_ids">
@@ -46,8 +43,15 @@
                     </page>
                 </xpath>
                 <xpath expr="//field[@name='vat']" position="attributes">
-                    <attribute name="invisible">not is_company</attribute>
-                    <attribute name="string">SIRET/SIREN</attribute>
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='vat']" position="after">
+                    <field name="company_registry" string="SIREN/SIRET" invisible="parent_id or not is_company" options="{'placeholder_field': 'company_registry_placeholder'}"/>
+                    <field name="industry_id" invisible="not is_company" options="{'no_create': True}"/>
+                    <field name="res_partner_naf_id" invisible="not is_company"/>
+                </xpath>
+                <xpath expr="//group[@name='misc']" position="attributes">
+                    <attribute name="invisible">1</attribute>
                 </xpath>
                 <xpath expr="//page[@name='sales_purchases']" position="attributes">
                     <attribute name="invisible">not is_company</attribute>
@@ -58,7 +62,7 @@
                         <field name="is_prospect" string="Prospect"/>
                         <field name="is_blacklist" string="Blacklist"/>
                     </group>
-                </xpath>
+                </xpath>                
             </field>
         </record>
         <record id="res_partner_view_search_limayrac_contact" model="ir.ui.view">
