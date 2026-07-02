@@ -6,14 +6,12 @@
             <field name="name">res.partner.department.list</field>
             <field name="model">res.partner.department</field>
             <field name="arch" type="xml">
-                <list decoration-danger="is_blacklisted" editable="bottom">
-                    <field name="is_blacklisted" column_invisible='1'></field>
+                <list>
+                    <field name="name"></field>
                     <field name="res_partner_id" column_invisible='1'></field>
-                    <field name="name" readonly="is_blacklisted"></field>
-                    <field name="tags_ids" widget="many2many_tags" readonly="is_blacklisted"></field>
-                    <field name="reason_blacklist" readonly="1"></field>
-                    <button name="action_blacklist" invisible="is_blacklisted" string="Blacklist" type="object" class="btn-primary"></button>
-                    <button name="action_unblacklist" invisible="not is_blacklisted" string="Unblacklist" type="object" class="btn-secondary"></button>
+                    <field name="is_blacklisted" column_invisible='1'></field>
+                    <field name="tags_ids"></field>
+                    <button name="action_blacklist" string="Blacklist" type="object" class="btn-primary"></button>
                 </list>
             </field>
         </record>

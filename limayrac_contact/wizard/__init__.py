@@ -1,1 +1,0 @@
-from . import res_partner_blacklist_wizard
