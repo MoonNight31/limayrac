@@ -1,31 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-        <!-- Lead avec étudiant associé : le stage passe à Qualified via le create() -->
+        <!--
+            Opportunités "étudiant" : rattachées à Administrator et à l'équipe
+            commerciale pour apparaître directement dans le Pipeline CRM.
+            res_partner_id (étudiant) est renseigné : crm.lead.create() force
+            alors le stage à Qualified (stage_lead2).
+        -->
         <record id="demo_lead_stage" model="crm.lead">
             <field name="name">Recherche stage - Lucas Petit</field>
-            <field name="type">lead</field>
+            <field name="type">opportunity</field>
             <field name="type_contract">1</field>
+            <field name="user_id" ref="base.user_admin"/>
+            <field name="team_id" ref="sales_team.team_sales_department"/>
             <field name="res_partner_id" ref="demo_partner_etudiant_1"/>
             <field name="partner_id" ref="demo_company_techcorp"/>
             <field name="email_from">lucas.petit@student.example</field>
+            <field name="probability">50</field>
         </record>
 
         <record id="demo_lead_alternance" model="crm.lead">
             <field name="name">Recherche alternance - Emma Durand</field>
-            <field name="type">lead</field>
+            <field name="type">opportunity</field>
             <field name="type_contract">2</field>
+            <field name="user_id" ref="base.user_admin"/>
+            <field name="team_id" ref="sales_team.team_sales_department"/>
             <field name="res_partner_id" ref="demo_partner_etudiant_2"/>
             <field name="partner_id" ref="demo_company_webagence"/>
             <field name="email_from">emma.durand@student.example</field>
+            <field name="probability">40</field>
         </record>
 
-        <!-- Lead sans étudiant : reste à l'étape New -->
+        <!-- Opportunité sans étudiant : reste à l'étape New (stage_lead1) -->
         <record id="demo_lead_sans_etudiant" model="crm.lead">
             <field name="name">Demande d'information entreprise</field>
-            <field name="type">lead</field>
+            <field name="type">opportunity</field>
             <field name="type_contract">3</field>
+            <field name="user_id" ref="base.user_admin"/>
+            <field name="team_id" ref="sales_team.team_sales_department"/>
             <field name="partner_id" ref="demo_company_techcorp_filiale"/>
+            <field name="probability">20</field>
         </record>
     </data>
 </odoo>

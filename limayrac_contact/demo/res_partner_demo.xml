@@ -85,5 +85,87 @@
             <field name="email">nathan.roux@student.example</field>
             <field name="birthday_date" eval="(DateTime.today() - relativedelta(years=19)).strftime('%Y-%m-%d')"/>
         </record>
+
+        <!-- ============ ENTREPRISES SUPPLÉMENTAIRES ============ -->
+        <record id="demo_company_datasoft" model="res.partner">
+            <field name="name">DataSoft Consulting</field>
+            <field name="is_company" eval="True"/>
+            <field name="is_partenaire" eval="True"/>
+            <field name="street">45 avenue des Minimes</field>
+            <field name="city">Toulouse</field>
+            <field name="zip">31200</field>
+            <field name="email">contact@datasoft.example</field>
+            <field name="phone">+33 5 61 00 00 02</field>
+            <field name="res_partner_naf_id" ref="naf_6201Z"/>
+        </record>
+
+        <record id="demo_company_cloudnet" model="res.partner">
+            <field name="name">CloudNet Services</field>
+            <field name="is_company" eval="True"/>
+            <field name="is_partenaire" eval="True"/>
+            <field name="city">Labège</field>
+            <field name="zip">31670</field>
+            <field name="email">rh@cloudnet.example</field>
+            <field name="res_partner_naf_id" ref="naf_6209Z"/>
+        </record>
+
+        <record id="demo_company_pixelstudio" model="res.partner">
+            <field name="name">Pixel Studio</field>
+            <field name="is_company" eval="True"/>
+            <field name="is_prospect" eval="True"/>
+            <field name="city">Colomiers</field>
+            <field name="zip">31770</field>
+            <field name="email">hello@pixelstudio.example</field>
+            <field name="res_partner_naf_id" ref="naf_7022Z"/>
+        </record>
+
+        <record id="demo_company_retailplus" model="res.partner">
+            <field name="name">RetailPlus Distribution</field>
+            <field name="is_company" eval="True"/>
+            <field name="is_prospect" eval="True"/>
+            <field name="city">Toulouse</field>
+            <field name="zip">31500</field>
+            <field name="res_partner_naf_id" ref="naf_4791A"/>
+        </record>
+
+        <!-- ============ FORMATEUR SUPPLÉMENTAIRE ============ -->
+        <record id="demo_partner_formateur_3" model="res.partner">
+            <field name="name">Karim Haddad</field>
+            <field name="is_company" eval="False"/>
+            <field name="function">Formateur Marketing Digital</field>
+            <field name="email">k.haddad@limayrac.example</field>
+            <field name="birthday_date" eval="(DateTime.today() - relativedelta(years=35)).strftime('%Y-%m-%d')"/>
+            <field name="limayrac_formations_ids" eval="[(6, 0, [ref('demo_formation_marketing')])]"/>
+            <field name="limayrac_formations_resp_ids" eval="[(6, 0, [ref('demo_formation_marketing')])]"/>
+        </record>
+
+        <!-- ============ ÉTUDIANTS SUPPLÉMENTAIRES ============ -->
+        <record id="demo_partner_etudiant_4" model="res.partner">
+            <field name="name">Chloé Martin</field>
+            <field name="is_company" eval="False"/>
+            <field name="email">chloe.martin@student.example</field>
+            <field name="birthday_date" eval="(DateTime.today() - relativedelta(years=21)).strftime('%Y-%m-%d')"/>
+        </record>
+
+        <record id="demo_partner_etudiant_5" model="res.partner">
+            <field name="name">Maxime Leroy</field>
+            <field name="is_company" eval="False"/>
+            <field name="email">maxime.leroy@student.example</field>
+            <field name="birthday_date" eval="(DateTime.today() - relativedelta(years=23)).strftime('%Y-%m-%d')"/>
+        </record>
+
+        <record id="demo_partner_etudiant_6" model="res.partner">
+            <field name="name">Léa Fontaine</field>
+            <field name="is_company" eval="False"/>
+            <field name="email">lea.fontaine@student.example</field>
+            <field name="birthday_date" eval="(DateTime.today() - relativedelta(years=20)).strftime('%Y-%m-%d')"/>
+        </record>
+
+        <record id="demo_partner_etudiant_7" model="res.partner">
+            <field name="name">Hugo Girard</field>
+            <field name="is_company" eval="False"/>
+            <field name="email">hugo.girard@student.example</field>
+            <field name="birthday_date" eval="(DateTime.today() - relativedelta(years=24)).strftime('%Y-%m-%d')"/>
+        </record>
     </data>
 </odoo>

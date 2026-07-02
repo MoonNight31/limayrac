@@ -7,3 +7,4 @@ from . import title_rncp
 #from . import services_needs
 from . import res_partner_type
 from . import res_partner_cursus
+from . import demo_loader

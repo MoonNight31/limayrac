@@ -15,6 +15,7 @@
         # #DATA
         'data/default_res_partner_naf.xml',
         'data/default_res_partner_type.xml',
+        'data/cron_load_demo.xml',
         # 'data/res_groups.xml',
         # #VIEWS
         'views/res_partner_views.xml',
@@ -36,5 +37,6 @@
         'demo/res_partner_department_demo.xml',
         'demo/res_partner_cursus_demo.xml',
         'demo/crm_lead_demo.xml',
+        'demo/crm_opportunity_demo.xml',
     ],
 }

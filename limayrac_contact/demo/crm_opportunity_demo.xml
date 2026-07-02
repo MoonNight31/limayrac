@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!--
+            Opportunités CRM = besoins des entreprises en stagiaires / alternants.
+            Rattachées au vendeur Administrator (base.user_admin). Pas de montant
+            (expected_revenue) : il ne s'agit pas de ventes.
+            NB : crm.lead.create() surcharge stage_id selon res_partner_id.
+            Ici on ne renseigne pas res_partner_id (champ "étudiant"), donc toutes
+            ces opportunités sont créées à l'étape "New" (stage_lead1). Le stage
+            cible réel est ensuite appliqué par le loader (_set_opportunity_stages).
+        -->
+        <record id="demo_opp_techcorp" model="crm.lead">
+            <field name="name">Besoin alternant développeur - TechCorp SA</field>
+            <field name="type">opportunity</field>
+            <field name="type_contract">2</field>
+            <field name="user_id" ref="base.user_admin"/>
+            <field name="team_id" ref="sales_team.team_sales_department"/>
+            <field name="partner_id" ref="demo_company_techcorp"/>
+            <field name="email_from">contact@techcorp.example</field>
+            <field name="probability">70</field>
+            <field name="priority">2</field>
+            <field name="date_deadline" eval="(DateTime.today() + relativedelta(days=30)).strftime('%Y-%m-%d')"/>
+        </record>
+
+        <record id="demo_opp_datasoft" model="crm.lead">
+            <field name="name">Besoin stagiaire - DataSoft Consulting</field>
+            <field name="type">opportunity</field>
+            <field name="type_contract">1</field>
+            <field name="user_id" ref="base.user_admin"/>
+            <field name="team_id" ref="sales_team.team_sales_department"/>
+            <field name="partner_id" ref="demo_company_datasoft"/>
+            <field name="email_from">contact@datasoft.example</field>
+            <field name="probability">45</field>
+            <field name="priority">1</field>
+            <field name="date_deadline" eval="(DateTime.today() + relativedelta(days=45)).strftime('%Y-%m-%d')"/>
+        </record>
+
+        <record id="demo_opp_cloudnet" model="crm.lead">
+            <field name="name">Besoin alternants réseaux - CloudNet Services</field>
+            <field name="type">opportunity</field>
+            <field name="type_contract">2</field>
+            <field name="user_id" ref="base.user_admin"/>
+            <field name="team_id" ref="sales_team.team_sales_department"/>
+            <field name="partner_id" ref="demo_company_cloudnet"/>
+            <field name="email_from">rh@cloudnet.example</field>
+            <field name="probability">30</field>
+            <field name="priority">3</field>
+            <field name="date_deadline" eval="(DateTime.today() + relativedelta(days=60)).strftime('%Y-%m-%d')"/>
+        </record>
+
+        <record id="demo_opp_pixelstudio" model="crm.lead">
+            <field name="name">Besoin stagiaire/alternant - Pixel Studio</field>
+            <field name="type">opportunity</field>
+            <field name="type_contract">3</field>
+            <field name="user_id" ref="base.user_admin"/>
+            <field name="team_id" ref="sales_team.team_sales_department"/>
+            <field name="partner_id" ref="demo_company_pixelstudio"/>
+            <field name="email_from">hello@pixelstudio.example</field>
+            <field name="probability">15</field>
+            <field name="priority">0</field>
+            <field name="date_deadline" eval="(DateTime.today() + relativedelta(days=90)).strftime('%Y-%m-%d')"/>
+        </record>
+
+        <record id="demo_opp_retailplus" model="crm.lead">
+            <field name="name">Besoin stagiaire - RetailPlus Distribution</field>
+            <field name="type">opportunity</field>
+            <field name="type_contract">1</field>
+            <field name="user_id" ref="base.user_admin"/>
+            <field name="team_id" ref="sales_team.team_sales_department"/>
+            <field name="partner_id" ref="demo_company_retailplus"/>
+            <field name="probability">55</field>
+            <field name="priority">2</field>
+            <field name="date_deadline" eval="(DateTime.today() + relativedelta(days=20)).strftime('%Y-%m-%d')"/>
+        </record>
+
+        <record id="demo_opp_webagence" model="crm.lead">
+            <field name="name">Besoin alternant - WebAgence</field>
+            <field name="type">opportunity</field>
+            <field name="type_contract">2</field>
+            <field name="user_id" ref="base.user_admin"/>
+            <field name="team_id" ref="sales_team.team_sales_department"/>
+            <field name="partner_id" ref="demo_company_webagence"/>
+            <field name="email_from">hello@webagence.example</field>
+            <field name="probability">100</field>
+            <field name="priority">3</field>
+            <field name="date_deadline" eval="(DateTime.today() + relativedelta(days=10)).strftime('%Y-%m-%d')"/>
+        </record>
+    </data>
+</odoo>
