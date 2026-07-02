@@ -33,7 +33,6 @@
                                 <templates>
                                     <t t-name="card">
                                         <div class="fw-bold"><field name="name"/></div>
-                                        <div><field name="vat"/></div>
                                         <div><field name="company_registry"/></div>
                                         <div><field name="res_partner_naf_id"/></div>
                                     </t>
@@ -45,26 +44,25 @@
                         <field name="res_partner_cursus_ids">
                             <list editable="bottom">
                                 <field name="limayrac_formations_id"/>
-                                <field name="start_date"/>
-                                <field name="end_date"/>
+                                <field name="start_date" string="Période" widget="daterange" options="{'end_date_field': 'end_date'}"/>
+                                <field name="end_date" column_invisible="1"/>
                                 <field name="is_diploma_obtained"/>
                             </list>
                         </field>
                     </page>
-                    <page name="limayrac_formations" string="Formations Limayrac" invisible="not limayrac_formations_ids">
+                    <page name="limayrac_formations" string="Formations Limayrac" invisible="not limayrac_formations_ids and not limayrac_formations_resp_ids">
                         <field name="limayrac_formations_ids" readonly="1">
                             <list>
                                 <field name="name"/>
                                 <field name="title_rncp_id"/>
-=                            </list>
+                            </list>
                         </field>
                     </page>
                 </xpath>
-                <xpath expr="//field[@name='vat']" position="attributes">
-                    <attribute name="invisible">1</attribute>
+                <xpath expr="//field[@name='company_type']" position="after">
+                    <field name="partner_type_ids" string="Type de contact" widget="many2many_checkboxes" nolabel="1"/>
                 </xpath>
-                <xpath expr="//field[@name='vat']" position="after">
-                    <field name="partner_type_ids" string="Type de contact" invisible="is_company" widget="many2many_checkboxes"/>
+                <xpath expr="//field[@name='website']" position="before">
                     <field name="company_registry" string="SIREN/SIRET" invisible="parent_id or not is_company" options="{'placeholder_field': 'company_registry_placeholder'}"/>
                     <field name="industry_id" invisible="not is_company" options="{'no_create': True}"/>
                     <field name="res_partner_naf_id" invisible="not is_company"/>
@@ -96,6 +94,11 @@
                     <filter string='Administratifs' name='partner_type_administratifs' domain="[('partner_type_ids.code', '=', 'type_003')]"/>
                     <filter string='Entreprises' name='partner_type_entreprises' domain="[('partner_type_ids.code', '=', 'type_004')]"/>
                     <filter string='Anciens étudiants' name='partner_type_anciens_etudiants' domain="[('partner_type_ids.code', '=', 'type_005')]"/>
+                    <separator/>
+                    <filter string="Élèves - année en cours" name="cursus_school_year_current"
+                        domain="['&amp;', ('res_partner_cursus_ids.start_date', '&lt;=', (context_today() - relativedelta(months=8) + relativedelta(month=9, day=1) + relativedelta(years=1, days=-1)).strftime('%Y-%m-%d')), '|', ('res_partner_cursus_ids.end_date', '=', False), ('res_partner_cursus_ids.end_date', '&gt;=', (context_today() - relativedelta(months=8) + relativedelta(month=9, day=1)).strftime('%Y-%m-%d'))]"/>
+                    <filter string="Élèves - année précédente" name="cursus_school_year_previous"
+                        domain="['&amp;', ('res_partner_cursus_ids.start_date', '&lt;=', (context_today() - relativedelta(months=8) + relativedelta(month=9, day=1) - relativedelta(days=1)).strftime('%Y-%m-%d')), '|', ('res_partner_cursus_ids.end_date', '=', False), ('res_partner_cursus_ids.end_date', '&gt;=', (context_today() - relativedelta(months=8) + relativedelta(month=9, day=1) - relativedelta(years=1)).strftime('%Y-%m-%d'))]"/>
                 </xpath>
 
                 <xpath expr="//group[@name='group_by']" position="inside">
