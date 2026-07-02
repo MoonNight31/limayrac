@@ -45,6 +45,17 @@
                                 </group>
                             </page>
                             <page name="responsables_pedagogiques" string="Responsables pédagogiques">
+                                <field name="res_partner_resp_ids">
+                                    <kanban>
+                                        <templates>
+                                            <t t-name="card">
+                                                <div class="fw-bold"><field name="name"/></div>
+                                            </t>
+                                        </templates>
+                                    </kanban>
+                                </field>
+                            </page>
+                            <page name="formators" string="Formateurs">
                                 <field name="res_partner_ids">
                                     <kanban>
                                         <templates>

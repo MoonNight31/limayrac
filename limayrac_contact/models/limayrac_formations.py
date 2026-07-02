@@ -12,7 +12,9 @@ class LimayracFormations(models.Model):
     question_five = fields.Char(string="Question 5")
     title_rncp_id = fields.Many2one('title.rncp', string="Titre RNCP", domain="[('is_valid', '=', True)]")
     old_rncp_ids = fields.Many2many('title.rncp', string="Ancien Titre RNCP", readonly=True)
-    res_partner_ids = fields.Many2many('res.partner', string='Responsables formation')
+    res_partner_resp_ids = fields.Many2many('res.partner', 'res_partner_limayrac_formations_resp_rel', 'limayrac_formations_id', 'res_partner_id', string='Responsables de sections')
+    res_partner_ids = fields.Many2many('res.partner', 'res_partner_limayrac_formations_rel', 'limayrac_formations_id', 'res_partner_id', string='Formateurs')
+    res_partner_cursus_ids = fields.One2many('res.partner.cursus', 'limayrac_formations_id', string='Cursus des contacts')
 
     def write(self, vals):
         for record in self:

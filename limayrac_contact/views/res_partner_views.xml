@@ -10,7 +10,10 @@
                     <field name="birthday_date" invisible='is_company'/>
                     <field name="headquarters_id" invisible="not is_company"/>
                 </xpath>
-                <xpath expr="//page[@name='internal_notes']" position="after">
+                <xpath expr="//page[@name='contact_addresses']" position="attributes">
+                    <attribute name="invisible">not is_company</attribute>
+                </xpath>
+                <xpath expr="//page[@name='internal_notes']" position="before">
                     <page name="services" string="Services" invisible='not is_company'>
                         <field name="res_partner_department_ids">
                             <list decoration-danger="is_blacklisted" editable="bottom">
@@ -25,7 +28,7 @@
                         </field>
                     </page>
                     <page name="subsidiaries" string="Filiales" invisible="not is_company">
-                        <field name="childs_company_ids">
+                        <field name="childs_company_ids" readonly="1" nolabel="1">
                             <kanban>
                                 <templates>
                                     <t t-name="card">
@@ -38,9 +41,24 @@
                             </kanban>
                         </field>
                     </page>
-                    <!-- <page name="needs" string="Besoins">
-                        <field name="services_needs_id"/>
-                    </page> -->
+                    <page name="cursus" string="Cursus" invisible="is_company">
+                        <field name="res_partner_cursus_ids">
+                            <list editable="bottom">
+                                <field name="limayrac_formations_id"/>
+                                <field name="start_date"/>
+                                <field name="end_date"/>
+                                <field name="is_diploma_obtained"/>
+                            </list>
+                        </field>
+                    </page>
+                    <page name="limayrac_formations" string="Formations Limayrac" invisible="not limayrac_formations_ids">
+                        <field name="limayrac_formations_ids" readonly="1">
+                            <list>
+                                <field name="name"/>
+                                <field name="title_rncp_id"/>
+=                            </list>
+                        </field>
+                    </page>
                 </xpath>
                 <xpath expr="//field[@name='vat']" position="attributes">
                     <attribute name="invisible">1</attribute>
