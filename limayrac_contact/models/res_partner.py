@@ -34,11 +34,15 @@ class ResPartner(models.Model):
 
     @api.depends('limayrac_formations_ids', 'limayrac_formations_resp_ids', 'res_partner_cursus_ids', 'user_id', 'is_company')
     def _compute_partner_type_ids(self):
-        type_001 = self.env.ref('limayrac_contact.type_001')
-        type_002 = self.env.ref('limayrac_contact.type_002')
-        type_003 = self.env.ref('limayrac_contact.type_003')
-        type_004 = self.env.ref('limayrac_contact.type_004')
-        type_005 = self.env.ref('limayrac_contact.type_005')
+        empty = self.env['res.partner.type']
+        # raise_if_not_found=False : ce compute peut se déclencher pendant
+        # l'installation (init_models), avant que les types de démo/données
+        # ne soient chargés en base. On tolère alors leur absence.
+        type_001 = self.env.ref('limayrac_contact.type_001', raise_if_not_found=False) or empty
+        type_002 = self.env.ref('limayrac_contact.type_002', raise_if_not_found=False) or empty
+        type_003 = self.env.ref('limayrac_contact.type_003', raise_if_not_found=False) or empty
+        type_004 = self.env.ref('limayrac_contact.type_004', raise_if_not_found=False) or empty
+        type_005 = self.env.ref('limayrac_contact.type_005', raise_if_not_found=False) or empty
         for record in self:
             types = self.env['res.partner.type']
             if record.limayrac_formations_ids or record.limayrac_formations_resp_ids:
