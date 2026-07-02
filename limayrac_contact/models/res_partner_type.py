@@ -5,3 +5,4 @@ class ResPartnerType(models.Model):
     _description = 'Res Partner Type'
 
     name = fields.Char(string='Nom',)
+    code = fields.Char(string='Code')
