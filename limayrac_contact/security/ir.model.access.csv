@@ -3,3 +3,4 @@ access_res_partner_department,res.partner.department,model_res_partner_departmen
 access_res_partner_naf,res.partner.naf,model_res_partner_naf,base.group_user,1,1,1,1
 access_limayrac_formations,limayrac.formations,model_limayrac_formations,base.group_user,1,1,1,1
 access_title_rncp,title.rncp,model_title_rncp,base.group_user,1,1,1,1
+access_services_needs,services.needs,model_services_needs,base.group_user,1,1,1,1
