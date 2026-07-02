@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="demo_formation_cda" model="limayrac.formations">
+            <field name="name">Bachelor Développement d'Applications</field>
+            <field name="title_rncp_id" ref="demo_rncp_dev"/>
+            <field name="question_one">Quel est votre niveau en programmation ?</field>
+            <field name="question_two">Avez-vous déjà réalisé un projet web ?</field>
+            <field name="question_three">Maîtrisez-vous une base de données ?</field>
+        </record>
+
+        <record id="demo_formation_asr" model="limayrac.formations">
+            <field name="name">Bachelor Administration Systèmes &amp; Réseaux</field>
+            <field name="title_rncp_id" ref="demo_rncp_admin_reseau"/>
+            <field name="question_one">Connaissez-vous Linux ?</field>
+            <field name="question_two">Avez-vous des notions de réseau (TCP/IP) ?</field>
+        </record>
+
+        <record id="demo_formation_marketing" model="limayrac.formations">
+            <field name="name">Bachelor Marketing Digital</field>
+            <field name="title_rncp_id" ref="demo_rncp_marketing"/>
+            <field name="question_one">Avez-vous géré des réseaux sociaux professionnels ?</field>
+            <field name="question_two">Connaissez-vous les bases du SEO ?</field>
+        </record>
+    </data>
+</odoo>

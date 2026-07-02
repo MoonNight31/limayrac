@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="demo_department_rh" model="res.partner.department">
+            <field name="name">Ressources Humaines</field>
+            <field name="res_partner_id" ref="demo_company_techcorp"/>
+        </record>
+
+        <record id="demo_department_dsi" model="res.partner.department">
+            <field name="name">Direction des Systèmes d'Information</field>
+            <field name="res_partner_id" ref="demo_company_techcorp"/>
+        </record>
+
+        <record id="demo_department_commercial" model="res.partner.department">
+            <field name="name">Service Commercial</field>
+            <field name="res_partner_id" ref="demo_company_webagence"/>
+        </record>
+
+        <!-- Service blacklisté : teste is_blacklisted / reason_blacklist -->
+        <record id="demo_department_blacklist" model="res.partner.department">
+            <field name="name">Service Achats (blacklisté)</field>
+            <field name="res_partner_id" ref="demo_company_techcorp_filiale"/>
+            <field name="is_blacklisted" eval="True"/>
+            <field name="reason_blacklist">Litige commercial non résolu.</field>
+        </record>
+    </data>
+</odoo>

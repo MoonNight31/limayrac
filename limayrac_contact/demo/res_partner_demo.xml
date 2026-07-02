@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- ============ ENTREPRISES (partenaires / prospects) ============ -->
+        <record id="demo_company_techcorp" model="res.partner">
+            <field name="name">TechCorp SA</field>
+            <field name="is_company" eval="True"/>
+            <field name="is_partenaire" eval="True"/>
+            <field name="street">12 rue de l'Innovation</field>
+            <field name="city">Toulouse</field>
+            <field name="zip">31000</field>
+            <field name="email">contact@techcorp.example</field>
+            <field name="phone">+33 5 61 00 00 01</field>
+            <field name="res_partner_naf_id" ref="naf_2620Z"/>
+        </record>
+
+        <!-- Filiale de TechCorp : teste headquarters_id / childs_company_ids -->
+        <record id="demo_company_techcorp_filiale" model="res.partner">
+            <field name="name">TechCorp Sud SARL</field>
+            <field name="is_company" eval="True"/>
+            <field name="is_partenaire" eval="True"/>
+            <field name="headquarters_id" ref="demo_company_techcorp"/>
+            <field name="city">Montpellier</field>
+            <field name="zip">34000</field>
+            <field name="res_partner_naf_id" ref="naf_2620Z"/>
+        </record>
+
+        <record id="demo_company_webagence" model="res.partner">
+            <field name="name">WebAgence Prospect SARL</field>
+            <field name="is_company" eval="True"/>
+            <field name="is_prospect" eval="True"/>
+            <field name="city">Blagnac</field>
+            <field name="zip">31700</field>
+            <field name="email">hello@webagence.example</field>
+            <field name="res_partner_naf_id" ref="naf_2611Z"/>
+        </record>
+
+        <record id="demo_company_blacklist" model="res.partner">
+            <field name="name">Société Bannie SAS</field>
+            <field name="is_company" eval="True"/>
+            <field name="is_blacklist" eval="True"/>
+            <field name="city">Toulouse</field>
+            <field name="zip">31200</field>
+        </record>
+
+        <!-- ============ FORMATEURS (liés aux formations) ============ -->
+        <record id="demo_partner_formateur_1" model="res.partner">
+            <field name="name">Julien Moreau</field>
+            <field name="is_company" eval="False"/>
+            <field name="function">Formateur Développement</field>
+            <field name="email">j.moreau@limayrac.example</field>
+            <field name="birthday_date" eval="(DateTime.today() - relativedelta(years=38)).strftime('%Y-%m-%d')"/>
+            <field name="limayrac_formations_ids" eval="[(6, 0, [ref('demo_formation_cda')])]"/>
+            <field name="limayrac_formations_resp_ids" eval="[(6, 0, [ref('demo_formation_cda')])]"/>
+        </record>
+
+        <record id="demo_partner_formateur_2" model="res.partner">
+            <field name="name">Sophie Bernard</field>
+            <field name="is_company" eval="False"/>
+            <field name="function">Formatrice Systèmes &amp; Réseaux</field>
+            <field name="email">s.bernard@limayrac.example</field>
+            <field name="birthday_date" eval="(DateTime.today() - relativedelta(years=42)).strftime('%Y-%m-%d')"/>
+            <field name="limayrac_formations_ids" eval="[(6, 0, [ref('demo_formation_asr')])]"/>
+            <field name="limayrac_formations_resp_ids" eval="[(6, 0, [ref('demo_formation_asr'), ref('demo_formation_marketing')])]"/>
+        </record>
+
+        <!-- ============ ÉTUDIANTS ============ -->
+        <record id="demo_partner_etudiant_1" model="res.partner">
+            <field name="name">Lucas Petit</field>
+            <field name="is_company" eval="False"/>
+            <field name="email">lucas.petit@student.example</field>
+            <field name="birthday_date" eval="(DateTime.today() - relativedelta(years=20)).strftime('%Y-%m-%d')"/>
+        </record>
+
+        <record id="demo_partner_etudiant_2" model="res.partner">
+            <field name="name">Emma Durand</field>
+            <field name="is_company" eval="False"/>
+            <field name="email">emma.durand@student.example</field>
+            <field name="birthday_date" eval="(DateTime.today() - relativedelta(years=22)).strftime('%Y-%m-%d')"/>
+        </record>
+
+        <record id="demo_partner_etudiant_3" model="res.partner">
+            <field name="name">Nathan Roux</field>
+            <field name="is_company" eval="False"/>
+            <field name="email">nathan.roux@student.example</field>
+            <field name="birthday_date" eval="(DateTime.today() - relativedelta(years=19)).strftime('%Y-%m-%d')"/>
+        </record>
+    </data>
+</odoo>

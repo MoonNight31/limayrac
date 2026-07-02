@@ -29,4 +29,12 @@
         # #MENU
         # 'views/menu.xml',
     ],
+    'demo': [
+        'demo/title_rncp_demo.xml',
+        'demo/limayrac_formations_demo.xml',
+        'demo/res_partner_demo.xml',
+        'demo/res_partner_department_demo.xml',
+        'demo/res_partner_cursus_demo.xml',
+        'demo/crm_lead_demo.xml',
+    ],
 }

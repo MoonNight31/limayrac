@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Cursus en cours -->
+        <record id="demo_cursus_lucas" model="res.partner.cursus">
+            <field name="res_partner_id" ref="demo_partner_etudiant_1"/>
+            <field name="limayrac_formations_id" ref="demo_formation_cda"/>
+            <field name="start_date" eval="(DateTime.today() - relativedelta(months=6)).strftime('%Y-%m-%d')"/>
+            <field name="is_diploma_obtained" eval="False"/>
+        </record>
+
+        <record id="demo_cursus_emma" model="res.partner.cursus">
+            <field name="res_partner_id" ref="demo_partner_etudiant_2"/>
+            <field name="limayrac_formations_id" ref="demo_formation_asr"/>
+            <field name="start_date" eval="(DateTime.today() - relativedelta(months=8)).strftime('%Y-%m-%d')"/>
+            <field name="is_diploma_obtained" eval="False"/>
+        </record>
+
+        <!-- Cursus terminé avec diplôme obtenu -->
+        <record id="demo_cursus_nathan" model="res.partner.cursus">
+            <field name="res_partner_id" ref="demo_partner_etudiant_3"/>
+            <field name="limayrac_formations_id" ref="demo_formation_marketing"/>
+            <field name="start_date" eval="(DateTime.today() - relativedelta(years=2)).strftime('%Y-%m-%d')"/>
+            <field name="end_date" eval="(DateTime.today() - relativedelta(months=2)).strftime('%Y-%m-%d')"/>
+            <field name="is_diploma_obtained" eval="True"/>
+        </record>
+    </data>
+</odoo>

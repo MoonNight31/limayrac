@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Lead avec étudiant associé : le stage passe à Qualified via le create() -->
+        <record id="demo_lead_stage" model="crm.lead">
+            <field name="name">Recherche stage - Lucas Petit</field>
+            <field name="type">lead</field>
+            <field name="type_contract">1</field>
+            <field name="res_partner_id" ref="demo_partner_etudiant_1"/>
+            <field name="partner_id" ref="demo_company_techcorp"/>
+            <field name="email_from">lucas.petit@student.example</field>
+        </record>
+
+        <record id="demo_lead_alternance" model="crm.lead">
+            <field name="name">Recherche alternance - Emma Durand</field>
+            <field name="type">lead</field>
+            <field name="type_contract">2</field>
+            <field name="res_partner_id" ref="demo_partner_etudiant_2"/>
+            <field name="partner_id" ref="demo_company_webagence"/>
+            <field name="email_from">emma.durand@student.example</field>
+        </record>
+
+        <!-- Lead sans étudiant : reste à l'étape New -->
+        <record id="demo_lead_sans_etudiant" model="crm.lead">
+            <field name="name">Demande d'information entreprise</field>
+            <field name="type">lead</field>
+            <field name="type_contract">3</field>
+            <field name="partner_id" ref="demo_company_techcorp_filiale"/>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="demo_rncp_dev" model="title.rncp">
+            <field name="name">Concepteur Développeur d'Applications</field>
+            <field name="code_rncp">RNCP31678</field>
+            <field name="start_date" eval="(DateTime.today() - relativedelta(years=2)).strftime('%Y-%m-%d')"/>
+            <field name="end_date" eval="(DateTime.today() + relativedelta(years=3)).strftime('%Y-%m-%d')"/>
+        </record>
+
+        <record id="demo_rncp_admin_reseau" model="title.rncp">
+            <field name="name">Administrateur Système, Réseau et Sécurité</field>
+            <field name="code_rncp">RNCP37680</field>
+            <field name="start_date" eval="(DateTime.today() - relativedelta(years=1)).strftime('%Y-%m-%d')"/>
+            <field name="end_date" eval="(DateTime.today() + relativedelta(years=4)).strftime('%Y-%m-%d')"/>
+        </record>
+
+        <record id="demo_rncp_marketing" model="title.rncp">
+            <field name="name">Responsable Marketing Digital</field>
+            <field name="code_rncp">RNCP34079</field>
+            <field name="start_date" eval="(DateTime.today() - relativedelta(years=3)).strftime('%Y-%m-%d')"/>
+            <field name="end_date" eval="(DateTime.today() + relativedelta(years=2)).strftime('%Y-%m-%d')"/>
+        </record>
+
+        <!-- Titre expiré : sert à vérifier le compute is_valid = False -->
+        <record id="demo_rncp_expire" model="title.rncp">
+            <field name="name">Ancien Titre Développeur Web (expiré)</field>
+            <field name="code_rncp">RNCP25000</field>
+            <field name="start_date" eval="(DateTime.today() - relativedelta(years=6)).strftime('%Y-%m-%d')"/>
+            <field name="end_date" eval="(DateTime.today() - relativedelta(years=1)).strftime('%Y-%m-%d')"/>
+        </record>
+    </data>
+</odoo>
