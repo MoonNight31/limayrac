@@ -14,6 +14,7 @@
         'security/ir.model.access.csv',
         # #DATA
         'data/default_res_partner_naf.xml',
+        'data/default_res_partner_type.xml',
         # 'data/res_groups.xml',
         # #VIEWS
         'views/res_partner_views.xml',

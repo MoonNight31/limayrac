@@ -14,7 +14,6 @@ class ResPartner(models.Model):
     res_partner_naf_id = fields.Many2one(
         'res.partner.naf',
         string='Code NAF')
-    # services_needs_id = fields.Many2one('services.needs', string='Besoins')
-
+    partner_type_ids = fields.Many2many('res.partner.type', string='Type de partenaire')
     headquarters_id = fields.Many2one('res.partner', string='Siège social', domain="[('is_company', '=', True), ('id', '!=', id)]")
     childs_company_ids = fields.One2many('res.partner', 'headquarters_id', string='Filiales')
