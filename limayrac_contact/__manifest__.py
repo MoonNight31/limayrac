@@ -19,11 +19,11 @@
         'views/res_partner_views.xml',
         'views/res_partner_department_views.xml',
         'views/res_partner_naf_views.xml',
-        'views/limayrac_formation_views.xml'
+        'views/limayrac_formation_views.xml',
         # #REPORT
         # 'report/report_estate_property.xml',
         # # WIZARD
-        # 'wizard/mon_super_wizard_views.xml',
+        'wizard/res_partner_blacklist_wizard_views.xml',
         # #MENU
         # 'views/menu.xml',
     ],
