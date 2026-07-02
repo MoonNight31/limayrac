@@ -3,15 +3,23 @@
     <data noupdate="1">
         <record id="type_001" model="res.partner.type">
             <field name="name">Formateur</field>
+            <field name="code">type_001</field>
         </record>
         <record id="type_002" model="res.partner.type">
             <field name="name">Étudiant</field>
+            <field name="code">type_002</field>
         </record>
         <record id="type_003" model="res.partner.type">
             <field name="name">Administratif</field>
+            <field name="code">type_003</field>
         </record>
         <record id="type_004" model="res.partner.type">
             <field name="name">Entreprise</field>
+            <field name="code">type_004</field>
+        </record>
+        <record id="type_005" model="res.partner.type">
+            <field name="name">Ancien étudiant</field>
+            <field name="code">type_005</field>
         </record>
     </data>
 </odoo>

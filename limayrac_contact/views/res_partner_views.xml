@@ -89,9 +89,25 @@
             <field name="model">res.partner</field>
             <field name="inherit_id" ref="base.view_res_partner_filter"/>
             <field name="arch" type="xml">
+                
                 <xpath expr="//filter[@name='type_company']" position="after">
-                    <filter name='is_prospect' string="Prospect" domain="[('is_prospect', '=', True)]"/>
+                    <filter string='Formateurs' name='partner_type_formateurs' domain="[('partner_type_ids.code', '=', 'type_001')]"/>
+                    <filter string='Étudiants' name='partner_type_etudiants' domain="[('partner_type_ids.code', '=', 'type_002')]"/>
+                    <filter string='Administratifs' name='partner_type_administratifs' domain="[('partner_type_ids.code', '=', 'type_003')]"/>
+                    <filter string='Entreprises' name='partner_type_entreprises' domain="[('partner_type_ids.code', '=', 'type_004')]"/>
+                    <filter string='Anciens étudiants' name='partner_type_anciens_etudiants' domain="[('partner_type_ids.code', '=', 'type_005')]"/>
                 </xpath>
+
+                <xpath expr="//group[@name='group_by']" position="inside">
+                    <filter name='limayrac_formations_ids' string="Enseignants par formations" domain="[('limayrac_formations_ids', '!=', False), ('partner_type_ids.code', '=', 'type_001')]" context="{'group_by' : 'limayrac_formations_ids'}"/>
+                    <filter name='cursus_formations_ids' string="Élèves par formations" domain="[('cursus_formations_ids', '!=', False), ('partner_type_ids.code', '=', 'type_002')]" context="{'group_by' : 'cursus_formations_ids'}"/>
+                    <filter name='partner_type_ids' string="Type de contact" domain="[('partner_type_ids', '!=', False)]" context="{'group_by' : 'partner_type_ids'}"/>
+                </xpath>
+                <xpath expr="//filter[@name='type_person']" position="replace"/>
+                <xpath expr="//filter[@name='type_company']" position="replace"/>
+                <xpath expr="//filter[@name='salesperson']" position="replace"/>
+                <xpath expr="//filter[@name='group_country']" position="replace"/>
+                <xpath expr="//filter[@name='group_by_properties']" position="replace"/>
             </field>
         </record>
     </data>
