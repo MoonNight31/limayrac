@@ -38,9 +38,9 @@
                             </kanban>
                         </field>
                     </page>
-                    <page name="needs" string="Besoins">
+                    <!-- <page name="needs" string="Besoins">
                         <field name="services_needs_id"/>
-                    </page>
+                    </page> -->
                 </xpath>
                 <xpath expr="//field[@name='vat']" position="attributes">
                     <attribute name="invisible">1</attribute>
