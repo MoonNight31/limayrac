@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_crm_lead_form_limayrac" model="ir.ui.view">
+            <field name="name">crm.lead.form.limayrac</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+            <field name="arch" type="xml">
+
+            <xpath expr="//h2[@class='row g-0 pb-3 pb-sm-4']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            
+            <xpath expr="//field[@name='stage_id']" position="attributes">
+                <attribute name="readonly">1</attribute>
+            </xpath>
+
+            <xpath expr="//div[hasclass('oe_title')]" position="after">
+                <field name="type_contract" widget="radio" options="{'horizontal': true}"/>
+            </xpath>
+
+            <xpath expr="//div[@class='d-flex gap-3 align-items-center']" position="after">
+                <field name="res_partner_id"/>
+            </xpath>
+
+            <xpath expr="//button[@name='action_set_won_rainbowman']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -8,7 +8,7 @@
     'author': 'Limayrac',
     'website': 'http://www.limayrac.com',
     'category': 'Uncategorized',
-    'depends': ['base', 'contacts'],
+    'depends': ['base', 'contacts', 'crm'],
     'data': [
         #SECURITY
         'security/ir.model.access.csv',
@@ -20,6 +20,7 @@
         'views/res_partner_department_views.xml',
         'views/res_partner_naf_views.xml',
         'views/limayrac_formation_views.xml',
+        'views/crm_lead_views.xml',
         # #REPORT
         # 'report/report_estate_property.xml',
         # # WIZARD
