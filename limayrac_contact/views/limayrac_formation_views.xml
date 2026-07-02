@@ -35,7 +35,13 @@
                         <notebook>
                             <page name="title_rncp" string="Ancien titre RNCP associé">
                                 <group>
-                                    <field name="title_rncp_id"/>
+                                    <field name="old_rncp_ids" readonly="1" nolabel="1">
+                                        <list decoration-danger="not is_valid">
+                                            <field name="name"/>
+                                            <field name="code_rncp"/>
+                                            <field name="is_valid"/>
+                                        </list>
+                                    </field>
                                 </group>
                             </page>
                             <page name="responsables_pedagogiques" string="Responsables pédagogiques">
