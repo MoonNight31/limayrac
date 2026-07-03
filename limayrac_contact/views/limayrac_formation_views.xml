@@ -66,6 +66,15 @@
                                     </kanban>
                                 </field>
                             </page>
+                            <page name="opportunites" string="Opportunités en cours">
+                                <field name="crm_lead_ongoing_ids" readonly="1" nolabel="1">
+                                    <list>
+                                        <field name="name"/>
+                                        <field name="res_partner_id"/>
+                                        <field name="type_contract"/>
+                                    </list>
+                                </field>
+                            </page>
                         </notebook>
                     </sheet>
                 </form>

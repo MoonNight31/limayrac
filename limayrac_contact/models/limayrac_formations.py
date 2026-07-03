@@ -15,6 +15,15 @@ class LimayracFormations(models.Model):
     res_partner_resp_ids = fields.Many2many('res.partner', 'res_partner_limayrac_formations_resp_rel', 'limayrac_formations_id', 'res_partner_id', string='Responsables de sections')
     res_partner_ids = fields.Many2many('res.partner', 'res_partner_limayrac_formations_rel', 'limayrac_formations_id', 'res_partner_id', string='Formateurs')
     res_partner_cursus_ids = fields.One2many('res.partner.cursus', 'limayrac_formations_id', string='Cursus des contacts')
+    crm_lead_ids = fields.Many2many('crm.lead', 'crm_lead_limayrac_formations_rel', 'limayrac_formations_id', 'crm_lead_id', string='Opportunités associées')
+    crm_lead_ongoing_ids = fields.Many2many('crm.lead', string='Opportunités en cours', compute='_compute_crm_lead_ongoing_ids')
+
+    @api.depends('crm_lead_ids', 'crm_lead_ids.won_status')
+    def _compute_crm_lead_ongoing_ids(self):
+        for record in self:
+            record.crm_lead_ongoing_ids = record.crm_lead_ids.filtered(
+                lambda lead: lead.won_status == 'pending'
+            )
 
     def write(self, vals):
         partners_before = self.res_partner_ids | self.res_partner_resp_ids
