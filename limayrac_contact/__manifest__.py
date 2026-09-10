@@ -1,14 +1,14 @@
 {
     'name': 'Limayrac Contact',
     'version': '0.1',
-    'summary': 'A brief summary of the module',
+    'summary': 'Module to manage Limayrac contacts and related information.',
     'description': """
         A detailed description of the module.
     """,
     'author': 'Limayrac',
     'website': 'http://www.limayrac.com',
     'category': 'Uncategorized',
-    'depends': ['base', 'contacts', 'crm'],
+    'depends': ['base', 'contacts', 'crm', 'mail'],
     'data': [
         #SECURITY
         'security/ir.model.access.csv',
@@ -16,6 +16,7 @@
         'data/default_res_partner_naf.xml',
         'data/default_res_partner_type.xml',
         'data/cron_load_demo.xml',
+        'data/mail_template_rdv_sre.xml',
         # 'data/res_groups.xml',
         # #VIEWS
         'views/res_partner_views.xml',

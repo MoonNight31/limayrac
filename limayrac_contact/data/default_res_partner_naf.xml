@@ -2468,8 +2468,7 @@ périphériques)</field>
         </record>
         <record id="naf_7740Z" model="res.partner.naf">
             <field name="code">7740Z</field>
-            <field name="activity">Location-bail de propriété intellectuelle et de produits similaires, à l'exception des œuvres soumises à
-copyright</field>
+            <field name="activity">Location-bail de propriété intellectuelle et de produits similaires, à l'exception des œuvres soumises à copyright</field>
         </record>
         <record id="naf_7810Z" model="res.partner.naf">
             <field name="code">7810Z</field>
@@ -2565,8 +2564,7 @@ copyright</field>
         </record>
         <record id="naf_8412Z" model="res.partner.naf">
             <field name="code">8412Z</field>
-            <field name="activity">Administration publique (tutelle) de la santé, de la formation, de la culture et des services sociaux, autre que
-sécurité sociale</field>
+            <field name="activity">Administration publique (tutelle) de la santé, de la formation, de la culture et des services sociaux, autre que sécurité sociale</field>
         </record>
         <record id="naf_8413Z" model="res.partner.naf">
             <field name="code">8413Z</field>

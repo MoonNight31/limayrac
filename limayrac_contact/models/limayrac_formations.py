@@ -44,4 +44,3 @@ class LimayracFormations(models.Model):
         res = super(LimayracFormations, self).unlink()
         partners.modified(['limayrac_formations_ids', 'limayrac_formations_resp_ids'])
         return res
-

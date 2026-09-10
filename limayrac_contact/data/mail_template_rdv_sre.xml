@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <record id="mail_template_rdv_sre" model="mail.template">
+        <field name="name">Demande de rendez-vous - Service Relations Entreprises</field>
+        <field name="model_id" ref="base.model_res_partner"/>
+        <field name="subject">Limayrac - Rendez-vous partenariat alternance : {{ object.name }}</field>
+        <field name="email_from">{{ user.email_formatted }}</field>
+        <field name="email_to">{{ object.email }}</field>
+        <field name="lang">{{ object.lang }}</field>
+        <field name="auto_delete" eval="False"/>
+        <field name="body_html" type="html">
+            <div style="margin:0px;padding:0px;font-size:13px;font-family:Arial,sans-serif;">
+                <p>Bonjour <t t-out="object.name or 'Madame, Monsieur'"/>,</p>
+
+                <p>
+                    Je suis <t t-out="user.name or ''"/>, du Service Relations Entreprises
+                    de Limayrac. Je vous contacte au sujet de l'accueil d'alternants
+                    au sein de votre structure.
+                </p>
+
+                <t t-if="object.res_partner_naf_id and object.res_partner_naf_id.activity">
+                    <p>
+                        Nous accompagnons plusieurs entreprises du secteur
+                        « <t t-out="object.res_partner_naf_id.activity"/> » et formons
+                        chaque année des étudiants en alternance sur ces métiers.
+                    </p>
+                </t>
+
+                <p>
+                    Je souhaiterais échanger avec vous sur vos besoins en recrutement
+                    ainsi que sur les profils que nous formons.
+                </p>
+
+                <p>
+                    Seriez-vous disponible pour un échange d'une trentaine de minutes,
+                    en visioconférence ou dans vos locaux ? Je m'adapte bien entendu
+                    à vos disponibilités.
+                </p>
+
+                <p>
+                    Dans l'attente de votre retour, je vous prie d'agréer,
+                    <t t-out="object.name or 'Madame, Monsieur'"/>, mes salutations distinguées.
+                </p>
+
+                <p>
+                    <t t-out="user.name or ''"/><br/>
+                    Service Relations Entreprises - Limayrac<br/>
+                    <t t-out="user.email or ''"/><t t-if="user.phone"> - <t t-out="user.phone"/></t>
+                </p>
+            </div>
+        </field>
+    </record>
+</odoo>

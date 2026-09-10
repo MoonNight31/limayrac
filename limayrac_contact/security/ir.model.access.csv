@@ -4,6 +4,5 @@ access_res_partner_naf,res.partner.naf,model_res_partner_naf,base.group_user,1,1
 access_limayrac_formations,limayrac.formations,model_limayrac_formations,base.group_user,1,1,1,1
 access_title_rncp,title.rncp,model_title_rncp,base.group_user,1,1,1,1
 access_res_partner_blacklist_wizard,res.partner.blacklist.wizard,model_res_partner_blacklist_wizard,base.group_user,1,1,1,1
-access_res_partner_blacklist_wizard,res.partner.blacklist.wizard,model_res_partner_blacklist_wizard,base.group_user,1,1,1,1
 access_res_partner_type,res.partner.type,model_res_partner_type,base.group_user,1,1,1,1
 access_res_partner_cursus,res.partner.cursus,model_res_partner_cursus,base.group_user,1,1,1,1
