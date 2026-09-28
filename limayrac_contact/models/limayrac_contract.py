@@ -1,5 +1,5 @@
 from odoo import models, fields, api
-from odoo.exceptions import ValidationError
+from odoo.exceptions import UserError, ValidationError
 
 class LimayracContract(models.Model):
     _name = 'limayrac.contract'
@@ -13,8 +13,10 @@ class LimayracContract(models.Model):
         [('1', 'Stage'), ('2', 'Alternance')],
         string='Type de contrat', required=True, tracking=True)
     state = fields.Selection([
-        ('draft', 'Brouillon'),
-        ('signed', 'Signé'),
+        ('draft', 'En attente signature'),
+        ('company_signed', "Signé par l'entreprise"),
+        ('cfa_signed', 'Signé par le CFA'),
+        ('validated', 'Validé'),
         ('running', 'En cours'),
         ('done', 'Terminé'),
         ('cancel', 'Annulé'),
@@ -179,18 +181,18 @@ class LimayracContract(models.Model):
         return super().create(vals_list)
 
     def _sync_lead_won(self):
-        """L'opportunité est gagnée dès qu'un de ses contrats est signé."""
+        """L'opportunité est gagnée dès qu'un de ses contrats est validé."""
         for record in self:
             lead = record.crm_lead_id
             if not lead:
                 continue
-            has_signed = any(
-                contract.state in ('signed', 'running', 'done')
+            has_validated = any(
+                contract.state in ('validated', 'running', 'done')
                 for contract in lead.contract_ids
             )
-            if has_signed and lead.won_status != 'won':
+            if has_validated and lead.won_status != 'won':
                 lead.action_set_won()
-            elif not has_signed and lead.won_status == 'won':
+            elif not has_validated and lead.won_status == 'won':
                 lead.stage_id = lead._stage_for_partner(bool(lead.res_partner_id))
 
     def _check_ready_to_sign(self):
@@ -208,27 +210,44 @@ class LimayracContract(models.Model):
                     "Impossible de signer le contrat %s : renseignez %s." % (
                         record.name, ', '.join(missing)))
 
-    def action_sign(self):
+    def _check_state(self, expected_state, action_label):
+        # Les boutons sont masqués hors de leur étape, mais un appel direct
+        # (RPC, double-clic sur un formulaire périmé) les contourne.
+        wrong = self.filtered(lambda c: c.state != expected_state)
+        if wrong:
+            raise UserError("Action « %s » impossible sur le contrat %s à l'étape « %s »." % (
+                action_label, wrong[0].name,
+                dict(self._fields['state'].selection)[wrong[0].state]))
+
+    def action_company_sign(self):
+        self._check_state('draft', "Signature entreprise")
         self._check_ready_to_sign()
-        self.write({'state': 'signed'})
+        self.write({'state': 'company_signed'})
+
+    def action_cfa_sign(self):
+        self._check_state('company_signed', "Signature CFA")
+        self.write({'state': 'cfa_signed'})
+
+    def action_validate(self):
+        self._check_state('cfa_signed', "Valider")
+        self.write({'state': 'validated'})
         self._sync_lead_won()
-        # Un contrat signé alors que sa période a déjà commencé ne doit pas
+        # Un contrat validé alors que sa période a déjà commencé ne doit pas
         # attendre le passage du cron le lendemain.
         self._update_state_from_dates()
-
 
     def _update_state_from_dates(self):
         """Fait avancer le contrat selon ses dates, sans action manuelle.
 
-        signed -> running à la date de début, puis running -> done au lendemain
-        de la date de fin. Les états draft et cancel ne bougent pas : un contrat
-        non signé ou annulé ne démarre jamais tout seul.
+        validated -> running à la date de début, puis running -> done au
+        lendemain de la date de fin. Les étapes de signature et cancel ne
+        bougent pas : un contrat non validé ou annulé ne démarre jamais tout seul.
         """
         today = fields.Date.today()
         to_run = self.filtered(
-            lambda c: c.state == 'signed' and c.start_date <= today < c.end_date)
+            lambda c: c.state == 'validated' and c.start_date <= today < c.end_date)
         to_done = self.filtered(
-            lambda c: c.state in ('signed', 'running') and c.end_date < today)
+            lambda c: c.state in ('validated', 'running') and c.end_date < today)
         if to_run:
             to_run.write({'state': 'running'})
         if to_done:
@@ -240,7 +259,7 @@ class LimayracContract(models.Model):
         """Balaie quotidiennement les contrats dont la période a évolué."""
         today = fields.Date.today()
         contracts = self.search([
-            ('state', 'in', ('signed', 'running')),
+            ('state', 'in', ('validated', 'running')),
             '|', ('start_date', '<=', today), ('end_date', '<', today),
         ])
         updated = contracts._update_state_from_dates()

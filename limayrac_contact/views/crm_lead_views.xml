@@ -42,6 +42,15 @@
             </xpath>
 
             <xpath expr="//page[@name='internal_notes']" position="before">
+                    <page name="candidatures" string="Candidatures">
+                            <field name="res_partner_ids" widget="many2many">
+                            <list>
+                                <field name="name"/>
+                            </list>
+                            </field>
+                    </page>
+            </xpath>
+            <xpath expr="//page[@name='internal_notes']" position="before">
                     <page name="formations" string="Formations Limayrac">
                             <field name="limayrac_formation_ids" widget="many2many">
                             <list>

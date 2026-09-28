@@ -3,7 +3,8 @@ from odoo import models, fields, api
 class CrmLead(models.Model):
     _inherit = 'crm.lead'
 
-    res_partner_id = fields.Many2one('res.partner', string='Etudiant associé', domain="[('is_company', '=', False), ('partner_type_ids.code', '=', 'type_002')]")
+    res_partner_id = fields.Many2one('res.partner', string='Etudiant choisi', domain="[('is_company', '=', False), ('partner_type_ids.code', '=', 'type_002')]")
+    res_partner_ids = fields.Many2many('res.partner', 'crm_lead_res_partner_rel', 'crm_lead_id', 'res_partner_id', string='Candidatures', domain="[('is_company', '=', False), ('partner_type_ids.code', '=', 'type_002')]")
     type_contract = fields.Selection([('1', 'Stage'), ('2', 'Alternance'), ('3', 'Stage/Alternance')], string='Type de contrat')
     limayrac_formation_ids = fields.Many2many('limayrac.formations', 'crm_lead_limayrac_formations_rel', 'crm_lead_id', 'limayrac_formations_id', string='Formations Limayrac')
     contract_ids = fields.One2many('limayrac.contract', 'crm_lead_id', string='Contrats')
