@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_limayrac_contract_list" model="ir.ui.view">
+            <field name="name">limayrac.contract.list</field>
+            <field name="model">limayrac.contract</field>
+            <field name="arch" type="xml">
+                <list string="Contrats" decoration-muted="state == 'cancel'" decoration-success="state == 'running'">
+                    <field name="name"/>
+                    <field name="contract_type"/>
+                    <field name="student_id"/>
+                    <field name="company_partner_id"/>
+                    <field name="department_id"/>
+                    <field name="company_tutor_id"/>
+                    <field name="company_tutor2_id" optional="show"/>
+                    <field name="school_tutor_id"/>
+                    <field name="limayrac_formation_id"/>
+                    <field name="start_date"/>
+                    <field name="end_date"/>
+                    <field name="state" widget="badge"/>
+                </list>
+            </field>
+        </record>
+
+        <record id="view_limayrac_contract_form" model="ir.ui.view">
+            <field name="name">limayrac.contract.form</field>
+            <field name="model">limayrac.contract</field>
+            <field name="arch" type="xml">
+                <form string="Contrat">
+                    <header>
+                        <button name="action_sign" type="object" string="Signer"
+                                class="oe_highlight" invisible="state != 'draft'"/>
+                        <!-- Pas de bouton Démarrer/Terminer : les passages
+                             signed -> running -> done suivent les dates du
+                             contrat, via le cron quotidien. -->
+                        <button name="action_cancel" type="object" string="Annuler"
+                                invisible="state in ('cancel', 'done')"/>
+                        <button name="action_draft" type="object" string="Remettre en brouillon"
+                                invisible="state != 'cancel'"/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,signed,running,done"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_title">
+                            <h1><field name="name" readonly="1"/></h1>
+                        </div>
+                        <field name="contract_type" widget="radio" options="{'horizontal': true}"/>
+                        <group>
+                            <group string="Étudiant">
+                                <field name="student_id"/>
+                                <field name="cursus_id" invisible="1"/>
+                                <field name="limayrac_formation_id"
+                                       options="{'no_create': True, 'no_open': True}"/>
+                                <field name="title_rncp_id"/>
+                                <field name="school_tutor_id" required="state != 'draft'"/>
+                            </group>
+                            <group string="Entreprise">
+                                <field name="company_partner_id"/>
+                                <field name="department_id" required="state != 'draft'"/>
+                                <field name="company_tutor_id" required="state != 'draft'"/>
+                                <field name="company_tutor2_id"
+                                       invisible="not company_tutor_id and not company_tutor2_id"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group string="Période">
+                                <field name="start_date"/>
+                                <field name="end_date"/>
+                            </group>
+                            <group string="Origine">
+                                <field name="crm_lead_id"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page name="notes" string="Notes">
+                                <field name="note" nolabel="1" placeholder="Notes internes sur le contrat..."/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <chatter/>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_limayrac_contract_search" model="ir.ui.view">
+            <field name="name">limayrac.contract.search</field>
+            <field name="model">limayrac.contract</field>
+            <field name="arch" type="xml">
+                <search string="Contrats">
+                    <field name="name"/>
+                    <field name="student_id"/>
+                    <field name="company_partner_id"/>
+                    <field name="company_tutor_id" string="Tuteur entreprise"
+                           filter_domain="['|', ('company_tutor_id', 'ilike', self), ('company_tutor2_id', 'ilike', self)]"/>
+                    <field name="school_tutor_id"/>
+                    <field name="limayrac_formation_id"/>
+                    <filter name="filter_stage" string="Stages" domain="[('contract_type', '=', '1')]"/>
+                    <filter name="filter_alternance" string="Alternances" domain="[('contract_type', '=', '2')]"/>
+                    <separator/>
+                    <filter name="filter_running" string="En cours" domain="[('state', '=', 'running')]"/>
+                    <filter name="filter_draft" string="Brouillon" domain="[('state', '=', 'draft')]"/>
+                    <group>
+                        <filter name="group_state" string="État" context="{'group_by': 'state'}"/>
+                        <filter name="group_type" string="Type de contrat" context="{'group_by': 'contract_type'}"/>
+                        <filter name="group_company" string="Entreprise" context="{'group_by': 'company_partner_id'}"/>
+                        <filter name="group_formation" string="Formation" context="{'group_by': 'limayrac_formation_id'}"/>
+                        <filter name="group_school_tutor" string="Tuteur école" context="{'group_by': 'school_tutor_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="action_limayrac_contract" model="ir.actions.act_window">
+            <field name="name">Contrats</field>
+            <field name="res_model">limayrac.contract</field>
+            <field name="view_mode">list,form</field>
+            <field name="search_view_id" ref="view_limayrac_contract_search"/>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Créez votre premier contrat d'alternance ou de stage
+                </p>
+            </field>
+        </record>
+
+        <menuitem id="menu_limayrac_contract"
+            name="Contrats"
+            parent="contacts.menu_contacts"
+            action="action_limayrac_contract"
+            sequence="11"/>
+    </data>
+</odoo>

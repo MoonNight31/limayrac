@@ -17,6 +17,8 @@
         'data/default_res_partner_type.xml',
         'data/cron_load_demo.xml',
         'data/mail_template_rdv_sre.xml',
+        'data/limayrac_contract_sequence.xml',
+        'data/cron_limayrac_contract.xml',
         # 'data/res_groups.xml',
         # #VIEWS
         'views/res_partner_views.xml',
@@ -24,6 +26,7 @@
         'views/res_partner_naf_views.xml',
         'views/limayrac_formation_views.xml',
         'views/crm_lead_views.xml',
+        'views/limayrac_contract_views.xml',
         # #REPORT
         # 'report/report_estate_property.xml',
         # # WIZARD
