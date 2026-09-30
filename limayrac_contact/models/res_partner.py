@@ -18,6 +18,7 @@ class ResPartner(models.Model):
     partner_type_ids = fields.Many2many('res.partner.type', string='Type de partenaire', compute='_compute_partner_type_ids', store=True)
     headquarters_id = fields.Many2one('res.partner', string='Siège social', domain="[('is_company', '=', True), ('id', '!=', id)]")
     childs_company_ids = fields.One2many('res.partner', 'headquarters_id', string='Filiales')
+    company_contract_ids = fields.One2many('limayrac.contract', 'company_partner_id', string='Contrats')
     res_partner_cursus_ids = fields.One2many('res.partner.cursus', 'res_partner_id', string='Cursus du contact')
     cursus_formations_ids = fields.Many2many(
         'limayrac.formations',
