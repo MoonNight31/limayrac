@@ -6,7 +6,12 @@
             <field name="model">limayrac.contract</field>
             <field name="arch" type="xml">
                 <list string="Contrats" decoration-muted="state == 'cancel'" decoration-success="state == 'running'">
-                    <field name="name"/>
+                    <field name="date_integration" widget="remaining_days"
+                           options="{'classes': {
+                               'bf': 'days &lt; 0',
+                               'danger': 'days &lt;= 7',
+                               'warning': 'days &gt; 7 and days &lt;= 30'
+                           }}"/>
                     <field name="contract_type"/>
                     <field name="student_id"/>
                     <field name="company_partner_id"/>
@@ -73,7 +78,8 @@
                             <group string="Origine">
                                 <field name="crm_lead_id"/>
                                 <field name="company_currency" invisible="1"/>
-                                <field name="expected_revenue" readonly="not crm_lead_id"/>
+                                <field name="expected_revenue"/>
+                                <field name="revenue" readonly="not crm_lead_id"/>
                             </group>
                         </group>
                         <notebook>

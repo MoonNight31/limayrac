@@ -1,3 +1,5 @@
+from dateutil.relativedelta import relativedelta
+
 from odoo import models, fields, api
 from odoo.exceptions import UserError, ValidationError
 
@@ -22,12 +24,15 @@ class LimayracContract(models.Model):
         ('cancel', 'Annulé'),
     ], string='État', default='draft', required=True, tracking=True)
 
+    date_integration = fields.Date(string='Date intégration', tracking=True)
+
     crm_lead_id = fields.Many2one('crm.lead', string='Opportunité', ondelete='set null')
     company_currency = fields.Many2one(
         'res.currency', string='Devise', related='crm_lead_id.company_currency')
     expected_revenue = fields.Monetary(
         string='Revenu espéré', related='crm_lead_id.expected_revenue',
-        currency_field='company_currency', readonly=False)
+        currency_field='company_currency', readonly=True)
+    revenue = fields.Monetary(string='Revenu réel', currency_field='company_currency', tracking=True)
 
     # --- Les acteurs du contrat ---
     student_id = fields.Many2one(
@@ -236,6 +241,8 @@ class LimayracContract(models.Model):
     def action_validate(self):
         self._check_state('cfa_signed', "Valider")
         self.write({'state': 'validated'})
+        for record in self:
+            record.date_integration = record.start_date + relativedelta(months=3)
         self._sync_lead_won()
         # Un contrat validé alors que sa période a déjà commencé ne doit pas
         # attendre le passage du cron le lendemain.
