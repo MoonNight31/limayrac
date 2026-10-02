@@ -42,22 +42,27 @@ class ResPartner(models.Model):
         # raise_if_not_found=False : ce compute peut se déclencher pendant
         # l'installation (init_models), avant que les types de démo/données
         # ne soient chargés en base. On tolère alors leur absence.
+        #FORMATEUR
         type_001 = self.env.ref('limayrac_contact.type_001', raise_if_not_found=False) or empty
+        #ETUDIANTS
         type_002 = self.env.ref('limayrac_contact.type_002', raise_if_not_found=False) or empty
+        #ADMINISTRATIF
         type_003 = self.env.ref('limayrac_contact.type_003', raise_if_not_found=False) or empty
+        #ENTREPRISE
         type_004 = self.env.ref('limayrac_contact.type_004', raise_if_not_found=False) or empty
+        #ANCIEN ELEVE
         type_005 = self.env.ref('limayrac_contact.type_005', raise_if_not_found=False) or empty
         for record in self:
             types = self.env['res.partner.type']
+            current_formations = record.res_partner_cursus_ids.filtered(lambda c: c.end_date and c.end_date >= fields.Date.today())
             if record.limayrac_formations_ids or record.limayrac_formations_resp_ids:
                 types |= type_001
-            if record.res_partner_cursus_ids:
+            if record.res_partner_cursus_ids and current_formations:
                 types |= type_002
             if record.user_ids:
                 types |= type_003
             if record.is_company or record.parent_id and record.parent_id.id != self.env.company.id:
                 types |= type_004
-            current_formations = record.res_partner_cursus_ids.filtered(lambda c: not c.end_date or c.end_date < fields.Date.today())
             if record.res_partner_cursus_ids and not current_formations:
                 types |= type_005
             record.partner_type_ids = types
