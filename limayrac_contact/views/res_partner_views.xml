@@ -99,6 +99,26 @@
                 </xpath>                
             </field>
         </record>
+        <record id="view_res_partner_graph_limayrac_contact" model="ir.ui.view">
+            <field name="name">res.partner.graph.limayrac.contact</field>
+            <field name="model">res.partner</field>
+            <field name="arch" type="xml">
+                <graph string="Contacts" type="bar">
+                    <field name="partner_type_ids"/>
+                    <field name="res_partner_naf_id"/>
+                </graph>
+            </field>
+        </record>
+        <record id="view_res_partner_pivot_limayrac_contact" model="ir.ui.view">
+            <field name="name">res.partner.pivot.limayrac.contact</field>
+            <field name="model">res.partner</field>
+            <field name="arch" type="xml">
+                <pivot string="Contacts">
+                    <field name="partner_type_ids" type="row"/>
+                    <field name="cursus_formations_ids" type="col"/>
+                </pivot>
+            </field>
+        </record>
         <record id="res_partner_view_search_limayrac_contact" model="ir.ui.view">
             <field name="name">res.partner.select.limayrac.contact</field>
             <field name="model">res.partner</field>
@@ -112,6 +132,8 @@
                     <filter string='Entreprises' name='partner_type_entreprises' domain="[('partner_type_ids.code', '=', 'type_004')]"/>
                     <filter string='Anciens étudiants' name='partner_type_anciens_etudiants' domain="[('partner_type_ids.code', '=', 'type_005')]"/>
                     <separator/>
+                    <filter string='Sociétés' name='companies' domain="[('is_company', '=', True)]"/>
+                    <separator/>
                     <filter string="Élèves - année en cours" name="cursus_school_year_current"
                         domain="['&amp;', ('res_partner_cursus_ids.start_date', '&lt;=', (context_today() - relativedelta(months=8) + relativedelta(month=9, day=1) + relativedelta(years=1, days=-1)).strftime('%Y-%m-%d')), '|', ('res_partner_cursus_ids.end_date', '=', False), ('res_partner_cursus_ids.end_date', '&gt;=', (context_today() - relativedelta(months=8) + relativedelta(month=9, day=1)).strftime('%Y-%m-%d'))]"/>
                     <filter string="Élèves - année précédente" name="cursus_school_year_previous"
@@ -122,6 +144,7 @@
                     <filter name='limayrac_formations_ids' string="Enseignants par formations" domain="[('limayrac_formations_ids', '!=', False), ('partner_type_ids.code', '=', 'type_001')]" context="{'group_by' : 'limayrac_formations_ids'}"/>
                     <filter name='cursus_formations_ids' string="Élèves par formations" domain="[('cursus_formations_ids', '!=', False), ('partner_type_ids.code', '=', 'type_002')]" context="{'group_by' : 'cursus_formations_ids'}"/>
                     <filter name='partner_type_ids' string="Type de contact" domain="[('partner_type_ids', '!=', False)]" context="{'group_by' : 'partner_type_ids'}"/>
+                    <filter name='res_partner_naf_id' string="Code NAF" domain="[('is_company', '=', True), ('res_partner_naf_id', '!=', False)]" context="{'group_by' : 'res_partner_naf_id'}"/>
                 </xpath>
                 <xpath expr="//filter[@name='type_person']" position="replace"/>
                 <xpath expr="//filter[@name='type_company']" position="replace"/>
@@ -130,5 +153,15 @@
                 <xpath expr="//filter[@name='group_by_properties']" position="replace"/>
             </field>
         </record>
+        <record id="action_res_partner_analysis" model="ir.actions.act_window">
+            <field name="name">Analyses</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_mode">graph,pivot,list</field>
+        </record>
+        <menuitem id="menu_res_partner_analysis_reporting"
+            name="Analyses"
+            parent="contacts.menu_contacts"
+            action="action_res_partner_analysis"
+            sequence="91"/>
     </data>
 </odoo>
