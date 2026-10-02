@@ -23,6 +23,11 @@ class LimayracContract(models.Model):
     ], string='État', default='draft', required=True, tracking=True)
 
     crm_lead_id = fields.Many2one('crm.lead', string='Opportunité', ondelete='set null')
+    company_currency = fields.Many2one(
+        'res.currency', string='Devise', related='crm_lead_id.company_currency')
+    expected_revenue = fields.Monetary(
+        string='Revenu espéré', related='crm_lead_id.expected_revenue',
+        currency_field='company_currency', readonly=False)
 
     # --- Les acteurs du contrat ---
     student_id = fields.Many2one(
