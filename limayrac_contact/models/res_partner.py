@@ -33,7 +33,10 @@ class ResPartner(models.Model):
         for record in self:
             record.cursus_formations_ids = record.res_partner_cursus_ids.limayrac_formations_id
 
-    @api.depends('limayrac_formations_ids', 'limayrac_formations_resp_ids', 'res_partner_cursus_ids', 'user_id', 'is_company')
+    @api.depends('limayrac_formations_ids', 'limayrac_formations_resp_ids',
+                 'res_partner_cursus_ids', 'res_partner_cursus_ids.end_date',
+                 'res_partner_cursus_ids.limayrac_formations_id',
+                 'user_ids', 'is_company', 'parent_id')
     def _compute_partner_type_ids(self):
         empty = self.env['res.partner.type']
         # raise_if_not_found=False : ce compute peut se déclencher pendant
