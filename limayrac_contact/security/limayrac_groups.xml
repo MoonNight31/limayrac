@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- =====================================================================
+         Single parent category grouping every Limayrac privilege.
+         ===================================================================== -->
+    <record id="module_category_limayrac" model="ir.module.category">
+        <field name="name">Limayrac</field>
+        <field name="sequence">100</field>
+    </record>
+
+    <!-- =====================================================================
+         One privilege (None / Read / Write selection) per model, all under
+         the single "Limayrac" category.
+         ===================================================================== -->
+    <record id="res_groups_privilege_limayrac_contract" model="res.groups.privilege">
+        <field name="name">Contrats</field>
+        <field name="category_id" ref="module_category_limayrac"/>
+        <field name="sequence">10</field>
+    </record>
+
+    <record id="res_groups_privilege_limayrac_formations" model="res.groups.privilege">
+        <field name="name">Formations</field>
+        <field name="category_id" ref="module_category_limayrac"/>
+        <field name="sequence">20</field>
+    </record>
+
+    <record id="res_groups_privilege_limayrac_cursus" model="res.groups.privilege">
+        <field name="name">Cursus des contacts</field>
+        <field name="category_id" ref="module_category_limayrac"/>
+        <field name="sequence">30</field>
+    </record>
+
+    <record id="res_groups_privilege_limayrac_department" model="res.groups.privilege">
+        <field name="name">Départements des contacts</field>
+        <field name="category_id" ref="module_category_limayrac"/>
+        <field name="sequence">40</field>
+    </record>
+
+    <record id="res_groups_privilege_limayrac_naf" model="res.groups.privilege">
+        <field name="name">Codes NAF des contacts</field>
+        <field name="category_id" ref="module_category_limayrac"/>
+        <field name="sequence">50</field>
+    </record>
+
+    <record id="res_groups_privilege_limayrac_rncp" model="res.groups.privilege">
+        <field name="name">Titres RNCP</field>
+        <field name="category_id" ref="module_category_limayrac"/>
+        <field name="sequence">60</field>
+    </record>
+
+    <!-- =====================================================================
+         limayrac.contract
+         Default read: res.partner readers (base.group_user) and crm.lead
+         readers (sales_team.group_sale_salesman, redundant but kept explicit).
+         ===================================================================== -->
+    <record id="group_limayrac_contract_read" model="res.groups">
+        <field name="name">Lecture</field>
+        <field name="privilege_id" ref="res_groups_privilege_limayrac_contract"/>
+        <field name="sequence">1</field>
+        <field name="implied_by_ids" eval="[
+            Command.link(ref('base.group_user')),
+            Command.link(ref('sales_team.group_sale_salesman')),
+        ]"/>
+    </record>
+    <record id="group_limayrac_contract_write" model="res.groups">
+        <field name="name">Écriture</field>
+        <field name="privilege_id" ref="res_groups_privilege_limayrac_contract"/>
+        <field name="sequence">2</field>
+        <field name="implied_ids" eval="[Command.link(ref('group_limayrac_contract_read'))]"/>
+    </record>
+
+    <!-- =====================================================================
+         limayrac.formations
+         Default read: res.partner readers and crm.lead readers.
+         ===================================================================== -->
+    <record id="group_limayrac_formations_read" model="res.groups">
+        <field name="name">Lecture</field>
+        <field name="privilege_id" ref="res_groups_privilege_limayrac_formations"/>
+        <field name="sequence">1</field>
+        <field name="implied_by_ids" eval="[
+            Command.link(ref('base.group_user')),
+            Command.link(ref('sales_team.group_sale_salesman')),
+        ]"/>
+    </record>
+    <record id="group_limayrac_formations_write" model="res.groups">
+        <field name="name">Écriture</field>
+        <field name="privilege_id" ref="res_groups_privilege_limayrac_formations"/>
+        <field name="sequence">2</field>
+        <field name="implied_ids" eval="[Command.link(ref('group_limayrac_formations_read'))]"/>
+    </record>
+
+    <!-- =====================================================================
+         res.partner.cursus
+         Default read: res.partner readers.
+         ===================================================================== -->
+    <record id="group_limayrac_cursus_read" model="res.groups">
+        <field name="name">Lecture</field>
+        <field name="privilege_id" ref="res_groups_privilege_limayrac_cursus"/>
+        <field name="sequence">1</field>
+        <field name="implied_by_ids" eval="[Command.link(ref('base.group_user'))]"/>
+    </record>
+    <record id="group_limayrac_cursus_write" model="res.groups">
+        <field name="name">Écriture</field>
+        <field name="privilege_id" ref="res_groups_privilege_limayrac_cursus"/>
+        <field name="sequence">2</field>
+        <field name="implied_ids" eval="[Command.link(ref('group_limayrac_cursus_read'))]"/>
+    </record>
+
+    <!-- =====================================================================
+         res.partner.department
+         Default read: res.partner readers.
+         ===================================================================== -->
+    <record id="group_limayrac_department_read" model="res.groups">
+        <field name="name">Lecture</field>
+        <field name="privilege_id" ref="res_groups_privilege_limayrac_department"/>
+        <field name="sequence">1</field>
+        <field name="implied_by_ids" eval="[Command.link(ref('base.group_user'))]"/>
+    </record>
+    <record id="group_limayrac_department_write" model="res.groups">
+        <field name="name">Écriture</field>
+        <field name="privilege_id" ref="res_groups_privilege_limayrac_department"/>
+        <field name="sequence">2</field>
+        <field name="implied_ids" eval="[Command.link(ref('group_limayrac_department_read'))]"/>
+    </record>
+
+    <!-- =====================================================================
+         res.partner.naf
+         Default read: res.partner readers.
+         ===================================================================== -->
+    <record id="group_limayrac_naf_read" model="res.groups">
+        <field name="name">Lecture</field>
+        <field name="privilege_id" ref="res_groups_privilege_limayrac_naf"/>
+        <field name="sequence">1</field>
+        <field name="implied_by_ids" eval="[Command.link(ref('base.group_user'))]"/>
+    </record>
+    <record id="group_limayrac_naf_write" model="res.groups">
+        <field name="name">Écriture</field>
+        <field name="privilege_id" ref="res_groups_privilege_limayrac_naf"/>
+        <field name="sequence">2</field>
+        <field name="implied_ids" eval="[Command.link(ref('group_limayrac_naf_read'))]"/>
+    </record>
+
+    <!-- =====================================================================
+         title.rncp
+         Default read: limayrac.formations readers (transitively granted to
+         res.partner and crm.lead readers through the formations read group).
+         ===================================================================== -->
+    <record id="group_limayrac_rncp_read" model="res.groups">
+        <field name="name">Lecture</field>
+        <field name="privilege_id" ref="res_groups_privilege_limayrac_rncp"/>
+        <field name="sequence">1</field>
+        <field name="implied_by_ids" eval="[Command.link(ref('group_limayrac_formations_read'))]"/>
+    </record>
+    <record id="group_limayrac_rncp_write" model="res.groups">
+        <field name="name">Écriture</field>
+        <field name="privilege_id" ref="res_groups_privilege_limayrac_rncp"/>
+        <field name="sequence">2</field>
+        <field name="implied_ids" eval="[Command.link(ref('group_limayrac_rncp_read'))]"/>
+    </record>
+
+</odoo>

@@ -11,6 +11,7 @@
     'depends': ['base', 'contacts', 'crm', 'mail'],
     'data': [
         #SECURITY
+        'security/limayrac_groups.xml',
         'security/ir.model.access.csv',
         # #DATA
         'data/default_res_partner_naf.xml',
