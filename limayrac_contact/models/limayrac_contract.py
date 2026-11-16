@@ -26,7 +26,7 @@ class LimayracContract(models.Model):
 
     date_integration = fields.Date(string='Date intégration', tracking=True)
 
-    crm_lead_id = fields.Many2one('crm.lead', string='Opportunité', ondelete='set null')
+    crm_lead_id = fields.Many2one('crm.lead', string='Opportunité', ondelete='set null', index=True)
     company_currency = fields.Many2one(
         'res.currency', string='Devise', related='crm_lead_id.company_currency')
     expected_revenue = fields.Monetary(
@@ -118,6 +118,57 @@ class LimayracContract(models.Model):
                 raise ValidationError(
                     "Le cursus sélectionné n'appartient pas à l'étudiant du contrat.")
 
+    @api.constrains('crm_lead_id', 'state', 'student_id', 'company_partner_id',
+                    'contract_type', 'limayrac_formation_id')
+    def _check_lead_consistency(self):
+        """Le contrat doit correspondre à l'opportunité dont il est issu."""
+        for record in self:
+            lead = record.crm_lead_id
+            if not lead or record.state == 'cancel':
+                continue
+            others = lead.contract_ids.filtered(lambda c: c.state != 'cancel') - record
+            if others:
+                raise ValidationError(
+                    "L'opportunité « %s » a déjà un contrat (%s)." % (lead.name, others[0].name))
+            if not lead.active:
+                raise ValidationError(
+                    "L'opportunité « %s » est perdue : elle ne peut pas avoir de contrat actif." % lead.name)
+            if record.company_partner_id != lead.partner_id.commercial_partner_id:
+                raise ValidationError(
+                    "L'entreprise du contrat %s (%s) n'est pas celle de l'opportunité « %s »." % (
+                        record.name, record.company_partner_id.name, lead.name))
+            if record.student_id != lead.res_partner_id:
+                raise ValidationError(
+                    "L'étudiant du contrat %s doit être l'étudiant choisi sur l'opportunité « %s »." % (
+                        record.name, lead.name))
+            if lead.type_contract in ('1', '2') and record.contract_type != lead.type_contract:
+                raise ValidationError(
+                    "Le type du contrat %s ne correspond pas à celui de l'opportunité « %s »." % (
+                        record.name, lead.name))
+            if lead.formation_id and record.limayrac_formation_id.group_id != lead.formation_id:
+                raise ValidationError(
+                    "La classe du contrat %s n'appartient pas à la formation « %s » de l'opportunité." % (
+                        record.name, lead.formation_id.name))
+
+    @api.constrains('student_id', 'start_date', 'end_date', 'state')
+    def _check_student_overlap(self):
+        # Un étudiant ne peut pas être engagé dans deux contrats sur la même période.
+        for record in self:
+            if record.state == 'cancel':
+                continue
+            overlap = self.search([
+                ('id', '!=', record.id),
+                ('student_id', '=', record.student_id.id),
+                ('state', '!=', 'cancel'),
+                ('start_date', '<=', record.end_date),
+                ('end_date', '>=', record.start_date),
+            ], limit=1)
+            if overlap:
+                raise ValidationError(
+                    "%s a déjà le contrat %s du %s au %s, qui chevauche cette période." % (
+                        record.student_id.name, overlap.name,
+                        overlap.start_date.strftime('%d/%m/%Y'), overlap.end_date.strftime('%d/%m/%Y')))
+
     @api.constrains('company_tutor_id', 'company_tutor2_id', 'department_id', 'company_partner_id')
     def _check_company_consistency(self):
         # Les domaines des champs ne sont qu'une aide à la saisie : un write
@@ -188,22 +239,24 @@ class LimayracContract(models.Model):
                 vals['limayrac_formation_id'] = cursus.limayrac_formations_id.id
             elif not vals.get('cursus_id'):
                 raise ValidationError("La formation est obligatoire sur un contrat.")
-        return super().create(vals_list)
+        records = super().create(vals_list)
+        records.crm_lead_id._sync_stage()
+        return records
 
-    def _sync_lead_won(self):
-        """L'opportunité est gagnée dès qu'un de ses contrats est validé."""
-        for record in self:
-            lead = record.crm_lead_id
-            if not lead:
-                continue
-            has_validated = any(
-                contract.state in ('validated', 'running', 'done')
-                for contract in lead.contract_ids
-            )
-            if has_validated and lead.won_status != 'won':
-                lead.action_set_won()
-            elif not has_validated and lead.won_status == 'won':
-                lead.stage_id = lead._stage_for_partner(bool(lead.res_partner_id))
+    def write(self, vals):
+        # L'étape de l'opportunité suit le contrat : on resynchronise
+        # l'ancienne et la nouvelle opportunité.
+        leads = self.crm_lead_id
+        res = super().write(vals)
+        if {'state', 'crm_lead_id'} & set(vals):
+            (leads | self.crm_lead_id)._sync_stage()
+        return res
+
+    def unlink(self):
+        leads = self.crm_lead_id
+        res = super().unlink()
+        leads.exists()._sync_stage()
+        return res
 
     def _check_ready_to_sign(self):
         """Un brouillon peut rester incomplet, pas un contrat signé."""
@@ -243,7 +296,6 @@ class LimayracContract(models.Model):
         self.write({'state': 'validated'})
         for record in self:
             record.date_integration = record.start_date + relativedelta(months=3)
-        self._sync_lead_won()
         # Un contrat validé alors que sa période a déjà commencé ne doit pas
         # attendre le passage du cron le lendemain.
         self._update_state_from_dates()
@@ -279,8 +331,6 @@ class LimayracContract(models.Model):
 
     def action_cancel(self):
         self.write({'state': 'cancel'})
-        self._sync_lead_won()
 
     def action_draft(self):
         self.write({'state': 'draft'})
-        self._sync_lead_won()

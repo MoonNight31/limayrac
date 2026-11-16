@@ -5,8 +5,10 @@
             <field name="name">limayrac.formations.list</field>
             <field name="model">limayrac.formations</field>
             <field name="arch" type="xml">
-                <list string="Formations Limayrac">
+                <list string="Classes Limayrac">
                     <field name="name"/>
+                    <field name="filiere_id" optional="show"/>
+                    <field name="group_id" optional="show"/>
                     <field name="title_rncp_id"/>
                     <field name="question_one"/>
                     <field name="question_two"/>
@@ -21,10 +23,12 @@
             <field name="name">limayrac.formations.form</field>
             <field name="model">limayrac.formations</field>
             <field name="arch" type="xml">
-                <form string="Formations Limayrac">
+                <form string="Classes Limayrac">
                     <sheet>
                         <group>
                             <field name="name"/>
+                            <field name="group_id"/>
+                            <field name="filiere_id"/>
                             <field name="question_one"/>
                             <field name="question_two"/>
                             <field name="question_three"/>
@@ -66,12 +70,89 @@
                                     </kanban>
                                 </field>
                             </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_limayrac_formations_search" model="ir.ui.view">
+            <field name="name">limayrac.formations.search</field>
+            <field name="model">limayrac.formations</field>
+            <field name="arch" type="xml">
+                <search string="Classes Limayrac">
+                    <field name="name"/>
+                    <field name="filiere_id"/>
+                    <field name="group_id"/>
+                    <field name="title_rncp_id"/>
+                    <filter name="no_group" string="Sans formation" domain="[('group_id', '=', False)]"/>
+                    <group>
+                        <filter name="groupby_filiere" string="Filière" context="{'group_by': 'filiere_id'}"/>
+                        <filter name="groupby_group" string="Formation" context="{'group_by': 'group_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="action_limayrac_formations" model="ir.actions.act_window">
+            <field name="name">Classes</field>
+            <field name="res_model">limayrac.formations</field>
+            <field name="view_mode">list,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Créez votre première classe
+                </p>
+            </field>
+        </record>
+
+        <menuitem id="menu_limayrac_formations"
+            name="Classes"
+            parent="contacts.menu_contacts"
+            action="action_limayrac_formations"
+            sequence="10"/>
+
+        <!-- Formations (limayrac.formations.group) -->
+        <record id="view_limayrac_formations_group_list" model="ir.ui.view">
+            <field name="name">limayrac.formations.group.list</field>
+            <field name="model">limayrac.formations.group</field>
+            <field name="arch" type="xml">
+                <list string="Formations">
+                    <field name="name"/>
+                    <field name="filiere_id"/>
+                    <field name="formation_count"/>
+                </list>
+            </field>
+        </record>
+
+        <record id="view_limayrac_formations_group_form" model="ir.ui.view">
+            <field name="name">limayrac.formations.group.form</field>
+            <field name="model">limayrac.formations.group</field>
+            <field name="arch" type="xml">
+                <form string="Formation">
+                    <sheet>
+                        <widget name="web_ribbon" title="Archivé" bg_color="text-bg-danger" invisible="active"/>
+                        <group>
+                            <field name="name"/>
+                            <field name="filiere_id"/>
+                            <field name="active" invisible="1"/>
+                        </group>
+                        <notebook>
+                            <page name="formations" string="Classes">
+                                <field name="formation_ids">
+                                    <list>
+                                        <field name="name"/>
+                                        <field name="title_rncp_id"/>
+                                    </list>
+                                </field>
+                            </page>
                             <page name="opportunites" string="Opportunités en cours">
                                 <field name="crm_lead_ongoing_ids" readonly="1" nolabel="1">
                                     <list>
                                         <field name="name"/>
+                                        <field name="partner_id"/>
                                         <field name="res_partner_id"/>
                                         <field name="type_contract"/>
+                                        <field name="stage_id"/>
                                     </list>
                                 </field>
                             </page>
@@ -81,21 +162,107 @@
             </field>
         </record>
 
-        <record id="action_limayrac_formations" model="ir.actions.act_window">
+        <record id="view_limayrac_formations_group_search" model="ir.ui.view">
+            <field name="name">limayrac.formations.group.search</field>
+            <field name="model">limayrac.formations.group</field>
+            <field name="arch" type="xml">
+                <search string="Formations">
+                    <field name="name"/>
+                    <field name="filiere_id"/>
+                    <filter name="archived" string="Archivées" domain="[('active', '=', False)]"/>
+                    <group>
+                        <filter name="groupby_filiere" string="Filière" context="{'group_by': 'filiere_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="action_limayrac_formations_group" model="ir.actions.act_window">
             <field name="name">Formations</field>
-            <field name="res_model">limayrac.formations</field>
+            <field name="res_model">limayrac.formations.group</field>
             <field name="view_mode">list,form</field>
             <field name="help" type="html">
                 <p class="o_view_nocontent_smiling_face">
-                    Créez votre première formation
+                    Créez votre première formation (ex : BTS SIO)
                 </p>
             </field>
         </record>
 
-        <menuitem id="menu_limayrac_formations"
-            name="Formations"
+        <!-- Filières -->
+        <record id="view_limayrac_formations_filiere_list" model="ir.ui.view">
+            <field name="name">limayrac.formations.filiere.list</field>
+            <field name="model">limayrac.formations.filiere</field>
+            <field name="arch" type="xml">
+                <list string="Filières">
+                    <field name="name"/>
+                    <field name="group_count"/>
+                </list>
+            </field>
+        </record>
+
+        <record id="view_limayrac_formations_filiere_form" model="ir.ui.view">
+            <field name="name">limayrac.formations.filiere.form</field>
+            <field name="model">limayrac.formations.filiere</field>
+            <field name="arch" type="xml">
+                <form string="Filière">
+                    <sheet>
+                        <widget name="web_ribbon" title="Archivé" bg_color="text-bg-danger" invisible="active"/>
+                        <group>
+                            <field name="name"/>
+                            <field name="active" invisible="1"/>
+                        </group>
+                        <notebook>
+                            <page name="groups" string="Formations">
+                                <field name="group_ids">
+                                    <list>
+                                        <field name="name"/>
+                                        <field name="formation_count"/>
+                                    </list>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_limayrac_formations_filiere_search" model="ir.ui.view">
+            <field name="name">limayrac.formations.filiere.search</field>
+            <field name="model">limayrac.formations.filiere</field>
+            <field name="arch" type="xml">
+                <search string="Filières">
+                    <field name="name"/>
+                    <filter name="archived" string="Archivées" domain="[('active', '=', False)]"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="action_limayrac_formations_filiere" model="ir.actions.act_window">
+            <field name="name">Filières</field>
+            <field name="res_model">limayrac.formations.filiere</field>
+            <field name="view_mode">list,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Créez votre première filière (ex : Informatique)
+                </p>
+            </field>
+        </record>
+
+        <menuitem id="menu_limayrac_formations_config"
+            name="Configuration formations"
             parent="contacts.menu_contacts"
-            action="action_limayrac_formations"
-            sequence="10"/>
+            sequence="11"/>
+
+        <menuitem id="menu_limayrac_formations_filiere"
+            name="Filières"
+            parent="menu_limayrac_formations_config"
+            action="action_limayrac_formations_filiere"
+            sequence="1"/>
+
+        <menuitem id="menu_limayrac_formations_group"
+            name="Formations"
+            parent="menu_limayrac_formations_config"
+            action="action_limayrac_formations_group"
+            sequence="2"/>
     </data>
 </odoo>
