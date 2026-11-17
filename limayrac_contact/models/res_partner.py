@@ -5,6 +5,10 @@ class ResPartner(models.Model):
     _inherit = 'res.partner'
 
     birthday_date = fields.Date(string='Date de naissance')
+    civilite = fields.Selection([
+        ('mr', 'Monsieur'),
+        ('mrs', 'Madame'),
+    ], string='Civilité')
     res_partner_department_ids = fields.One2many(
         'res.partner.department',
         'res_partner_id',
