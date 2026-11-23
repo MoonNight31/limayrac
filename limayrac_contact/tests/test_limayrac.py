@@ -178,6 +178,20 @@ class TestContract(LimayracCase):
         self.env['limayrac.contract']._cron_update_states()
         self.assertEqual(contract.state, 'done')
 
+    def test_cron_realigns_opportunity_stage(self):
+        # Opportunité restée en décalage avec son contrat en cours (données
+        # antérieures aux règles d'étape) : le cron la remet en Won.
+        lead = self._lead(res_partner_ids=[(6, 0, self.student.ids)], res_partner_id=self.student.id)
+        contract = self.env['limayrac.contract'].create(self._contract_vals(
+            crm_lead_id=lead.id, start_date=self.today - relativedelta(days=5)))
+        contract.action_company_sign()
+        contract.action_cfa_sign()
+        contract.action_validate()
+        self.assertEqual(lead.stage_id, self.env.ref('crm.stage_lead4'))
+        lead.with_context(limayrac_stage_sync=True).stage_id = self.env.ref('crm.stage_lead2')
+        self.env['limayrac.contract']._cron_update_states()
+        self.assertEqual(lead.stage_id, self.env.ref('crm.stage_lead4'))
+
 
 @tagged('post_install', '-at_install', 'limayrac')
 class TestPartnerTypes(LimayracCase):
