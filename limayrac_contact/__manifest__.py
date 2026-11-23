@@ -1,6 +1,6 @@
 {
     'name': 'Limayrac Contact',
-    'version': '0.1',
+    'version': '0.2',
     'summary': 'Module to manage Limayrac contacts and related information.',
     'description': """
         A detailed description of the module.

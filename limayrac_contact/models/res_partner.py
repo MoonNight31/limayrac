@@ -41,6 +41,12 @@ class ResPartner(models.Model):
         store=True)
     limayrac_formations_ids = fields.Many2many('limayrac.formations', 'res_partner_limayrac_formations_rel', 'res_partner_id', 'limayrac_formations_id', string='Formations Limayrac')
     limayrac_formations_resp_ids = fields.Many2many('limayrac.formations', 'res_partner_limayrac_formations_resp_rel', 'res_partner_id', 'limayrac_formations_id', string='Responsable de sections Limayrac')
+    formation_group_ids = fields.Many2many(
+        'limayrac.formations.group', 'res_partner_limayrac_formations_group_rel', 'res_partner_id', 'group_id',
+        string='Formations (formateur)')
+    formation_group_resp_ids = fields.Many2many(
+        'limayrac.formations.group', 'res_partner_limayrac_formations_group_resp_rel', 'res_partner_id', 'group_id',
+        string='Formations (responsable pédagogique)')
 
     @api.depends('res_partner_cursus_ids.limayrac_formations_id', 'res_partner_cursus_ids.formation_id')
     def _compute_cursus_formations_ids(self):
@@ -49,6 +55,7 @@ class ResPartner(models.Model):
             record.cursus_formation_group_ids = record.res_partner_cursus_ids.formation_id
 
     @api.depends('limayrac_formations_ids', 'limayrac_formations_resp_ids',
+                 'formation_group_ids', 'formation_group_resp_ids',
                  'res_partner_cursus_ids', 'res_partner_cursus_ids.end_date',
                  'res_partner_cursus_ids.limayrac_formations_id',
                  'user_ids', 'is_company', 'parent_id')
@@ -73,7 +80,8 @@ class ResPartner(models.Model):
             # Un cursus sans date de fin est en cours.
             current_formations = record.res_partner_cursus_ids.filtered(
                 lambda c: not c.end_date or c.end_date >= today)
-            if record.limayrac_formations_ids or record.limayrac_formations_resp_ids:
+            if record.limayrac_formations_ids or record.limayrac_formations_resp_ids \
+                    or record.formation_group_ids or record.formation_group_resp_ids:
                 types |= type_001
             if record.res_partner_cursus_ids and current_formations:
                 types |= type_002

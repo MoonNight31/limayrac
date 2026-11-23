@@ -36,6 +36,10 @@
                             <field name="question_five"/>
                             <field name="title_rncp_id"/>
                         </group>
+                        <div class="text-muted mb-2">
+                            Titre RNCP, questions, responsables pédagogiques et formateurs sont repris de la formation
+                            à la création de la classe, puis propres à la classe.
+                        </div>
                         <notebook>
                             <page name="title_rncp" string="Ancien titre RNCP associé">
                                 <group>
@@ -119,6 +123,7 @@
                 <list string="Formations">
                     <field name="name"/>
                     <field name="filiere_id"/>
+                    <field name="title_rncp_id" optional="show"/>
                     <field name="formation_count"/>
                 </list>
             </field>
@@ -132,11 +137,56 @@
                     <sheet>
                         <widget name="web_ribbon" title="Archivé" bg_color="text-bg-danger" invisible="active"/>
                         <group>
-                            <field name="name"/>
-                            <field name="filiere_id"/>
-                            <field name="active" invisible="1"/>
+                            <group>
+                                <field name="name"/>
+                                <field name="filiere_id"/>
+                                <field name="title_rncp_id"/>
+                                <field name="active" invisible="1"/>
+                            </group>
+                            <group string="Questions">
+                                <field name="question_one"/>
+                                <field name="question_two"/>
+                                <field name="question_three"/>
+                                <field name="question_four"/>
+                                <field name="question_five"/>
+                            </group>
                         </group>
+                        <div class="text-muted mb-2">
+                            Le titre RNCP, les questions, les responsables pédagogiques et les formateurs
+                            sont copiés dans chaque nouvelle classe ; les modifier ici ne change pas les classes existantes.
+                        </div>
                         <notebook>
+                            <page name="responsables_pedagogiques" string="Responsables pédagogiques">
+                                <field name="res_partner_resp_ids">
+                                    <kanban>
+                                        <templates>
+                                            <t t-name="card">
+                                                <div class="fw-bold"><field name="name"/></div>
+                                            </t>
+                                        </templates>
+                                    </kanban>
+                                </field>
+                            </page>
+                            <page name="formators" string="Formateurs">
+                                <field name="res_partner_ids">
+                                    <kanban>
+                                        <templates>
+                                            <t t-name="card">
+                                                <div class="fw-bold"><field name="name"/></div>
+                                            </t>
+                                        </templates>
+                                    </kanban>
+                                </field>
+                            </page>
+                            <page name="title_rncp" string="Ancien titre RNCP associé">
+                                <field name="old_rncp_ids" readonly="1" nolabel="1">
+                                    <list decoration-danger="not is_valid">
+                                        <field name="name"/>
+                                        <field name="code_rncp"/>
+                                        <field name="is_valid"/>
+                                    </list>
+                                </field>
+                            </page>
                             <page name="formations" string="Classes">
                                 <field name="formation_ids">
                                     <list>

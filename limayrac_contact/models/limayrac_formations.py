@@ -18,6 +18,47 @@ class LimayracFormations(models.Model):
     res_partner_ids = fields.Many2many('res.partner', 'res_partner_limayrac_formations_rel', 'limayrac_formations_id', 'res_partner_id', string='Formateurs')
     res_partner_cursus_ids = fields.One2many('res.partner.cursus', 'limayrac_formations_id', string='Cursus des contacts')
 
+    # RNCP, questions, responsables pédagogiques et formateurs sont définis sur
+    # la formation et copiés dans la classe à sa création ; la classe garde
+    # ensuite ses propres valeurs (modifiables), même si la formation change.
+
+    @staticmethod
+    def _is_empty_value(value):
+        if not value:
+            return True
+        if isinstance(value, (list, tuple)):
+            # Commandes x2many vides : [] ou [Command.set([])] / [Command.clear()]
+            return all(isinstance(cmd, (list, tuple)) and (
+                (cmd[0] == fields.Command.SET and not cmd[2]) or cmd[0] == fields.Command.CLEAR)
+                for cmd in value)
+        return False
+
+    @api.model_create_multi
+    def create(self, vals_list):
+        Group = self.env['limayrac.formations.group']
+        for vals in vals_list:
+            group = Group.browse(vals.get('group_id'))
+            if not group:
+                continue
+            for name, value in group._get_class_values().items():
+                if self._is_empty_value(vals.get(name)):
+                    vals[name] = value
+        records = super().create(vals_list)
+        (records.res_partner_ids | records.res_partner_resp_ids).modified(
+            ['limayrac_formations_ids', 'limayrac_formations_resp_ids'])
+        return records
+
+    @api.onchange('group_id')
+    def _onchange_group_id_copy(self):
+        # Nouvelle classe : on pré-remplit depuis la formation pour que
+        # l'utilisateur voie (et puisse ajuster) ce qui sera enregistré.
+        if self._origin.id or not self.group_id:
+            return
+        group = self.group_id
+        for name in group.CLASS_COPIED_FIELDS:
+            if not self[name]:
+                self[name] = group[name]
+
     def write(self, vals):
         partners_before = self.res_partner_ids | self.res_partner_resp_ids
         for record in self:
