@@ -15,11 +15,13 @@
                     <field name="contract_type"/>
                     <field name="student_id"/>
                     <field name="company_partner_id"/>
+                    <field name="opco_id" optional="hide"/>
                     <field name="department_id"/>
                     <field name="company_tutor_id"/>
                     <field name="company_tutor2_id" optional="show"/>
                     <field name="school_tutor_id"/>
-                    <field name="limayrac_formation_id"/>
+                    <field name="formation_id"/>
+                    <field name="limayrac_formation_id" optional="hide"/>
                     <field name="start_date"/>
                     <field name="end_date"/>
                     <field name="state" widget="badge"/>
@@ -57,13 +59,16 @@
                             <group string="Étudiant">
                                 <field name="student_id"/>
                                 <field name="cursus_id" invisible="1"/>
-                                <field name="limayrac_formation_id"
+                                <field name="student_formation_ids" invisible="1"/>
+                                <field name="formation_id"
                                        options="{'no_create': True, 'no_open': True}"/>
+                                <field name="limayrac_formation_id" invisible="not limayrac_formation_id"/>
                                 <field name="title_rncp_id"/>
                                 <field name="school_tutor_id" required="state != 'draft'"/>
                             </group>
                             <group string="Entreprise">
                                 <field name="company_partner_id"/>
+                                <field name="opco_id" readonly="state != 'draft'" options="{'no_create': True}"/>
                                 <field name="department_id" required="state != 'draft'"/>
                                 <field name="company_tutor_id" required="state != 'draft'"/>
                                 <field name="company_tutor2_id"
@@ -101,9 +106,11 @@
                     <field name="name"/>
                     <field name="student_id"/>
                     <field name="company_partner_id"/>
+                    <field name="opco_id"/>
                     <field name="company_tutor_id" string="Tuteur entreprise"
                            filter_domain="['|', ('company_tutor_id', 'ilike', self), ('company_tutor2_id', 'ilike', self)]"/>
                     <field name="school_tutor_id"/>
+                    <field name="formation_id"/>
                     <field name="limayrac_formation_id"/>
                     <filter name="filter_stage" string="Stages" domain="[('contract_type', '=', '1')]"/>
                     <filter name="filter_alternance" string="Alternances" domain="[('contract_type', '=', '2')]"/>
@@ -116,7 +123,9 @@
                         <filter name="group_state" string="État" context="{'group_by': 'state'}"/>
                         <filter name="group_type" string="Type de contrat" context="{'group_by': 'contract_type'}"/>
                         <filter name="group_company" string="Entreprise" context="{'group_by': 'company_partner_id'}"/>
-                        <filter name="group_formation" string="Formation" context="{'group_by': 'limayrac_formation_id'}"/>
+                        <filter name="group_opco" string="OPCO" context="{'group_by': 'opco_id'}"/>
+                        <filter name="group_formation" string="Formation" context="{'group_by': 'formation_id'}"/>
+                        <filter name="group_class" string="Classe" context="{'group_by': 'limayrac_formation_id'}"/>
                         <filter name="group_school_tutor" string="Tuteur école" context="{'group_by': 'school_tutor_id'}"/>
                     </group>
                 </search>

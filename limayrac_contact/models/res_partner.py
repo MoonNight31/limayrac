@@ -19,6 +19,10 @@ class ResPartner(models.Model):
     res_partner_naf_id = fields.Many2one(
         'res.partner.naf',
         string='Code NAF')
+    res_partner_opco_id = fields.Many2one(
+        'res.partner.opco',
+        string='OPCO',
+        index=True)
     partner_type_ids = fields.Many2many('res.partner.type', string='Type de partenaire', compute='_compute_partner_type_ids', store=True)
     headquarters_id = fields.Many2one('res.partner', string='Siège social', domain="[('is_company', '=', True), ('id', '!=', id)]")
     childs_company_ids = fields.One2many('res.partner', 'headquarters_id', string='Filiales')
@@ -26,16 +30,23 @@ class ResPartner(models.Model):
     res_partner_cursus_ids = fields.One2many('res.partner.cursus', 'res_partner_id', string='Cursus du contact')
     cursus_formations_ids = fields.Many2many(
         'limayrac.formations',
-        string='Formations du cursus',
+        string='Classes du cursus',
+        compute='_compute_cursus_formations_ids',
+        store=True)
+    cursus_formation_group_ids = fields.Many2many(
+        'limayrac.formations.group',
+        'res_partner_cursus_formation_group_rel', 'res_partner_id', 'formation_id',
+        string='Formations suivies',
         compute='_compute_cursus_formations_ids',
         store=True)
     limayrac_formations_ids = fields.Many2many('limayrac.formations', 'res_partner_limayrac_formations_rel', 'res_partner_id', 'limayrac_formations_id', string='Formations Limayrac')
     limayrac_formations_resp_ids = fields.Many2many('limayrac.formations', 'res_partner_limayrac_formations_resp_rel', 'res_partner_id', 'limayrac_formations_id', string='Responsable de sections Limayrac')
 
-    @api.depends('res_partner_cursus_ids.limayrac_formations_id')
+    @api.depends('res_partner_cursus_ids.limayrac_formations_id', 'res_partner_cursus_ids.formation_id')
     def _compute_cursus_formations_ids(self):
         for record in self:
             record.cursus_formations_ids = record.res_partner_cursus_ids.limayrac_formations_id
+            record.cursus_formation_group_ids = record.res_partner_cursus_ids.formation_id
 
     @api.depends('limayrac_formations_ids', 'limayrac_formations_resp_ids',
                  'res_partner_cursus_ids', 'res_partner_cursus_ids.end_date',
@@ -56,9 +67,12 @@ class ResPartner(models.Model):
         type_004 = self.env.ref('limayrac_contact.type_004', raise_if_not_found=False) or empty
         #ANCIEN ELEVE
         type_005 = self.env.ref('limayrac_contact.type_005', raise_if_not_found=False) or empty
+        today = fields.Date.today()
         for record in self:
             types = self.env['res.partner.type']
-            current_formations = record.res_partner_cursus_ids.filtered(lambda c: c.end_date and c.end_date >= fields.Date.today())
+            # Un cursus sans date de fin est en cours.
+            current_formations = record.res_partner_cursus_ids.filtered(
+                lambda c: not c.end_date or c.end_date >= today)
             if record.limayrac_formations_ids or record.limayrac_formations_resp_ids:
                 types |= type_001
             if record.res_partner_cursus_ids and current_formations:
@@ -70,3 +84,15 @@ class ResPartner(models.Model):
             if record.res_partner_cursus_ids and not current_formations:
                 types |= type_005
             record.partner_type_ids = types
+
+    @api.model
+    def _cron_update_partner_types(self):
+        """Recalcule les types des contacts ayant un cursus.
+
+        Le type Étudiant / Ancien étudiant dépend de la date du jour : la
+        valeur stockée ne change pas d'elle-même quand un cursus se termine.
+        """
+        partners = self.with_context(active_test=False).search([('res_partner_cursus_ids', '!=', False)])
+        partners.modified(['res_partner_cursus_ids'])
+        partners.flush_recordset(['partner_type_ids'])
+        return len(partners)

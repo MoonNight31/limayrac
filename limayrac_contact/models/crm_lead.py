@@ -141,7 +141,7 @@ class CrmLead(models.Model):
             lambda c: not c.end_date or c.end_date >= fields.Date.today())
         if self.formation_id:
             cursus = cursus.filtered(
-                lambda c: c.limayrac_formations_id.group_id == self.formation_id)
+                lambda c: c.formation_id == self.formation_id)
         return {
             'type': 'ir.actions.act_window',
             'name': 'Nouveau contrat',
@@ -156,7 +156,7 @@ class CrmLead(models.Model):
                 # il faut trancher au moment du contrat, on ne pré-remplit pas.
                 'default_contract_type': self.type_contract if self.type_contract in ('1', '2') else False,
                 'default_cursus_id': cursus.id if len(cursus) == 1 else False,
-                'default_limayrac_formation_id': cursus.limayrac_formations_id.id if len(cursus) == 1 else False,
+                'default_formation_id': cursus.formation_id.id if len(cursus) == 1 else self.formation_id.id,
             },
         }
 
