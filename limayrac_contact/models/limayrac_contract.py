@@ -1,7 +1,11 @@
+import logging
+
 from dateutil.relativedelta import relativedelta
 
 from odoo import models, fields, api
 from odoo.exceptions import UserError, ValidationError
+
+_logger = logging.getLogger(__name__)
 
 class LimayracContract(models.Model):
     _name = 'limayrac.contract'
@@ -355,13 +359,26 @@ class LimayracContract(models.Model):
 
     @api.model
     def _cron_update_states(self):
-        """Balaie quotidiennement les contrats dont la période a évolué."""
+        """Balaie quotidiennement les contrats dont la période a évolué, puis
+        réaligne l'étape de toutes les opportunités qui ont un contrat.
+
+        Le second balayage rattrape les opportunités restées en décalage
+        (données antérieures aux règles d'étape, contrat relié après coup…) ;
+        `_sync_stage` n'écrit que si l'étape attendue diffère.
+        """
         today = fields.Date.today()
         contracts = self.search([
             ('state', 'in', ('validated', 'running')),
             '|', ('start_date', '<=', today), ('end_date', '<', today),
         ])
         updated = contracts._update_state_from_dates()
+        leads = self.env['crm.lead'].search([
+            ('type', '=', 'opportunity'), ('contract_ids', '!=', False)])
+        stages_before = {lead.id: lead.stage_id for lead in leads}
+        leads._sync_stage()
+        synced = leads.filtered(lambda lead: lead.stage_id != stages_before[lead.id])
+        _logger.info("Contrats : %d état(s) mis à jour, %d opportunité(s) réalignée(s)",
+                     len(updated), len(synced))
         return len(updated)
 
     def action_cancel(self):
