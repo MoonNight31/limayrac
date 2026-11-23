@@ -7,8 +7,13 @@
             <field name="inherit_id" ref="base.view_partner_form"/>
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='parent_id']" position="after">
+                    <field name="civilite" invisible='is_company'/>
                     <field name="birthday_date" invisible='is_company'/>
                     <field name="headquarters_id" invisible="not is_company"/>
+                </xpath>
+                <!-- Contact créé depuis l'onglet « Contacts & Adresses » d'une entreprise -->
+                <xpath expr="//field[@name='child_ids']/form//field[@name='function']" position="before">
+                    <field name="civilite" invisible="type != 'contact'"/>
                 </xpath>
                 <xpath expr="//page[@name='contact_addresses']" position="attributes">
                     <attribute name="invisible">not is_company</attribute>
@@ -46,7 +51,8 @@
                                 <field name="name"/>
                                 <field name="contract_type"/>
                                 <field name="student_id"/>
-                                <field name="limayrac_formation_id"/>
+                                <field name="formation_id"/>
+                                <field name="limayrac_formation_id" optional="hide"/>
                                 <field name="department_id"/>
                                 <field name="company_tutor_id"/>
                                 <field name="company_tutor2_id" optional="hide"/>
@@ -60,7 +66,8 @@
                     <page name="cursus" string="Cursus" invisible="is_company">
                         <field name="res_partner_cursus_ids">
                             <list editable="bottom">
-                                <field name="limayrac_formations_id"/>
+                                <field name="formation_id" required="not limayrac_formations_id"/>
+                                <field name="limayrac_formations_id" optional="show"/>
                                 <field name="start_date" string="Période" widget="daterange" options="{'end_date_field': 'end_date'}"/>
                                 <field name="end_date" column_invisible="1"/>
                                 <field name="is_diploma_obtained"/>
@@ -83,6 +90,7 @@
                     <field name="company_registry" string="SIREN/SIRET" invisible="parent_id or not is_company" options="{'placeholder_field': 'company_registry_placeholder'}"/>
                     <field name="industry_id" invisible="not is_company" options="{'no_create': True}"/>
                     <field name="res_partner_naf_id" invisible="not is_company"/>
+                    <field name="res_partner_opco_id" invisible="not is_company" options="{'no_create': True}"/>
                 </xpath>
                 <xpath expr="//group[@name='misc']" position="attributes">
                     <attribute name="invisible">1</attribute>
@@ -115,7 +123,7 @@
             <field name="arch" type="xml">
                 <pivot string="Contacts">
                     <field name="partner_type_ids" type="row"/>
-                    <field name="cursus_formations_ids" type="col"/>
+                    <field name="cursus_formation_group_ids" type="col"/>
                 </pivot>
             </field>
         </record>
@@ -133,6 +141,9 @@
                     <filter string='Anciens étudiants' name='partner_type_anciens_etudiants' domain="[('partner_type_ids.code', '=', 'type_005')]"/>
                     <separator/>
                     <filter string='Sociétés' name='companies' domain="[('is_company', '=', True)]"/>
+                    <!-- Indicateur seulement : la blacklist entreprise ne bloque rien
+                         (seule celle d'un service bloque les contrats). -->
+                    <filter string='Entreprises blacklistées' name='companies_blacklisted' domain="[('is_company', '=', True), ('is_blacklist', '=', True)]"/>
                     <separator/>
                     <filter string="Élèves - année en cours" name="cursus_school_year_current"
                         domain="['&amp;', ('res_partner_cursus_ids.start_date', '&lt;=', (context_today() - relativedelta(months=8) + relativedelta(month=9, day=1) + relativedelta(years=1, days=-1)).strftime('%Y-%m-%d')), '|', ('res_partner_cursus_ids.end_date', '=', False), ('res_partner_cursus_ids.end_date', '&gt;=', (context_today() - relativedelta(months=8) + relativedelta(month=9, day=1)).strftime('%Y-%m-%d'))]"/>
@@ -142,8 +153,10 @@
 
                 <xpath expr="//group[@name='group_by']" position="inside">
                     <filter name='limayrac_formations_ids' string="Enseignants par formations" domain="[('limayrac_formations_ids', '!=', False), ('partner_type_ids.code', '=', 'type_001')]" context="{'group_by' : 'limayrac_formations_ids'}"/>
-                    <filter name='cursus_formations_ids' string="Élèves par formations" domain="[('cursus_formations_ids', '!=', False), ('partner_type_ids.code', '=', 'type_002')]" context="{'group_by' : 'cursus_formations_ids'}"/>
+                    <filter name='cursus_formation_group_ids' string="Élèves par formations" domain="[('cursus_formation_group_ids', '!=', False), ('partner_type_ids.code', '=', 'type_002')]" context="{'group_by' : 'cursus_formation_group_ids'}"/>
+                    <filter name='cursus_formations_ids' string="Élèves par classes" domain="[('cursus_formations_ids', '!=', False), ('partner_type_ids.code', '=', 'type_002')]" context="{'group_by' : 'cursus_formations_ids'}"/>
                     <filter name='partner_type_ids' string="Type de contact" domain="[('partner_type_ids', '!=', False)]" context="{'group_by' : 'partner_type_ids'}"/>
+                    <filter name='res_partner_opco_id' string="OPCO" domain="[('is_company', '=', True), ('res_partner_opco_id', '!=', False)]" context="{'group_by' : 'res_partner_opco_id'}"/>
                     <filter name='res_partner_naf_id' string="Code NAF" domain="[('is_company', '=', True), ('res_partner_naf_id', '!=', False)]" context="{'group_by' : 'res_partner_naf_id'}"/>
                 </xpath>
                 <xpath expr="//filter[@name='type_person']" position="replace"/>

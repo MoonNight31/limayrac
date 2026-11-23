@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_res_partner_opco_list" model="ir.ui.view">
+            <field name="name">res.partner.opco.list</field>
+            <field name="model">res.partner.opco</field>
+            <field name="arch" type="xml">
+                <list editable="bottom">
+                    <field name="name"/>
+                    <field name="active" widget="boolean_toggle"/>
+                </list>
+            </field>
+        </record>
+        <record id="view_res_partner_opco_search" model="ir.ui.view">
+            <field name="name">res.partner.opco.search</field>
+            <field name="model">res.partner.opco</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                    <filter name="inactive" string="Archivés" domain="[('active', '=', False)]"/>
+                </search>
+            </field>
+        </record>
+        <record id="action_res_partner_opco" model="ir.actions.act_window">
+            <field name="name">OPCO</field>
+            <field name="res_model">res.partner.opco</field>
+            <field name="view_mode">list</field>
+        </record>
+        <menuitem id="menu_res_partner_opco"
+            name="OPCO"
+            parent="contacts.res_partner_menu_config"
+            action="action_res_partner_opco"
+            sequence="30"/>
+    </data>
+</odoo>

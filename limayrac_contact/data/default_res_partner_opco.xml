@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Les 11 OPCO agréés depuis 2019. Libellés identiques à l'export YParéo. -->
+    <data noupdate="1">
+        <record id="opco_afdas" model="res.partner.opco"><field name="name">AFDAS</field></record>
+        <record id="opco_akto" model="res.partner.opco"><field name="name">AKTO</field></record>
+        <record id="opco_atlas" model="res.partner.opco"><field name="name">ATLAS</field></record>
+        <record id="opco_ocapiat" model="res.partner.opco"><field name="name">OCAPIAT</field></record>
+        <record id="opco_2i" model="res.partner.opco"><field name="name">OPCO 2I</field></record>
+        <record id="opco_construction" model="res.partner.opco"><field name="name">OPCO DE LA CONSTRUCTION</field></record>
+        <record id="opco_ep" model="res.partner.opco"><field name="name">OPCO DES ENTREPRISES DE PROXIMITE (EP)</field></record>
+        <record id="opco_mobilites" model="res.partner.opco"><field name="name">OPCO MOBILITES</field></record>
+        <record id="opco_sante" model="res.partner.opco"><field name="name">OPCO SANTE</field></record>
+        <record id="opco_commerce" model="res.partner.opco"><field name="name">OPCOMMERCE</field></record>
+        <record id="opco_uniformation" model="res.partner.opco"><field name="name">UNIFORMATION</field></record>
+    </data>
+</odoo>

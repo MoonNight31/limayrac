@@ -2,38 +2,39 @@
 <odoo>
     <data>
         <!--
-            Opportunités "étudiant" : rattachées à Administrator et à l'équipe
-            commerciale pour apparaître directement dans le Pipeline CRM.
-            res_partner_id (étudiant) est renseigné : crm.lead.create() force
-            alors le stage à Qualified (stage_lead2).
+            Opportunités d'entreprises pour lesquelles un étudiant a déjà été
+            choisi parmi les candidatures : l'étape est calculée automatiquement
+            (Qualified tant qu'aucun contrat n'existe).
         -->
         <record id="demo_lead_stage" model="crm.lead">
-            <field name="name">Recherche stage - Lucas Petit</field>
+            <field name="name">Besoin stagiaire - TechCorp SA</field>
             <field name="type">opportunity</field>
             <field name="type_contract">1</field>
             <field name="user_id" ref="base.user_admin"/>
             <field name="team_id" ref="sales_team.team_sales_department"/>
-            <field name="res_partner_id" ref="demo_partner_etudiant_1"/>
             <field name="partner_id" ref="demo_company_techcorp"/>
-            <field name="email_from">lucas.petit@student.example</field>
+            <field name="res_partner_ids" eval="[(6, 0, [ref('demo_partner_etudiant_1')])]"/>
+            <field name="res_partner_id" ref="demo_partner_etudiant_1"/>
+            <field name="email_from">contact@techcorp.example</field>
             <field name="probability">50</field>
         </record>
 
         <record id="demo_lead_alternance" model="crm.lead">
-            <field name="name">Recherche alternance - Emma Durand</field>
+            <field name="name">Besoin alternant développeur web - WebAgence Prospect</field>
             <field name="type">opportunity</field>
             <field name="type_contract">2</field>
             <field name="user_id" ref="base.user_admin"/>
             <field name="team_id" ref="sales_team.team_sales_department"/>
-            <field name="res_partner_id" ref="demo_partner_etudiant_2"/>
             <field name="partner_id" ref="demo_company_webagence"/>
-            <field name="email_from">emma.durand@student.example</field>
+            <field name="res_partner_ids" eval="[(6, 0, [ref('demo_partner_etudiant_2')])]"/>
+            <field name="res_partner_id" ref="demo_partner_etudiant_2"/>
+            <field name="email_from">hello@webagence.example</field>
             <field name="probability">40</field>
         </record>
 
-        <!-- Opportunité sans étudiant : reste à l'étape New (stage_lead1) -->
+        <!-- Opportunité sans étudiant : reste à l'étape New -->
         <record id="demo_lead_sans_etudiant" model="crm.lead">
-            <field name="name">Demande d'information entreprise</field>
+            <field name="name">Besoin stagiaire/alternant - TechCorp Sud</field>
             <field name="type">opportunity</field>
             <field name="type_contract">3</field>
             <field name="user_id" ref="base.user_admin"/>

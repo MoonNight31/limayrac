@@ -30,7 +30,8 @@
             <xpath expr="//header" position="inside">
                 <button name="action_create_contract" type="object"
                         string="Créer un contrat" class="oe_highlight"
-                        invisible="not res_partner_id"/>
+                        invisible="not res_partner_id or has_active_contract or not active"/>
+                <field name="has_active_contract" invisible="1"/>
             </xpath>
             
             <xpath expr="//field[@name='stage_id']" position="attributes">
@@ -39,6 +40,9 @@
 
             <xpath expr="//div[hasclass('oe_title')]" position="after">
                 <field name="type_contract" widget="radio" options="{'horizontal': true}"/>
+                <group>
+                    <field name="formation_id"/>
+                </group>
             </xpath>
 
             <xpath expr="//div[@class='d-flex gap-3 align-items-center']" position="after">
@@ -58,16 +62,18 @@
                             </field>
                     </page>
             </xpath>
-            <xpath expr="//page[@name='internal_notes']" position="before">
-                    <page name="formations" string="Formations Limayrac">
-                            <field name="limayrac_formation_ids" widget="many2many">
-                            <list>
-                                <field name="name"/>
-                                <field name="title_rncp_id"/>
-                            </list>
-                            </field>
-                    </page>
-            </xpath>
+            </field>
+        </record>
+
+        <!-- L'étape suit le contrat : pas de glisser-déposer dans le pipeline. -->
+        <record id="view_crm_lead_kanban_limayrac" model="ir.ui.view">
+            <field name="name">crm.lead.kanban.limayrac</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.crm_case_kanban_view_leads"/>
+            <field name="arch" type="xml">
+                <xpath expr="//kanban" position="attributes">
+                    <attribute name="records_draggable">0</attribute>
+                </xpath>
             </field>
         </record>
     </data>

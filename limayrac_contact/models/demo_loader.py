@@ -16,17 +16,19 @@ DEMO_FILES = [
     'demo/crm_opportunity_demo.xml',
 ]
 
-# Étape cible de chaque opportunité de démo. crm.lead.create() force toujours
-# stage_lead1 (pas de res_partner_id), donc on applique l'étape voulue après
-# chargement via un write() qui ne touche pas à res_partner_id.
-OPPORTUNITY_STAGES = {
-    'demo_opp_techcorp': 'crm.stage_lead3',
-    'demo_opp_datasoft': 'crm.stage_lead2',
-    'demo_opp_cloudnet': 'crm.stage_lead2',
-    'demo_opp_pixelstudio': 'crm.stage_lead1',
-    'demo_opp_retailplus': 'crm.stage_lead3',
-    'demo_opp_webagence': 'crm.stage_lead4',
-}
+# Opportunités de démo. Leur étape n'est pas forcée : elle est calculée
+# automatiquement à partir de l'étudiant choisi et du contrat.
+DEMO_OPPORTUNITIES = [
+    'demo_opp_techcorp',
+    'demo_opp_datasoft',
+    'demo_opp_cloudnet',
+    'demo_opp_pixelstudio',
+    'demo_opp_retailplus',
+    'demo_opp_webagence',
+    'demo_lead_stage',
+    'demo_lead_alternance',
+    'demo_lead_sans_etudiant',
+]
 
 
 class LimayracDemoLoader(models.AbstractModel):
@@ -51,7 +53,6 @@ class LimayracDemoLoader(models.AbstractModel):
                 mode='update',
                 noupdate=False,
             )
-        self._set_opportunity_stages()
         self._reset_opportunity_revenue()
         _logger.info("Limayrac: données de démo chargées.")
 
@@ -63,29 +64,11 @@ class LimayracDemoLoader(models.AbstractModel):
         pas remis à zéro par convert_file en mode update, d'où cette remise à
         zéro explicite (idempotente) sur les enregistrements de démo existants.
         """
-        xmlids = list(OPPORTUNITY_STAGES) + [
-            'demo_lead_stage', 'demo_lead_alternance', 'demo_lead_sans_etudiant',
-        ]
         leads = self.env['crm.lead']
-        for xmlid in xmlids:
+        for xmlid in DEMO_OPPORTUNITIES:
             lead = self.env.ref(
                 'limayrac_contact.%s' % xmlid, raise_if_not_found=False)
             if lead:
                 leads |= lead
         if leads:
             leads.expected_revenue = 0
-
-    def _set_opportunity_stages(self):
-        """Applique l'étape cible à chaque opportunité de démo.
-
-        crm.lead.create() force stage_lead1/stage_lead2 selon res_partner_id ;
-        comme les opportunités de démo n'ont pas d'étudiant associé, elles
-        arrivent toutes en stage_lead1. On corrige ici via un write() qui ne
-        touche pas à res_partner_id (sinon l'étape serait recalculée).
-        """
-        for xmlid, stage_xmlid in OPPORTUNITY_STAGES.items():
-            lead = self.env.ref(
-                'limayrac_contact.%s' % xmlid, raise_if_not_found=False)
-            stage = self.env.ref(stage_xmlid, raise_if_not_found=False)
-            if lead and stage:
-                lead.stage_id = stage

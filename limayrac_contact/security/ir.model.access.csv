@@ -3,12 +3,18 @@ access_limayrac_contract_read,limayrac.contract read,model_limayrac_contract,gro
 access_limayrac_contract_write,limayrac.contract write,model_limayrac_contract,group_limayrac_contract_write,1,1,1,1
 access_limayrac_formations_read,limayrac.formations read,model_limayrac_formations,group_limayrac_formations_read,1,0,0,0
 access_limayrac_formations_write,limayrac.formations write,model_limayrac_formations,group_limayrac_formations_write,1,1,1,1
+access_limayrac_formations_filiere_read,limayrac.formations.filiere read,model_limayrac_formations_filiere,group_limayrac_formations_read,1,0,0,0
+access_limayrac_formations_filiere_write,limayrac.formations.filiere write,model_limayrac_formations_filiere,group_limayrac_formations_write,1,1,1,1
+access_limayrac_formations_group_read,limayrac.formations.group read,model_limayrac_formations_group,group_limayrac_formations_read,1,0,0,0
+access_limayrac_formations_group_write,limayrac.formations.group write,model_limayrac_formations_group,group_limayrac_formations_write,1,1,1,1
 access_res_partner_cursus_read,res.partner.cursus read,model_res_partner_cursus,group_limayrac_cursus_read,1,0,0,0
 access_res_partner_cursus_write,res.partner.cursus write,model_res_partner_cursus,group_limayrac_cursus_write,1,1,1,1
 access_res_partner_department_read,res.partner.department read,model_res_partner_department,group_limayrac_department_read,1,0,0,0
 access_res_partner_department_write,res.partner.department write,model_res_partner_department,group_limayrac_department_write,1,1,1,1
 access_res_partner_naf_read,res.partner.naf read,model_res_partner_naf,group_limayrac_naf_read,1,0,0,0
 access_res_partner_naf_write,res.partner.naf write,model_res_partner_naf,group_limayrac_naf_write,1,1,1,1
+access_res_partner_opco_read,res.partner.opco read,model_res_partner_opco,group_limayrac_opco_read,1,0,0,0
+access_res_partner_opco_write,res.partner.opco write,model_res_partner_opco,group_limayrac_opco_write,1,1,1,1
 access_title_rncp_read,title.rncp read,model_title_rncp,group_limayrac_rncp_read,1,0,0,0
 access_title_rncp_write,title.rncp write,model_title_rncp,group_limayrac_rncp_write,1,1,1,1
 access_res_partner_blacklist_wizard,res.partner.blacklist.wizard,model_res_partner_blacklist_wizard,base.group_user,1,1,1,1
