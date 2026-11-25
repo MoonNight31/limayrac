@@ -1,4 +1,5 @@
-from odoo import models, fields, api
+from odoo import models, fields, api, _
+from odoo.exceptions import ValidationError
 
 class LimayracFormationsGroup(models.Model):
     _name = 'limayrac.formations.group'
@@ -8,6 +9,7 @@ class LimayracFormationsGroup(models.Model):
     name = fields.Char(string="Nom de la formation", required=True)
     active = fields.Boolean(default=True)
     filiere_id = fields.Many2one('limayrac.formations.filiere', string="Filière", required=True, ondelete='restrict', index=True)
+    nb_annees = fields.Integer(string="Durée (années)", required=True, default=1, aggregator=False)
     formation_ids = fields.One2many('limayrac.formations', 'group_id', string="Classes")
     formation_count = fields.Integer(string="Nombre de classes", compute='_compute_formation_count')
 
@@ -33,6 +35,20 @@ class LimayracFormationsGroup(models.Model):
     crm_lead_ongoing_ids = fields.Many2many('crm.lead', string='Opportunités en cours', compute='_compute_crm_lead_ongoing_ids')
 
     _name_uniq = models.Constraint('UNIQUE(name)', "Cette formation existe déjà.")
+
+    @api.constrains('nb_annees')
+    def _check_nb_annees(self):
+        for record in self:
+            if record.nb_annees < 1:
+                raise ValidationError(_("La durée de la formation doit être d'au moins 1 an."))
+            too_high = record.with_context(active_test=False).formation_ids.filtered(
+                lambda c: c.annee_niveau > record.nb_annees)
+            if too_high:
+                raise ValidationError(_(
+                    "La formation %(formation)s ne peut pas durer %(duree)s an(s) : "
+                    "ces classes sont dans une année supérieure : %(classes)s.",
+                    formation=record.name, duree=record.nb_annees,
+                    classes=", ".join(too_high.mapped('name'))))
 
     @api.depends('formation_ids')
     def _compute_formation_count(self):

@@ -1,4 +1,5 @@
-from odoo import models, fields, api
+from odoo import models, fields, api, _
+from odoo.exceptions import ValidationError
 
 class LimayracFormations(models.Model):
     _name = 'limayrac.formations'
@@ -7,13 +8,15 @@ class LimayracFormations(models.Model):
     name = fields.Char(string="Nom commercial", required=True)
     group_id = fields.Many2one('limayrac.formations.group', string="Formation", required=True, ondelete='restrict', index=True)
     filiere_id = fields.Many2one(related='group_id.filiere_id', string="Filière", store=True, index=True)
+    # Année d'études de la classe dans sa formation (1 = 1re année, ...).
+    annee_niveau = fields.Integer(string="Année", required=True, default=1, aggregator=False)
+    nb_annees = fields.Integer(related='group_id.nb_annees', string="Durée de la formation (années)")
     question_one = fields.Char(string="Question 1")
     question_two = fields.Char(string="Question 2")
     question_three = fields.Char(string="Question 3")
     question_four = fields.Char(string="Question 4")
     question_five = fields.Char(string="Question 5")
     title_rncp_id = fields.Many2one('title.rncp', string="Titre RNCP", domain="[('is_valid', '=', True)]")
-    old_rncp_ids = fields.Many2many('title.rncp', string="Ancien Titre RNCP", readonly=True)
     res_partner_resp_ids = fields.Many2many('res.partner', 'res_partner_limayrac_formations_resp_rel', 'limayrac_formations_id', 'res_partner_id', string='Responsables de sections')
     res_partner_ids = fields.Many2many('res.partner', 'res_partner_limayrac_formations_rel', 'limayrac_formations_id', 'res_partner_id', string='Formateurs')
     res_partner_cursus_ids = fields.One2many('res.partner.cursus', 'limayrac_formations_id', string='Cursus des contacts')
@@ -21,6 +24,15 @@ class LimayracFormations(models.Model):
     # RNCP, questions, responsables pédagogiques et formateurs sont définis sur
     # la formation et copiés dans la classe à sa création ; la classe garde
     # ensuite ses propres valeurs (modifiables), même si la formation change.
+
+    @api.constrains('annee_niveau', 'group_id')
+    def _check_annee_niveau(self):
+        for record in self:
+            if not 1 <= record.annee_niveau <= record.group_id.nb_annees:
+                raise ValidationError(_(
+                    "La classe %(classe)s est en année %(annee)s, alors que la formation %(formation)s dure %(duree)s an(s).",
+                    classe=record.name, annee=record.annee_niveau,
+                    formation=record.group_id.name, duree=record.group_id.nb_annees))
 
     @staticmethod
     def _is_empty_value(value):
@@ -61,12 +73,6 @@ class LimayracFormations(models.Model):
 
     def write(self, vals):
         partners_before = self.res_partner_ids | self.res_partner_resp_ids
-        for record in self:
-            if 'title_rncp_id' in vals:
-                if record.title_rncp_id.id not in record.old_rncp_ids.ids:
-                    record.old_rncp_ids = [(4, record.title_rncp_id.id)]
-                if vals['title_rncp_id'] in record.old_rncp_ids.ids:
-                    record.old_rncp_ids = [(3, vals['title_rncp_id'])]
         res = super(LimayracFormations, self).write(vals)
         if 'res_partner_ids' in vals or 'res_partner_resp_ids' in vals:
             partners_after = self.res_partner_ids | self.res_partner_resp_ids

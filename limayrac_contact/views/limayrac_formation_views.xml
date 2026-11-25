@@ -9,6 +9,7 @@
                     <field name="name"/>
                     <field name="filiere_id" optional="show"/>
                     <field name="group_id" optional="show"/>
+                    <field name="annee_niveau"/>
                     <field name="title_rncp_id"/>
                     <field name="question_one"/>
                     <field name="question_two"/>
@@ -29,6 +30,11 @@
                             <field name="name"/>
                             <field name="group_id"/>
                             <field name="filiere_id"/>
+                            <label for="annee_niveau"/>
+                            <div class="o_row">
+                                <field name="annee_niveau" class="oe_inline"/>
+                                <span invisible="not group_id">sur <field name="nb_annees" class="oe_inline"/> an(s)</span>
+                            </div>
                             <field name="question_one"/>
                             <field name="question_two"/>
                             <field name="question_three"/>
@@ -41,17 +47,6 @@
                             à la création de la classe, puis propres à la classe.
                         </div>
                         <notebook>
-                            <page name="title_rncp" string="Ancien titre RNCP associé">
-                                <group>
-                                    <field name="old_rncp_ids" readonly="1" nolabel="1">
-                                        <list decoration-danger="not is_valid">
-                                            <field name="name"/>
-                                            <field name="code_rncp"/>
-                                            <field name="is_valid"/>
-                                        </list>
-                                    </field>
-                                </group>
-                            </page>
                             <page name="responsables_pedagogiques" string="Responsables pédagogiques">
                                 <field name="res_partner_resp_ids">
                                     <kanban>
@@ -93,6 +88,7 @@
                     <group>
                         <filter name="groupby_filiere" string="Filière" context="{'group_by': 'filiere_id'}"/>
                         <filter name="groupby_group" string="Formation" context="{'group_by': 'group_id'}"/>
+                        <filter name="groupby_annee" string="Année" context="{'group_by': 'annee_niveau'}"/>
                     </group>
                 </search>
             </field>
@@ -123,6 +119,7 @@
                 <list string="Formations">
                     <field name="name"/>
                     <field name="filiere_id"/>
+                    <field name="nb_annees" optional="show"/>
                     <field name="title_rncp_id" optional="show"/>
                     <field name="formation_count"/>
                 </list>
@@ -140,6 +137,7 @@
                             <group>
                                 <field name="name"/>
                                 <field name="filiere_id"/>
+                                <field name="nb_annees"/>
                                 <field name="title_rncp_id"/>
                                 <field name="active" invisible="1"/>
                             </group>
@@ -191,6 +189,7 @@
                                 <field name="formation_ids">
                                     <list>
                                         <field name="name"/>
+                                        <field name="annee_niveau"/>
                                         <field name="title_rncp_id"/>
                                     </list>
                                 </field>

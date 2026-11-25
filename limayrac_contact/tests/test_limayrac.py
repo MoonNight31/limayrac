@@ -315,6 +315,23 @@ class TestFormationContent(LimayracCase):
         self.group.title_rncp_id = new
         self.assertIn(old, self.group.old_rncp_ids)
 
+    def test_class_year_within_formation_duration(self):
+        Classe = self.env['limayrac.formations']
+        self.assertEqual(self.group.nb_annees, 1)
+        self.assertEqual(self.classe.annee_niveau, 1)
+        with self.assertRaises(ValidationError):
+            Classe.create({'name': 'Test 2BTS', 'group_id': self.group.id, 'annee_niveau': 2})
+        self.group.nb_annees = 2
+        second = Classe.create({'name': 'Test 2BTS', 'group_id': self.group.id, 'annee_niveau': 2})
+        self.assertEqual(second.annee_niveau, 2)
+        with self.assertRaises(ValidationError):
+            second.annee_niveau = 0
+        # La formation ne peut pas être raccourcie sous l'année d'une de ses classes.
+        with self.assertRaises(ValidationError):
+            self.group.nb_annees = 1
+        with self.assertRaises(ValidationError):
+            self.group.nb_annees = 0
+
     def test_formation_responsible_is_formateur(self):
         _rncp, resp = self._fill_group(self.group)
         self.assertIn('type_001', resp.partner_type_ids.mapped('code'))
