@@ -83,9 +83,15 @@ class LimayracContract(models.Model):
     limayrac_formation_id = fields.Many2one(
         'limayrac.formations', string='Classe',
         related='cursus_id.limayrac_formations_id', store=True, readonly=True)
+    # Titre de la classe (figé à sa création) ; à défaut, celui de la formation.
     title_rncp_id = fields.Many2one(
-        'title.rncp', string='Titre RNCP',
-        related='limayrac_formation_id.title_rncp_id', readonly=True)
+        'title.rncp', string='Titre RNCP', compute='_compute_title_rncp_id')
+
+    @api.depends('limayrac_formation_id.title_rncp_id', 'formation_id.title_rncp_id')
+    def _compute_title_rncp_id(self):
+        for record in self:
+            record.title_rncp_id = record.limayrac_formation_id.title_rncp_id \
+                or record.formation_id.title_rncp_id
 
     @api.depends('cursus_id.formation_id')
     def _compute_formation_id(self):

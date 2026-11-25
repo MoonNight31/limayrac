@@ -74,10 +74,15 @@
                             </list>
                         </field>
                     </page>
-                    <page name="limayrac_formations" string="Formations Limayrac" invisible="not limayrac_formations_ids and not limayrac_formations_resp_ids">
+                    <page name="limayrac_formations" string="Formations Limayrac" invisible="not limayrac_formations_ids and not limayrac_formations_resp_ids and not formation_group_ids and not formation_group_resp_ids">
+                        <group>
+                            <field name="formation_group_resp_ids" widget="many2many_tags" readonly="1" invisible="not formation_group_resp_ids"/>
+                            <field name="formation_group_ids" widget="many2many_tags" readonly="1" invisible="not formation_group_ids"/>
+                        </group>
                         <field name="limayrac_formations_ids" readonly="1">
                             <list>
                                 <field name="name"/>
+                                <field name="group_id"/>
                                 <field name="title_rncp_id"/>
                             </list>
                         </field>

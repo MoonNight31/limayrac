@@ -272,3 +272,86 @@ class TestTitleRncp(LimayracCase):
         self.assertEqual(Title.search([('id', 'in', mine.ids), ('is_valid', '=', True)]), current | open_ended)
         self.assertEqual(Title.search([('id', 'in', mine.ids), ('is_valid', '=', False)]), expired)
         self.assertEqual(Title.search([('id', 'in', mine.ids), ('is_valid', '!=', True)]), expired)
+
+
+@tagged('post_install', '-at_install', 'limayrac')
+class TestFormationContent(LimayracCase):
+
+    def _fill_group(self, group):
+        rncp = self.env['title.rncp'].create({'name': 'Test RNCP formation'})
+        resp = self.env['res.partner'].create({'name': 'Test Responsable'})
+        group.write({
+            'title_rncp_id': rncp.id,
+            'question_one': 'Question formation ?',
+            'res_partner_resp_ids': [(6, 0, resp.ids)],
+            'res_partner_ids': [(6, 0, self.school_tutor.ids)],
+        })
+        return rncp, resp
+
+    def test_new_class_copies_formation_then_keeps_its_values(self):
+        rncp, resp = self._fill_group(self.group)
+        classe = self.env['limayrac.formations'].create({'name': 'Test 2BTS', 'group_id': self.group.id})
+        self.assertEqual(classe.title_rncp_id, rncp)
+        self.assertEqual(classe.question_one, 'Question formation ?')
+        self.assertEqual(classe.res_partner_resp_ids, resp)
+        self.assertEqual(classe.res_partner_ids, self.school_tutor)
+        # La formation change : la classe garde ses valeurs.
+        self.group.write({'question_one': 'Nouvelle question ?', 'res_partner_resp_ids': [(5,)]})
+        self.assertEqual(classe.question_one, 'Question formation ?')
+        self.assertEqual(classe.res_partner_resp_ids, resp)
+        # La classe reste modifiable.
+        classe.question_one = 'Question de la classe ?'
+        self.assertEqual(classe.question_one, 'Question de la classe ?')
+
+    def test_values_given_at_creation_are_kept(self):
+        self._fill_group(self.group)
+        classe = self.env['limayrac.formations'].create({
+            'name': 'Test 3BTS', 'group_id': self.group.id, 'question_one': 'Ma question ?'})
+        self.assertEqual(classe.question_one, 'Ma question ?')
+
+    def test_formation_rncp_history(self):
+        old, _resp = self._fill_group(self.group)
+        new = self.env['title.rncp'].create({'name': 'Test RNCP nouveau'})
+        self.group.title_rncp_id = new
+        self.assertIn(old, self.group.old_rncp_ids)
+
+    def test_class_year_within_formation_duration(self):
+        Classe = self.env['limayrac.formations']
+        self.assertEqual(self.group.nb_annees, 1)
+        self.assertEqual(self.classe.annee_niveau, 1)
+        with self.assertRaises(ValidationError):
+            Classe.create({'name': 'Test 2BTS', 'group_id': self.group.id, 'annee_niveau': 2})
+        self.group.nb_annees = 2
+        second = Classe.create({'name': 'Test 2BTS', 'group_id': self.group.id, 'annee_niveau': 2})
+        self.assertEqual(second.annee_niveau, 2)
+        with self.assertRaises(ValidationError):
+            second.annee_niveau = 0
+        # La formation ne peut pas être raccourcie sous l'année d'une de ses classes.
+        with self.assertRaises(ValidationError):
+            self.group.nb_annees = 1
+        with self.assertRaises(ValidationError):
+            self.group.nb_annees = 0
+
+    def test_formation_responsible_is_formateur(self):
+        _rncp, resp = self._fill_group(self.group)
+        self.assertIn('type_001', resp.partner_type_ids.mapped('code'))
+
+    def test_contract_rncp_falls_back_on_formation(self):
+        rncp, _resp = self._fill_group(self.group)
+        student = self.env['res.partner'].create({'name': 'Test Sans Classe'})
+        self.env['res.partner.cursus'].create({
+            'res_partner_id': student.id, 'formation_id': self.group.id,
+            'start_date': self.today - relativedelta(months=1)})
+        contract = self.env['limayrac.contract'].create(self._contract_vals(
+            student_id=student.id, cursus_id=False, formation_id=self.group.id))
+        self.assertEqual(contract.title_rncp_id, rncp)
+
+    def test_init_from_classes(self):
+        group = self.env['limayrac.formations.group'].create({
+            'name': 'Test Reprise', 'filiere_id': self.group.filiere_id.id})
+        Classe = self.env['limayrac.formations']
+        Classe.create({'name': 'Test R1', 'group_id': group.id, 'question_one': 'Même ?', 'question_two': 'A'})
+        Classe.create({'name': 'Test R2', 'group_id': group.id, 'question_one': 'Même ?', 'question_two': 'B'})
+        group._init_from_classes()
+        self.assertEqual(group.question_one, 'Même ?')
+        self.assertFalse(group.question_two)
